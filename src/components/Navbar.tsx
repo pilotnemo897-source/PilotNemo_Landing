@@ -48,32 +48,30 @@ export const Navbar: React.FC = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'glass-nav shadow-nexus-sm border-b border-slate-200/80 py-3'
+          ? 'glass-nav shadow-nexus-sm border-b border-slate-200/80 py-3.5'
           : 'bg-transparent py-4'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         
-        {/* Brand Logo Lockup: Both Icon + Stylized Name Images */}
-        <a href="#hero" className="flex items-center gap-3 group">
-          <div className="flex items-center gap-2.5 bg-nexus-navy px-3 py-1.5 rounded-2xl border border-nexus-navy-light shadow-md group-hover:scale-105 transition-transform duration-300">
-            {/* 1. Compass Paper Plane Icon Image */}
-            <img
-              src="/logo-icon.png"
-              alt="PilotNemo Compass Icon"
-              className="w-7 h-7 sm:w-8 sm:h-8 object-contain"
-            />
-            {/* 2. Stylized PILOTNEMO Name Image */}
-            <img
-              src="/logo-name.png"
-              alt="PILOTNEMO"
-              className="h-5 sm:h-6 w-auto object-contain"
-            />
-          </div>
+        {/* Large Direct Brand Logos: Icon + Name (No Background Box) */}
+        <a href="#hero" className="flex items-center gap-3 sm:gap-4 group py-1">
+          {/* 1. Compass Paper Plane Icon Image (Big) */}
+          <img
+            src="/logo-icon.png"
+            alt="PilotNemo Compass Icon"
+            className="h-10 sm:h-12 md:h-13 w-auto object-contain rounded-xl shadow-sm group-hover:scale-105 transition-transform duration-300"
+          />
+          {/* 2. Stylized PILOTNEMO Name Image (Big) */}
+          <img
+            src="/logo-name.png"
+            alt="PILOTNEMO"
+            className="h-7 sm:h-9 md:h-10 w-auto object-contain rounded-lg group-hover:scale-105 transition-transform duration-300"
+          />
         </a>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden md:flex items-center gap-1 bg-white/60 backdrop-blur-md px-4 py-1.5 rounded-full border border-slate-200/60 shadow-sm">
+        <nav className="hidden md:flex items-center gap-1 bg-white/70 backdrop-blur-md px-4 py-1.5 rounded-full border border-slate-200/60 shadow-sm">
           {navLinks.map((link) => {
             const sectionId = link.href.replace('#', '');
             const isActive = activeSection === sectionId;

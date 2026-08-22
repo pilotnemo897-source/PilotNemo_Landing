@@ -11,18 +11,18 @@ export const Footer: React.FC = () => {
           
           {/* Column 1: Brand Info */}
           <div className="lg:col-span-2 space-y-4">
-            <a href="#hero" className="inline-flex items-center gap-3 bg-white/5 px-3.5 py-2 rounded-2xl border border-white/10 hover:border-nexus-blue/50 transition-colors">
-              {/* 1. Compass Paper Plane Icon */}
+            <a href="#hero" className="inline-flex items-center gap-3.5 group">
+              {/* 1. Compass Paper Plane Icon (Big Direct) */}
               <img
                 src="/logo-icon.png"
                 alt="PilotNemo Icon"
-                className="w-8 h-8 object-contain"
+                className="h-12 sm:h-14 w-auto object-contain rounded-xl group-hover:scale-105 transition-transform duration-300"
               />
-              {/* 2. Stylized PILOTNEMO Name */}
+              {/* 2. Stylized PILOTNEMO Name (Big Direct) */}
               <img
                 src="/logo-name.png"
                 alt="PILOTNEMO"
-                className="h-6 w-auto object-contain"
+                className="h-8 sm:h-10 w-auto object-contain rounded-lg group-hover:scale-105 transition-transform duration-300"
               />
             </a>
             <p className="text-sm text-slate-400 max-w-sm leading-relaxed pt-1">
