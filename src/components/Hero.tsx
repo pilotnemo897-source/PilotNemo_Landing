@@ -100,7 +100,7 @@ export const Hero: React.FC = () => {
                     <span className="w-3 h-3 rounded-full bg-amber-400" />
                     <span className="w-3 h-3 rounded-full bg-emerald-400" />
                   </div>
-                  <span className="text-xs font-semibold text-nexus-muted ml-2">Nexus Growth Engine</span>
+                  <span className="text-xs font-semibold text-nexus-muted ml-2">PilotNemo Growth Engine</span>
                 </div>
                 <div className="flex items-center gap-1.5 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200 text-emerald-700 text-xs font-semibold">
                   <Activity className="w-3.5 h-3.5 animate-pulse" /> Live Growth

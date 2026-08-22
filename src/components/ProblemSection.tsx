@@ -56,7 +56,7 @@ export const ProblemSection: React.FC = () => {
               {/* Solution Box & Animated Arrow */}
               <div className="pt-6 border-t border-slate-100 mt-4">
                 <div className="flex items-center justify-between mb-2 text-xs font-bold uppercase tracking-wider text-slate-400 group-hover:text-nexus-blue transition-colors">
-                  <span>Nexus Solution</span>
+                  <span>PilotNemo Solution</span>
                   <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1.5 transition-transform duration-300 text-nexus-blue" />
                 </div>
                 <p className="text-sm font-semibold text-nexus-muted group-hover:text-nexus-text transition-colors leading-relaxed">

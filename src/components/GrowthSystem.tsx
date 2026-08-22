@@ -133,7 +133,7 @@ export const GrowthSystem: React.FC = () => {
           className="mt-16 text-center max-w-2xl mx-auto bg-white/5 backdrop-blur-md px-6 py-4 rounded-2xl border border-white/10"
         >
           <p className="text-sm font-medium text-slate-300">
-            ⚡ Stop managing multiple disconnected agencies. NexusDigital unifies your entire growth stack under one roof.
+            ⚡ Stop managing multiple disconnected agencies. PilotNemo unifies your entire growth stack under one roof.
           </p>
         </motion.div>
 

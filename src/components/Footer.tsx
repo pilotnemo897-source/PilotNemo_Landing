@@ -11,12 +11,12 @@ export const Footer: React.FC = () => {
           
           {/* Column 1: Brand Info */}
           <div className="lg:col-span-2 space-y-4">
-            <a href="#hero" className="flex items-center gap-2.5">
-              <div className="w-9 h-9 rounded-xl bg-nexus-blue flex items-center justify-center text-white font-bold text-lg">
-                N
+            <a href="#hero" className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-white/10 p-1.5 flex items-center justify-center border border-white/10 overflow-hidden">
+                <img src="/logo-icon.png" alt="PilotNemo Logo Icon" className="w-full h-full object-contain" />
               </div>
-              <span className="font-extrabold text-xl text-white tracking-tight">
-                Nexus<span className="text-nexus-blue-secondary">Digital</span>
+              <span className="font-extrabold text-2xl text-white tracking-tight">
+                PILOT<span className="text-nexus-blue-secondary">NEMO</span>
               </span>
             </a>
             <p className="text-sm text-slate-400 max-w-sm leading-relaxed">
@@ -112,8 +112,8 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-2.5 text-sm">
               <li>
-                <a href="mailto:hello@nexusdigital.com" className="hover:text-white transition-colors flex items-center gap-1">
-                  hello@nexusdigital.com <ArrowUpRight className="w-3 h-3" />
+                <a href="mailto:hello@pilotnemo.com" className="hover:text-white transition-colors flex items-center gap-1">
+                  hello@pilotnemo.com <ArrowUpRight className="w-3 h-3" />
                 </a>
               </li>
               <li>
@@ -134,7 +134,7 @@ export const Footer: React.FC = () => {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
           <div>
-            © 2026 NexusDigital. All rights reserved.
+            © 2026 PilotNemo. All rights reserved.
           </div>
           <div className="flex items-center gap-6">
             <a href="#hero" className="hover:text-white transition-colors">Privacy Policy</a>

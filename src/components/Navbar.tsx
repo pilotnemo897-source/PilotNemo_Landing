@@ -53,17 +53,17 @@ export const Navbar: React.FC = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        {/* Brand Logo */}
-        <a href="#hero" className="flex items-center gap-2.5 group">
-          <div className="w-10 h-10 rounded-xl bg-nexus-blue flex items-center justify-center text-white font-bold text-xl shadow-md group-hover:scale-105 transition-transform duration-300">
-            <span className="flex items-center justify-center">N</span>
+        {/* Brand Logo with PilotNemo Icon */}
+        <a href="#hero" className="flex items-center gap-3 group">
+          <div className="w-10 h-10 rounded-xl bg-nexus-navy p-1.5 flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-300 overflow-hidden">
+            <img src="/logo-icon.png" alt="PilotNemo Logo Icon" className="w-full h-full object-contain" />
           </div>
           <div className="flex flex-col">
-            <span className="font-extrabold text-xl text-nexus-text tracking-tight group-hover:text-nexus-blue transition-colors">
-              Nexus<span className="text-nexus-blue">Digital</span>
+            <span className="font-extrabold text-2xl text-nexus-text tracking-tight group-hover:text-nexus-blue transition-colors leading-none">
+              PILOT<span className="text-nexus-blue">NEMO</span>
             </span>
-            <span className="text-[10px] font-semibold text-nexus-muted tracking-widest uppercase -mt-1">
-              Growth & Tech
+            <span className="text-[10px] font-semibold text-nexus-muted tracking-widest uppercase mt-0.5">
+              Digital Growth & Tech
             </span>
           </div>
         </a>
