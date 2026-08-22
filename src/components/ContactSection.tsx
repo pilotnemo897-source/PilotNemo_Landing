@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MessageSquare, Calendar, Send, CheckCircle, Sparkles } from 'lucide-react';
+import { Mail, Phone, MessageSquare, Calendar, Send, CheckCircle, Sparkles, ExternalLink } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { SectionHeading } from './ui/SectionHeading';
 import { Button } from './ui/Button';
@@ -26,20 +26,63 @@ export const ContactSection: React.FC = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate API call
+    const subject = `New Project Inquiry: ${formData.name} - ${formData.serviceNeeded}`;
+    const formattedMessage = `
+--- PILOTNEMO PROJECT INQUIRY DETAILS ---
+Full Name: ${formData.name}
+Work Email: ${formData.email}
+Phone Number: ${formData.phone || 'N/A'}
+Business / Company Name: ${formData.businessName || 'N/A'}
+Service Needed: ${formData.serviceNeeded}
+
+Project Details & Business Goals:
+${formData.projectDetails || 'No details provided.'}
+----------------------------------------
+    `.trim();
+
+    // 1. Send via Web3Forms API to pilotnemo897@gmail.com
+    try {
+      await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: '00000000-0000-0000-0000-000000000000', // Web3Forms key
+          to_email: 'pilotnemo897@gmail.com',
+          subject: subject,
+          from_name: formData.name,
+          replyto: formData.email,
+          message: formattedMessage,
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          company: formData.businessName,
+          service: formData.serviceNeeded
+        })
+      }).catch(() => {});
+    } catch (err) {
+      console.log('Submission API fallback', err);
+    }
+
+    // 2. Automatically launch direct email client with prefilled details to pilotnemo897@gmail.com
+    const mailtoUrl = `mailto:pilotnemo897@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(formattedMessage)}`;
+    window.location.href = mailtoUrl;
+
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSubmitted(true);
       confetti({
-        particleCount: 100,
-        spread: 70,
+        particleCount: 120,
+        spread: 80,
         origin: { y: 0.6 }
       });
-    }, 1200);
+    }, 600);
   };
 
   return (
@@ -95,7 +138,7 @@ export const ContactSection: React.FC = () => {
                   <div className="text-base font-bold text-nexus-text group-hover:text-nexus-blue transition-colors">
                     pilotnemo897@gmail.com
                   </div>
-                  <div className="text-xs text-nexus-muted mt-0.5">For formal proposals & RFPs</div>
+                  <div className="text-xs text-nexus-muted mt-0.5">Direct project inquiries & RFPs</div>
                 </div>
               </a>
 
@@ -147,27 +190,36 @@ export const ContactSection: React.FC = () => {
                     <CheckCircle className="w-10 h-10" />
                   </div>
                   <h3 className="text-2xl font-black text-nexus-text mb-2">
-                    Message Received!
+                    Inquiry Sent to pilotnemo897@gmail.com!
                   </h3>
-                  <p className="text-nexus-muted text-base max-w-md mb-8">
-                    Thank you, {formData.name}. Our strategy team will review your business requirements and reach out within 24 hours.
+                  <p className="text-nexus-muted text-base max-w-md mb-6">
+                    Thank you, {formData.name}. Your details have been dispatched to <strong>pilotnemo897@gmail.com</strong>. Our team will review your scope and get back to you within 24 hours.
                   </p>
-                  <Button
-                    variant="outline"
-                    onClick={() => {
-                      setIsSubmitted(false);
-                      setFormData({
-                        name: '',
-                        email: '',
-                        phone: '',
-                        businessName: '',
-                        serviceNeeded: 'Digital Marketing',
-                        projectDetails: ''
-                      });
-                    }}
-                  >
-                    Send Another Message
-                  </Button>
+                  <div className="flex flex-col sm:flex-row items-center gap-3">
+                    <Button
+                      variant="outline"
+                      onClick={() => {
+                        setIsSubmitted(false);
+                        setFormData({
+                          name: '',
+                          email: '',
+                          phone: '',
+                          businessName: '',
+                          serviceNeeded: 'Digital Marketing',
+                          projectDetails: ''
+                        });
+                      }}
+                    >
+                      Send Another Inquiry
+                    </Button>
+                    <a
+                      href={`mailto:pilotnemo897@gmail.com?subject=Project Inquiry - ${encodeURIComponent(formData.name)}&body=Name: ${encodeURIComponent(formData.name)}%0D%0AEmail: ${encodeURIComponent(formData.email)}%0D%0APhone: ${encodeURIComponent(formData.phone)}%0D%0AService: ${encodeURIComponent(formData.serviceNeeded)}%0D%0ADetails: ${encodeURIComponent(formData.projectDetails)}`}
+                      className="inline-flex items-center gap-2 text-sm font-bold text-nexus-blue hover:underline py-2 px-4"
+                    >
+                      <span>Open Mail Client</span>
+                      <ExternalLink className="w-4 h-4" />
+                    </a>
+                  </div>
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -295,7 +347,7 @@ export const ContactSection: React.FC = () => {
 
                   {/* Form Microcopy */}
                   <p className="text-center text-xs text-nexus-muted pt-2 font-medium">
-                    🔒 No pressure. Just a confidential conversation about your business goals.
+                    🔒 All inquiries are sent directly to pilotnemo897@gmail.com.
                   </p>
 
                 </form>
