@@ -48,18 +48,28 @@ export const Navbar: React.FC = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'glass-nav shadow-nexus-sm border-b border-slate-200/80 py-3.5'
+          ? 'glass-nav shadow-nexus-sm border-b border-slate-200/80 py-3'
           : 'bg-transparent py-4'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        {/* Official PILOTNEMO Full Logo Lockup */}
-        <a href="#hero" className="flex items-center group py-1">
-          <img
-            src="/logo-full.png"
-            alt="PILOTNEMO Logo"
-            className="h-10 sm:h-11 w-auto object-contain rounded-lg group-hover:opacity-90 group-hover:scale-[1.02] transition-all duration-300"
-          />
+        
+        {/* Brand Logo Lockup: Both Icon + Stylized Name Images */}
+        <a href="#hero" className="flex items-center gap-3 group">
+          <div className="flex items-center gap-2.5 bg-nexus-navy px-3 py-1.5 rounded-2xl border border-nexus-navy-light shadow-md group-hover:scale-105 transition-transform duration-300">
+            {/* 1. Compass Paper Plane Icon Image */}
+            <img
+              src="/logo-icon.png"
+              alt="PilotNemo Compass Icon"
+              className="w-7 h-7 sm:w-8 sm:h-8 object-contain"
+            />
+            {/* 2. Stylized PILOTNEMO Name Image */}
+            <img
+              src="/logo-name.png"
+              alt="PILOTNEMO"
+              className="h-5 sm:h-6 w-auto object-contain"
+            />
+          </div>
         </a>
 
         {/* Desktop Navigation Links */}
