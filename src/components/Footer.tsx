@@ -11,15 +11,14 @@ export const Footer: React.FC = () => {
           
           {/* Column 1: Brand Info */}
           <div className="lg:col-span-2 space-y-4">
-            <a href="#hero" className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-white/10 p-1.5 flex items-center justify-center border border-white/10 overflow-hidden">
-                <img src="/logo-icon.png" alt="PilotNemo Logo Icon" className="w-full h-full object-contain" />
-              </div>
-              <span className="font-extrabold text-2xl text-white tracking-tight">
-                PILOT<span className="text-nexus-blue-secondary">NEMO</span>
-              </span>
+            <a href="#hero" className="inline-block">
+              <img
+                src="/logo-full.png"
+                alt="PILOTNEMO Logo"
+                className="h-10 sm:h-12 w-auto object-contain rounded-lg"
+              />
             </a>
-            <p className="text-sm text-slate-400 max-w-sm leading-relaxed">
+            <p className="text-sm text-slate-400 max-w-sm leading-relaxed pt-1">
               Your digital growth and technology partner. We combine strategy, creative design, and engineering to build products that scale businesses.
             </p>
             {/* Social Icons */}
