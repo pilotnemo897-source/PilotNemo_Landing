@@ -84,7 +84,7 @@ export const ContactSection: React.FC = () => {
 
               {/* Email Card */}
               <a
-                href="mailto:hello@pilotnemo.com"
+                href="mailto:pilotnemo897@gmail.com"
                 className="flex items-start gap-4 p-4 rounded-2xl bg-white border border-slate-200/80 hover:border-nexus-blue hover:shadow-md transition-all group"
               >
                 <div className="w-12 h-12 rounded-xl bg-nexus-blue-50 text-nexus-blue flex items-center justify-center font-bold flex-shrink-0 group-hover:bg-nexus-blue group-hover:text-white transition-colors">
@@ -93,7 +93,7 @@ export const ContactSection: React.FC = () => {
                 <div>
                   <div className="text-xs font-bold uppercase tracking-wider text-slate-400">Email</div>
                   <div className="text-base font-bold text-nexus-text group-hover:text-nexus-blue transition-colors">
-                    hello@pilotnemo.com
+                    pilotnemo897@gmail.com
                   </div>
                   <div className="text-xs text-nexus-muted mt-0.5">For formal proposals & RFPs</div>
                 </div>

@@ -111,8 +111,8 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-2.5 text-sm">
               <li>
-                <a href="mailto:hello@pilotnemo.com" className="hover:text-white transition-colors flex items-center gap-1">
-                  hello@pilotnemo.com <ArrowUpRight className="w-3 h-3" />
+                <a href="mailto:pilotnemo897@gmail.com" className="hover:text-white transition-colors flex items-center gap-1">
+                  pilotnemo897@gmail.com <ArrowUpRight className="w-3 h-3" />
                 </a>
               </li>
               <li>

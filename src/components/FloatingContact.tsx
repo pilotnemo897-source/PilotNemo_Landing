@@ -40,7 +40,7 @@ export const FloatingContact: React.FC = () => {
 
             {/* Email Option */}
             <a
-              href="mailto:hello@pilotnemo.com"
+              href="mailto:pilotnemo897@gmail.com"
               className="flex items-center gap-3 px-4 py-2.5 rounded-full bg-nexus-blue text-white font-semibold text-xs shadow-lg hover:bg-nexus-blue-hover transition-all hover:scale-105"
             >
               <span>Send Email</span>
