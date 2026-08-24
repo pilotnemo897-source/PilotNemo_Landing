@@ -1,42 +1,55 @@
-
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
+import { FeatureHighlights } from './components/FeatureHighlights';
 import { TrustSection } from './components/TrustSection';
-import { ProblemSection } from './components/ProblemSection';
-import { GrowthSystem } from './components/GrowthSystem';
-import { Services } from './components/Services';
-import { OutcomesSection } from './components/OutcomesSection';
-import { Process } from './components/Process';
-import { SolutionFinder } from './components/SolutionFinder';
+import { AboutSection } from './components/AboutSection';
+import { ServicesSection } from './components/ServicesSection';
+import { ProjectsSection } from './components/ProjectsSection';
+import { TeamSection } from './components/TeamSection';
 import { ContactSection } from './components/ContactSection';
-import { FinalCTA } from './components/FinalCTA';
+import { BlogSection } from './components/BlogSection';
 import { Footer } from './components/Footer';
 import { FloatingContact } from './components/FloatingContact';
 
 export function App() {
   return (
-    <div className="min-h-screen bg-nexus-bg text-nexus-text font-sans selection:bg-nexus-blue selection:text-white relative">
-      {/* Navigation Bar */}
+    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-blue-600 selection:text-white relative">
+      {/* Navigation */}
       <Navbar />
 
-      {/* Main Content Sections */}
       <main>
+        {/* 1. Hero — Royal blue card with team photo */}
         <Hero />
+
+        {/* 2. Feature Highlights — 3 cards below hero */}
+        <FeatureHighlights />
+
+        {/* 3. Partner Logo Trust Strip */}
         <TrustSection />
-        <ProblemSection />
-        <GrowthSystem />
-        <Services />
-        <OutcomesSection />
-        <Process />
-        <SolutionFinder />
+
+        {/* 4. About Section — Team meeting photo + stats overlay */}
+        <AboutSection />
+
+        {/* 5. Services Section — Accordion list + Expert card */}
+        <ServicesSection />
+
+        {/* 6. Projects — 3 featured case study cards */}
+        <ProjectsSection />
+
+        {/* 7. Team — 4 member profile cards */}
+        <TeamSection />
+
+        {/* 8. Contact — Form + Google Map + info cards */}
         <ContactSection />
-        <FinalCTA />
+
+        {/* 9. Blog / Insights — 3 articles */}
+        <BlogSection />
       </main>
 
-      {/* Footer */}
+      {/* 10. Pre-footer value strip + Dark navy footer */}
       <Footer />
 
-      {/* Floating Action Button */}
+      {/* Floating WhatsApp / Contact Button */}
       <FloatingContact />
     </div>
   );

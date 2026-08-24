@@ -4,9 +4,14 @@ export interface ServiceItem {
   iconName: string;
   title: string;
   description: string;
+  category: 'marketing' | 'engineering' | 'brand';
   tags: string[];
   ctaText: string;
   ctaTarget: string;
+  timeline: string;
+  deliverables: string[];
+  roiImpact: string;
+  techStack?: string[];
 }
 
 export interface ProblemCard {
@@ -39,6 +44,10 @@ export interface SolutionOption {
   includedServices: string[];
   description: string;
   ctaText: string;
+  estimatedTimeline: string;
+  expectedRoi: string;
+  coreDeliverables: string[];
+  targetAudience: string;
 }
 
 export interface BusinessOutcome {

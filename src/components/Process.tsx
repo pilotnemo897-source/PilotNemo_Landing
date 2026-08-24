@@ -18,10 +18,10 @@ export const Process: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <SectionHeading
-          eyebrow="SUCCESS ROADMAP"
-          title="Our Process:"
-          highlightText="Your Roadmap to Success"
-          subtitle="A battle-tested 5-step framework that turns complex challenges into predictable digital results."
+          eyebrow="AGILE EXECUTION FRAMEWORK"
+          title="Our 5-Step Process:"
+          highlightText="Predictable Engineering & Launch."
+          subtitle="A battle-tested 5-step framework that turns complex business objectives into high-ROI digital assets."
           align="center"
           className="mb-20"
         />
@@ -59,20 +59,20 @@ export const Process: React.FC = () => {
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.15 }}
+                transition={{ duration: 0.4, delay: idx * 0.12 }}
                 className="flex flex-row lg:flex-col items-start lg:items-center text-left lg:text-center pl-16 lg:pl-0 group"
               >
                 {/* Timeline Step Icon Bubble */}
-                <div className="absolute left-1 lg:static mb-0 lg:mb-6 w-12 h-12 rounded-2xl bg-white border-2 border-nexus-blue text-nexus-blue shadow-md flex items-center justify-center font-bold group-hover:bg-nexus-blue group-hover:text-white group-hover:scale-110 transition-all duration-300">
+                <div className="absolute left-1 lg:static mb-0 lg:mb-6 w-12 h-12 rounded-2xl bg-white border-2 border-nexus-blue text-nexus-blue shadow-md flex items-center justify-center font-bold group-hover:bg-nexus-blue group-hover:text-white group-hover:scale-110 transition-all duration-300 z-10">
                   {iconMap[step.iconName]}
                 </div>
 
-                {/* Step Content */}
-                <div className="bg-slate-50 lg:bg-transparent p-5 lg:p-0 rounded-2xl border border-slate-100 lg:border-none w-full">
-                  <div className="inline-block text-xs font-extrabold text-nexus-blue uppercase tracking-widest mb-1">
-                    STEP {step.number}
+                {/* Step Content Card */}
+                <div className="bg-slate-50 hover:bg-white p-5 lg:p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-nexus-hover transition-all duration-300 w-full group-hover:-translate-y-1">
+                  <div className="inline-block text-[11px] font-extrabold text-nexus-blue uppercase tracking-widest bg-nexus-blue-light px-2.5 py-0.5 rounded-full mb-2">
+                    PHASE {step.number}
                   </div>
-                  <h3 className="text-lg font-bold text-nexus-text mb-2 group-hover:text-nexus-blue transition-colors">
+                  <h3 className="text-base font-extrabold text-nexus-text mb-2 group-hover:text-nexus-blue transition-colors">
                     {step.title}
                   </h3>
                   <p className="text-xs text-nexus-muted leading-relaxed mb-4">
@@ -80,10 +80,10 @@ export const Process: React.FC = () => {
                   </p>
 
                   {/* Bullet Highlights */}
-                  <ul className="space-y-1.5 text-left">
+                  <ul className="space-y-1.5 text-left pt-2 border-t border-slate-100">
                     {step.details.map((detail) => (
                       <li key={detail} className="text-[11px] font-semibold text-slate-600 flex items-center gap-1.5">
-                        <Check className="w-3 h-3 text-nexus-blue flex-shrink-0" />
+                        <Check className="w-3.5 h-3.5 text-nexus-blue flex-shrink-0" />
                         <span>{detail}</span>
                       </li>
                     ))}
@@ -99,3 +99,4 @@ export const Process: React.FC = () => {
     </section>
   );
 };
+

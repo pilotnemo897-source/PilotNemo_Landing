@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, Menu, X, Sparkles } from 'lucide-react';
+import { ArrowRight, Menu, X, Compass, Sparkles } from 'lucide-react';
 import { Button } from './ui/Button';
 
 export const Navbar: React.FC = () => {
@@ -10,14 +10,9 @@ export const Navbar: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 20);
 
-      // Update active section based on viewport
-      const sections = ['hero', 'solutions', 'services', 'outcomes', 'process', 'contact'];
+      const sections = ['hero', 'about', 'services', 'projects', 'team', 'contact'];
       const scrollPosition = window.scrollY + 200;
 
       for (const sectionId of sections) {
@@ -38,40 +33,36 @@ export const Navbar: React.FC = () => {
   }, []);
 
   const navLinks = [
-    { label: 'Solutions', href: '#solutions' },
+    { label: 'Home', href: '#hero' },
+    { label: 'About Us', href: '#about' },
     { label: 'Services', href: '#services' },
-    { label: 'Outcomes', href: '#outcomes' },
-    { label: 'Process', href: '#process' },
+    { label: 'Projects', href: '#projects' },
+    { label: 'Team', href: '#team' },
+    { label: 'Contact', href: '#contact' },
   ];
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'glass-nav shadow-nexus-sm border-b border-slate-200/80 py-3.5'
+          ? 'bg-white/90 backdrop-blur-md shadow-md py-3 border-b border-slate-200/80'
           : 'bg-transparent py-4'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         
-        {/* Large Direct Brand Logos: Icon + Name (No Background Box) */}
-        <a href="#hero" className="flex items-center gap-3 sm:gap-4 group py-1">
-          {/* 1. Compass Paper Plane Icon Image (Big) */}
-          <img
-            src="/logo-icon.png"
-            alt="PilotNemo Compass Icon"
-            className="h-10 sm:h-12 md:h-13 w-auto object-contain rounded-xl shadow-sm group-hover:scale-105 transition-transform duration-300"
-          />
-          {/* 2. Stylized PILOTNEMO Name Image (Big) */}
-          <img
-            src="/logo-name.png"
-            alt="PILOTNEMO"
-            className="h-7 sm:h-9 md:h-10 w-auto object-contain rounded-lg group-hover:scale-105 transition-transform duration-300"
-          />
+        {/* Brand Logo */}
+        <a href="#hero" className="flex items-center gap-2 group py-1" aria-label="PilotNemo Home">
+          <div className="w-10 h-10 rounded-2xl bg-nexus-blue text-white flex items-center justify-center font-bold shadow-md group-hover:scale-105 transition-transform">
+            <Compass className="w-6 h-6" />
+          </div>
+          <span className="text-xl font-black text-nexus-text tracking-tight">
+            Pilot<span className="text-nexus-blue">Nemo</span>
+          </span>
         </a>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden md:flex items-center gap-1 bg-white/70 backdrop-blur-md px-4 py-1.5 rounded-full border border-slate-200/60 shadow-sm">
+        <nav className="hidden md:flex items-center gap-1 bg-slate-100/90 backdrop-blur-md px-4 py-1.5 rounded-full border border-slate-200/80 shadow-inner">
           {navLinks.map((link) => {
             const sectionId = link.href.replace('#', '');
             const isActive = activeSection === sectionId;
@@ -79,16 +70,16 @@ export const Navbar: React.FC = () => {
               <a
                 key={link.label}
                 href={link.href}
-                className={`relative px-4 py-2 text-sm font-medium transition-colors duration-200 rounded-full ${
+                className={`relative px-4 py-2 text-xs sm:text-sm font-bold transition-colors duration-200 rounded-full ${
                   isActive
-                    ? 'text-nexus-blue font-semibold'
-                    : 'text-nexus-muted hover:text-nexus-text'
+                    ? 'text-nexus-blue font-extrabold'
+                    : 'text-slate-600 hover:text-nexus-text'
                 }`}
               >
                 {isActive && (
                   <motion.span
                     layoutId="activeTab"
-                    className="absolute inset-0 bg-nexus-blue-50 rounded-full -z-10 border border-nexus-blue/20"
+                    className="absolute inset-0 bg-white rounded-full -z-10 shadow-sm border border-slate-200/60"
                     transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                   />
                 )}
@@ -106,7 +97,7 @@ export const Navbar: React.FC = () => {
               size="md"
               icon={<ArrowRight className="w-4 h-4" />}
             >
-              Let's Talk
+              Get A Quote
             </Button>
           </a>
         </div>
@@ -121,7 +112,7 @@ export const Navbar: React.FC = () => {
         </button>
       </div>
 
-      {/* Mobile Animated Drawer Menu */}
+      {/* Mobile Animated Menu Drawer */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
@@ -131,13 +122,13 @@ export const Navbar: React.FC = () => {
             transition={{ duration: 0.3, ease: 'easeInOut' }}
             className="md:hidden bg-white border-b border-slate-200 shadow-xl overflow-hidden"
           >
-            <div className="px-6 py-6 space-y-4 flex flex-col">
+            <div className="px-6 py-6 space-y-3 flex flex-col">
               {navLinks.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-lg font-medium text-nexus-text hover:text-nexus-blue py-2 border-b border-slate-100 transition-colors flex items-center justify-between"
+                  className="text-base font-bold text-nexus-text hover:text-nexus-blue py-2 border-b border-slate-100 transition-colors flex items-center justify-between"
                 >
                   <span>{link.label}</span>
                   <ArrowRight className="w-4 h-4 text-nexus-muted" />
@@ -146,7 +137,7 @@ export const Navbar: React.FC = () => {
               <a
                 href="#contact"
                 onClick={() => setMobileMenuOpen(false)}
-                className="pt-2"
+                className="pt-3"
               >
                 <Button
                   variant="primary"
@@ -154,7 +145,7 @@ export const Navbar: React.FC = () => {
                   fullWidth
                   icon={<Sparkles className="w-5 h-5" />}
                 >
-                  Start a Project
+                  Get A Quote
                 </Button>
               </a>
             </div>
@@ -164,3 +155,4 @@ export const Navbar: React.FC = () => {
     </header>
   );
 };
+
