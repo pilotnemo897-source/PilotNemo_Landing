@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { ArrowLeft, Menu, X } from 'lucide-react';
+import logo from '../assets/logo.png';
 
 const NAV_ITEMS = ['About Us', 'Programs', 'Reviews', 'FAQ', 'Contacts'];
 
@@ -42,6 +43,15 @@ export default function NotFound() {
         background: 'linear-gradient(to bottom, #FF8233, #FDAC55)',
       }}
     >
+      {/* ── White Hexagonal Texture Overlay ── */}
+      <div
+        className="absolute inset-0 pointer-events-none z-[1]"
+        style={{
+          opacity: 0.07,
+          backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100' viewBox='0 0 56 100'%3E%3Cpath d='M28 66L0 50L0 16L28 0L56 16L56 50L28 66L28 100' fill='none' stroke='white' stroke-width='1'/%3E%3Cpath d='M28 0L28 34L0 50L0 84L28 100L56 84L56 50L28 34' fill='none' stroke='white' stroke-width='1'/%3E%3C/svg%3E")`,
+          backgroundSize: '56px 100px',
+        }}
+      />
       {/* ── Background "404" Text Effect ── */}
       <div
         className="absolute inset-0 pointer-events-none flex items-center justify-center"
@@ -80,15 +90,13 @@ export default function NotFound() {
       {/* ── Navigation Bar ── */}
       <nav className="relative z-20 flex flex-row items-center justify-between px-4 sm:px-6 md:px-12 py-4 sm:py-5">
         {/* Logo */}
-        <div className="flex items-center">
-          <div className="grid grid-cols-2 gap-0.5">
-            <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-white rounded-full" />
-            <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-white rounded-full" />
-            <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-white rounded-full" />
-            <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-white rounded-full" />
-          </div>
-          <span className="text-white font-bold text-lg sm:text-xl ml-1">TinyTrails</span>
-        </div>
+        <a href="/" className="group py-1">
+          <img
+            src={logo}
+            alt="PilotNemo"
+            className="h-12 sm:h-14 w-auto group-hover:scale-105 transition-transform"
+          />
+        </a>
 
         {/* Desktop nav links */}
         <div className="hidden md:flex items-center gap-1">
@@ -140,15 +148,13 @@ export default function NotFound() {
         >
           {/* Panel header */}
           <div className="flex items-center justify-between px-6 py-5">
-            <div className="flex items-center">
-              <div className="grid grid-cols-2 gap-0.5">
-                <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-white rounded-full" />
-                <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-white rounded-full" />
-                <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-white rounded-full" />
-                <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-white rounded-full" />
-              </div>
-              <span className="text-white font-bold text-lg sm:text-xl ml-1">TinyTrails</span>
-            </div>
+            <a href="/" className="group py-1">
+              <img
+                src={logo}
+                alt="PilotNemo"
+                className="h-12 sm:h-14 w-auto group-hover:scale-105 transition-transform"
+              />
+            </a>
             <button
               onClick={() => setMenuOpen(false)}
               className="w-10 h-10 rounded-full bg-white/20 text-white hover:bg-white/30 flex items-center justify-center transition-colors cursor-pointer"
