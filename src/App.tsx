@@ -12,7 +12,7 @@ const CARD_BORDER = '#22222A';
 const HEADING = '#FFFFFF';
 const LINK = '#D1D5DB';
 const GRAY = '#9CA3AF';
-const DARK = '#000000';
+
 const F = "'Plus Jakarta Sans', 'Outfit', 'Inter', sans-serif";
 
 const HERO_VID =
@@ -416,7 +416,7 @@ export default function App() {
         position: 'relative',
         zIndex: 5,
       }}>
-        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyBetween: 'space-between', gap: 20 }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: 20 }}>
           {/* Trust Ratings */}
           <div style={{ display: 'flex', alignItems: 'center', gap: 24, flexWrap: 'wrap' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
@@ -729,7 +729,7 @@ export default function App() {
               viewport={{ once: true, amount: 0.15 }}
               transition={{ duration: 0.55, delay: i * 0.12, ease: [0.16, 1, 0.3, 1] }}
               whileHover={{ y: -8, scale: 1.02 }}
-              style={{ ...cardStyle, clipPath: CHAMFER, display: 'flex', flexDirection: 'column', justifyBetween: 'space-between' }}
+              style={{ ...cardStyle, clipPath: CHAMFER, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}
               onMouseEnter={cardHover}
               onMouseLeave={cardLeave}
             >
