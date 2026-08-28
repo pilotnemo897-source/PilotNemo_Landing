@@ -1,24 +1,24 @@
 @import "tailwindcss";
 
 @theme {
-  --color-structural-bg: #ffffff;
-  --color-surface: #ffffff;
-  --color-surface-container-low: #f8f8f6;
-  --color-surface-container: #f0f0ee;
-  --color-surface-container-highest: #e2e3e0;
-  --color-surface-dim: #dadad7;
+  --color-structural-bg: #faf9f6;
+  --color-surface: #faf9f6;
+  --color-surface-container-low: #f8fafc;
+  --color-surface-container: #f1f5f9;
+  --color-surface-container-highest: #e2e8f0;
+  --color-surface-dim: #cbd5e1;
   --color-surface-bright: #ffffff;
-  --color-on-surface: #1a1c1b;
-  --color-on-surface-variant: #55433a;
-  --color-tech-accent: #b85c24;
-  --color-primary: #98440b;
-  --color-primary-container: #b85c24;
+  --color-on-surface: #0A235C;
+  --color-on-surface-variant: #475569;
+  --color-tech-accent: #1e3e62;
+  --color-primary: #0A235C;
+  --color-primary-container: #1e3e62;
   --color-on-primary: #ffffff;
-  --color-muted-text: #929292;
-  --color-architectural-line: transparent;
-  --color-glass-container: rgba(32, 33, 36, 0.95);
-  --color-outline: #897268;
-  --color-outline-variant: #dcc1b5;
+  --color-muted-text: #64748b;
+  --color-architectural-line: rgba(10, 35, 92, 0.08);
+  --color-glass-container: rgba(10, 35, 92, 0.95);
+  --color-outline: #94a3b8;
+  --color-outline-variant: #e2e8f0;
 
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-jakarta: 'Plus Jakarta Sans', sans-serif;
@@ -35,21 +35,23 @@ html {
 }
 
 body {
-  background-color: #ffffff;
-  color: #1a1c1b;
+  background-color: #faf9f6;
+  color: #0A235C;
   font-family: 'Inter', sans-serif;
 }
 
-/* Smooth White Background */
+/* Milky Smooth White Background (Grid Removed) */
 .architectural-grid {
-  background-color: #ffffff;
+  background-color: #faf9f6;
   background-image: none;
 }
 
-/* Glass Panel Styling */
+/* Glass Panel Styling with Navy backdrop */
 .glass-panel {
-  background: rgba(32, 33, 36, 0.95);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(10, 35, 92, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 /* Material Symbols Icon helper */
@@ -127,23 +129,23 @@ a, button, input, select, textarea {
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Custom Scrollbar */
+/* Custom Scrollbar styled for Navy & Slate */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f5f5f2;
+  background: #f8fafc;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #dcc1b5;
+  background: #cbd5e1;
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #b85c24;
+  background: #1e3e62;
 }
 
 .scrollbar-hide::-webkit-scrollbar {

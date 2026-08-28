@@ -86,24 +86,24 @@ export default function ApproachSection({ onStartProject, onExploreServices }: A
   ];
 
   return (
-    <section id="approach" className="py-20 border-t border-transparent relative">
+    <section id="approach" className="py-12 border-t border-transparent relative">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-8 md:px-16">
         {/* Header Section */}
-        <header className="mb-20 border-b border-transparent pb-12">
+        <header className="mb-12 border-b border-transparent pb-8">
           <div className="flex items-center gap-2 mb-4">
-            <span className="material-symbols-outlined text-xs text-[#929292]">add</span>
-            <span className="font-label-technical text-xs text-[#929292] font-bold uppercase tracking-widest">
+            <span className="material-symbols-outlined text-xs text-tech-accent">add</span>
+            <span className="font-label-technical text-xs text-muted-text font-bold uppercase tracking-widest">
               03 / OUR APPROACH
             </span>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-end">
             <div className="md:col-span-7">
-              <h2 className="font-headline-lg text-4xl sm:text-6xl text-[#1a1c1b] font-extrabold leading-tight">
+              <h2 className="font-headline-lg text-4xl sm:text-6xl text-on-surface font-extrabold leading-tight">
                 Strategy first. Built for what comes next.
               </h2>
             </div>
             <div className="md:col-span-5">
-              <p className="font-body-lg text-base sm:text-lg text-[#55433a] border-l-2 border-[#b85c24]/40 pl-6 font-medium leading-relaxed">
+              <p className="font-body-lg text-base sm:text-lg text-on-surface-variant border-l-2 border-tech-accent/40 pl-6 font-medium leading-relaxed">
                 At PilotNemo, we don't start with code. We first understand the business, the users and the problem — then design and build the right digital solution.
               </p>
             </div>
@@ -111,23 +111,23 @@ export default function ApproachSection({ onStartProject, onExploreServices }: A
         </header>
 
         {/* SECTION 01 — OUR STRATEGY */}
-        <div className="mb-24">
+        <div className="mb-16">
           <div className="flex items-center gap-2 mb-8">
-            <span className="material-symbols-outlined text-xs text-[#b85c24]">add</span>
-            <h3 className="font-label-technical text-xs text-[#1a1c1b] font-bold uppercase tracking-widest">
+            <span className="material-symbols-outlined text-xs text-tech-accent">add</span>
+            <h3 className="font-label-technical text-xs text-on-surface font-bold uppercase tracking-widest">
               SECTION 01 — OUR STRATEGY
             </h3>
           </div>
 
           {/* Animated progress bar across all steps */}
-          <div className="mb-10">
+          <div className="mb-6">
             <div className="flex justify-between mb-2">
-              <span className="font-label-technical text-[9px] text-[#b85c24] tracking-widest uppercase font-bold">WORKFLOW PROGRESS</span>
-              <span className="font-label-technical text-[9px] text-[#929292] font-bold">IDEA → GROWTH</span>
+              <span className="font-label-technical text-[9px] text-tech-accent tracking-widest uppercase font-bold">WORKFLOW PROGRESS</span>
+              <span className="font-label-technical text-[9px] text-muted-text font-bold">IDEA → GROWTH</span>
             </div>
-            <div className="h-[2px] w-full bg-[#191919]/10 rounded-full overflow-hidden">
+            <div className="h-[2px] w-full bg-on-surface/10 rounded-full overflow-hidden">
               <motion.div
-                className="h-full bg-[#b85c24] rounded-full"
+                className="h-full bg-tech-accent rounded-full"
                 initial={{ width: 0 }}
                 whileInView={{ width: '100%' }}
                 viewport={{ once: true }}
@@ -136,7 +136,7 @@ export default function ApproachSection({ onStartProject, onExploreServices }: A
             </div>
             <div className="flex justify-between mt-1.5">
               {strategySteps.map((s) => (
-                <span key={s.num} className="font-label-technical text-[8px] text-[#929292] tracking-widest">{s.num}</span>
+                <span key={s.num} className="font-label-technical text-[8px] text-muted-text tracking-widest">{s.num}</span>
               ))}
             </div>
           </div>
@@ -144,9 +144,9 @@ export default function ApproachSection({ onStartProject, onExploreServices }: A
           {/* Strategy Steps — animated progress timeline */}
           <div className="relative">
             {/* Connector line behind cards (desktop) */}
-            <div className="hidden md:block absolute top-9 left-0 right-0 h-[2px] bg-[#191919]/8 z-0">
+            <div className="hidden md:block absolute top-9 left-0 right-0 h-[2px] bg-on-surface/8 z-0">
               <motion.div
-                className="h-full bg-[#b85c24]/40"
+                className="h-full bg-tech-accent/40"
                 initial={{ width: 0 }}
                 whileInView={{ width: '100%' }}
                 viewport={{ once: true }}
@@ -171,14 +171,14 @@ export default function ApproachSection({ onStartProject, onExploreServices }: A
                       whileInView={{ scale: 1 }}
                       viewport={{ once: true }}
                       transition={{ delay: idx * 0.12 + 0.2, duration: 0.4, type: 'spring', stiffness: 200 }}
-                      className="w-10 h-10 rounded-full bg-[#b85c24] flex items-center justify-center shadow-md border-2 border-white"
+                      className="w-10 h-10 rounded-full bg-tech-accent flex items-center justify-center shadow-md border-2 border-white"
                     >
                       <span className="font-label-technical text-[10px] text-white font-extrabold">{step.num}</span>
                     </motion.div>
                   </div>
 
                   {/* Card */}
-                  <div className="w-full p-5 bg-[#f4f4f1] border border-transparent group-hover:border-[#b85c24]/30 group-hover:bg-white transition-all rounded-xs shadow-xs hover:shadow-sm">
+                  <div className="w-full p-4 bg-surface-container-low border border-transparent group-hover:border-tech-accent/30 group-hover:bg-white transition-all rounded-xs shadow-xs hover:shadow-sm">
                     <div className="mb-4 overflow-hidden bg-transparent flex justify-center items-center">
                       <img
                         src={step.img}
@@ -186,21 +186,21 @@ export default function ApproachSection({ onStartProject, onExploreServices }: A
                         className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500 mix-blend-multiply"
                       />
                     </div>
-                    <h4 className="font-headline-md text-lg text-[#1a1c1b] font-bold mb-3">
+                    <h4 className="font-headline-md text-lg text-on-surface font-bold mb-3">
                       {step.title}
                     </h4>
-                    <ul className="space-y-1.5 font-body-md text-xs text-[#55433a] font-medium">
+                    <ul className="space-y-1.5 font-body-md text-xs text-on-surface-variant font-medium">
                       {step.items.map((item, i) => (
                         <li key={i} className="font-semibold flex items-center gap-1.5">
-                          <span className="w-1 h-1 rounded-full bg-[#b85c24] shrink-0" />
+                          <span className="w-1 h-1 rounded-full bg-tech-accent shrink-0" />
                           {item}
                         </li>
                       ))}
                     </ul>
                     {/* Mini progress strip per step */}
-                    <div className="mt-4 h-[2px] w-full bg-[#191919]/8 rounded-full overflow-hidden">
+                    <div className="mt-4 h-[2px] w-full bg-on-surface/8 rounded-full overflow-hidden">
                       <motion.div
-                        className="h-full bg-[#b85c24]"
+                        className="h-full bg-tech-accent"
                         initial={{ width: 0 }}
                         whileInView={{ width: '100%' }}
                         viewport={{ once: true }}
@@ -213,36 +213,36 @@ export default function ApproachSection({ onStartProject, onExploreServices }: A
             </div>
           </div>
 
-          <div className="mt-6 flex items-center justify-center p-4 border border-transparent bg-white/50 rounded-xs shadow-2xs">
-            <p className="font-label-technical text-xs text-[#1a1c1b] font-bold tracking-widest uppercase text-center">
-              FROM IDEA <span className="text-[#b85c24] mx-2 font-extrabold">→</span> PRODUCT{' '}
-              <span className="text-[#b85c24] mx-2 font-extrabold">→</span> GROWTH. One connected process. One team.
+          <div className="mt-4 flex items-center justify-center p-3 border border-transparent bg-white/50 rounded-xs shadow-2xs">
+            <p className="font-label-technical text-xs text-on-surface font-bold tracking-widest uppercase text-center">
+              FROM IDEA <span className="text-tech-accent mx-2 font-extrabold">→</span> PRODUCT{' '}
+              <span className="text-tech-accent mx-2 font-extrabold">→</span> GROWTH. One connected process. One team.
             </p>
           </div>
           </div>
 
 
         {/* SECTION 02 — WHY PILOTNEMO */}
-        <div className="mb-24">
+        <div className="mb-16">
           <div className="flex items-center gap-2 mb-4">
-            <span className="material-symbols-outlined text-xs text-[#b85c24]">add</span>
-            <h3 className="font-label-technical text-xs text-[#1a1c1b] font-bold uppercase tracking-widest">
+            <span className="material-symbols-outlined text-xs text-tech-accent">add</span>
+            <h3 className="font-label-technical text-xs text-on-surface font-bold uppercase tracking-widest">
               SECTION 02 — WHY PILOTNEMO
             </h3>
           </div>
-          <h4 className="font-headline-md text-2xl sm:text-3xl text-[#1a1c1b] font-bold mb-10">
+          <h4 className="font-headline-md text-2xl sm:text-3xl text-on-surface font-bold mb-6">
             More than development. A complete digital partner.
           </h4>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {whyBlocks.map((block, idx) => (
               <div
                 key={idx}
-                className="p-8 border border-transparent hover:border-[#b85c24]/40 transition-all bg-[#f4f4f1] rounded-xs shadow-xs"
+                className="p-6 border border-transparent hover:border-tech-accent/40 transition-all bg-surface-container-low rounded-xs shadow-xs"
               >
-                <h5 className="font-headline-md text-xl text-[#1a1c1b] font-bold mb-4">
+                <h5 className="font-headline-md text-xl text-on-surface font-bold mb-4">
                   {block.title}
                 </h5>
-                <p className="font-body-md text-sm text-[#55433a] font-medium leading-relaxed">
+                <p className="font-body-md text-sm text-on-surface-variant font-medium leading-relaxed">
                   {block.desc}
                 </p>
               </div>
@@ -251,20 +251,20 @@ export default function ApproachSection({ onStartProject, onExploreServices }: A
         </div>
 
         {/* SECTION 03 — PILOTNEMO DIFFERENCE */}
-        <div className="mb-24">
+        <div className="mb-16">
           <div className="flex items-center gap-2 mb-4">
-            <span className="material-symbols-outlined text-xs text-[#b85c24]">add</span>
-            <h3 className="font-label-technical text-xs text-[#1a1c1b] font-bold uppercase tracking-widest">
+            <span className="material-symbols-outlined text-xs text-tech-accent">add</span>
+            <h3 className="font-label-technical text-xs text-on-surface font-bold uppercase tracking-widest">
               SECTION 03 — PILOTNEMO DIFFERENCE
             </h3>
           </div>
-          <h4 className="font-headline-md text-2xl sm:text-4xl text-[#1a1c1b] font-extrabold mb-10 max-w-3xl leading-tight">
+          <h4 className="font-headline-md text-2xl sm:text-4xl text-on-surface font-extrabold mb-6 max-w-3xl leading-tight">
             Why work with multiple teams when one team can connect everything?
           </h4>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
             {/* Traditional Multi-Vendor Approach */}
-            <div className="lg:col-span-6 bg-[#fff7f7] border border-red-200/50 p-8 sm:p-10 rounded-xs flex flex-col justify-between relative overflow-hidden shadow-xs hover:border-red-300 transition-all">
+            <div className="lg:col-span-6 bg-[#fff7f7] border border-red-200/50 p-6 sm:p-8 rounded-xs flex flex-col justify-between relative overflow-hidden shadow-xs hover:border-red-300 transition-all">
               <div className="absolute top-0 right-0 w-24 h-24 bg-red-500/5 rounded-bl-full pointer-events-none" />
 
               <div>
@@ -286,7 +286,7 @@ export default function ApproachSection({ onStartProject, onExploreServices }: A
                   {/* Step 1 */}
                   <div className="p-4 bg-white border border-transparent rounded-xs shadow-2xs relative">
                     <div className="flex items-center justify-between mb-1">
-                      <span className="font-headline-md text-sm font-bold text-[#1a1c1b]">
+                      <span className="font-headline-md text-sm font-bold text-on-surface">
                         01. Strategy → Agency A
                       </span>
                       <span className="font-label-small text-[10px] text-red-600 font-semibold bg-red-50 px-2 py-0.5 rounded-xs">
@@ -309,7 +309,7 @@ export default function ApproachSection({ onStartProject, onExploreServices }: A
                   {/* Step 2 */}
                   <div className="p-4 bg-white border border-transparent rounded-xs shadow-2xs relative">
                     <div className="flex items-center justify-between mb-1">
-                      <span className="font-headline-md text-sm font-bold text-[#1a1c1b]">
+                      <span className="font-headline-md text-sm font-bold text-on-surface">
                         02. Design → Agency B
                       </span>
                       <span className="font-label-small text-[10px] text-red-600 font-semibold bg-red-50 px-2 py-0.5 rounded-xs">
@@ -332,7 +332,7 @@ export default function ApproachSection({ onStartProject, onExploreServices }: A
                   {/* Step 3 */}
                   <div className="p-4 bg-white border border-transparent rounded-xs shadow-2xs relative">
                     <div className="flex items-center justify-between mb-1">
-                      <span className="font-headline-md text-sm font-bold text-[#1a1c1b]">
+                      <span className="font-headline-md text-sm font-bold text-on-surface">
                         03. Development → Freelancers
                       </span>
                       <span className="font-label-small text-[10px] text-red-600 font-semibold bg-red-50 px-2 py-0.5 rounded-xs">
@@ -361,26 +361,26 @@ export default function ApproachSection({ onStartProject, onExploreServices }: A
             </div>
 
             {/* PilotNemo Integrated Connected Model */}
-            <div className="lg:col-span-6 bg-[#1a1c1b] text-white border border-transparent p-8 sm:p-10 rounded-xs flex flex-col justify-between relative overflow-hidden shadow-xl hover:border-[#b85c24] transition-all">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-[#b85c24]/10 rounded-bl-full pointer-events-none" />
+            <div className="lg:col-span-6 bg-gradient-to-br from-[#0A235C] to-[#1e3e62] text-white border border-transparent p-6 sm:p-8 rounded-xs flex flex-col justify-between relative overflow-hidden shadow-xl hover:border-sky-400/50 transition-all">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-sky-400/10 rounded-bl-full pointer-events-none" />
 
               <div>
                 {/* Header Badge */}
                 <div className="flex items-center justify-between mb-8 pb-4 border-b border-white/15">
                   <div className="flex items-center gap-2">
-                    <span className="material-symbols-outlined text-[#b85c24] text-lg">verified</span>
+                    <span className="material-symbols-outlined text-sky-400 text-lg">verified</span>
                     <span className="font-label-technical text-xs font-bold text-white uppercase tracking-widest">
                       PILOTNEMO INTEGRATED MODEL
                     </span>
                   </div>
-                  <span className="font-label-small text-[10px] bg-[#b85c24]/20 text-[#ffb690] border border-transparent px-2.5 py-1 rounded-xs font-bold uppercase flex items-center gap-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#b85c24] animate-pulse" />
+                  <span className="font-label-small text-[10px] bg-sky-400/15 text-sky-300 border border-transparent px-2.5 py-1 rounded-xs font-bold uppercase flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse" />
                     CONNECTED ENGINE
                   </span>
                 </div>
 
                 {/* Connected Flow List */}
-                <div className="bg-white/5 border border-transparent p-6 rounded-xs mb-8 space-y-4">
+                <div className="bg-white/5 border border-transparent p-4 rounded-xs mb-8 space-y-4">
                   {[
                     { title: 'Strategy & Feasibility Audit', note: 'Clear technical architecture blueprint from Day 1' },
                     { title: 'UX/UI & Interactive Prototyping', note: 'Designers who understand live code & accessibility' },
@@ -389,14 +389,14 @@ export default function ApproachSection({ onStartProject, onExploreServices }: A
                     { title: 'Continuous Growth & 24/7 Managed SLA', note: 'Dedicated support, performance tuning & CRO' },
                   ].map((step, idx) => (
                     <div key={idx} className="flex items-start gap-3">
-                      <span className="material-symbols-outlined text-[#b85c24] text-xl shrink-0 mt-0.5">
+                      <span className="material-symbols-outlined text-sky-400 text-xl shrink-0 mt-0.5">
                         check_circle
                       </span>
                       <div>
                         <div className="font-headline-md text-sm font-bold text-white">
                           {step.title}
                         </div>
-                        <div className="font-body-md text-xs text-gray-400">
+                        <div className="font-body-md text-xs text-gray-300">
                           {step.note}
                         </div>
                       </div>
@@ -406,10 +406,10 @@ export default function ApproachSection({ onStartProject, onExploreServices }: A
               </div>
 
               {/* Bottom Success Highlight */}
-              <div className="p-4 bg-[#b85c24]/15 border border-transparent rounded-xs flex items-center gap-3">
-                <span className="material-symbols-outlined text-[#b85c24] text-xl">auto_awesome</span>
+              <div className="p-4 bg-sky-400/10 border border-transparent rounded-xs flex items-center gap-3">
+                <span className="material-symbols-outlined text-sky-400 text-xl">auto_awesome</span>
                 <div>
-                  <div className="font-label-technical text-xs font-extrabold text-[#ffb690] uppercase tracking-widest">
+                  <div className="font-label-technical text-xs font-extrabold text-sky-300 uppercase tracking-widest">
                     ONE TEAM, ONE WORKFLOW
                   </div>
                   <p className="font-body-md text-xs text-gray-300 font-medium">
@@ -422,23 +422,23 @@ export default function ApproachSection({ onStartProject, onExploreServices }: A
         </div>
 
         {/* SECTION 04 — WHAT WE BRING TO THE TABLE */}
-        <div className="mb-24">
+        <div className="mb-16">
           <div className="flex items-center gap-2 mb-6">
-            <span className="material-symbols-outlined text-xs text-[#b85c24]">add</span>
-            <h3 className="font-label-technical text-xs text-[#1a1c1b] font-bold uppercase tracking-widest">
+            <span className="material-symbols-outlined text-xs text-tech-accent">add</span>
+            <h3 className="font-label-technical text-xs text-on-surface font-bold uppercase tracking-widest">
               SECTION 04 — WHAT WE BRING TO THE TABLE
             </h3>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 border border-transparent bg-[#f9f9f6] rounded-xs overflow-hidden shadow-xs">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 border border-transparent bg-surface-container-low rounded-xs overflow-hidden shadow-xs">
             {matrixData.map((col, idx) => (
               <div
                 key={idx}
-                className="p-6 border-b sm:border-b-0 sm:border-r border-transparent last:border-r-0"
+                className="p-5 border-b sm:border-b-0 sm:border-r border-transparent last:border-r-0"
               >
-                <h4 className="font-label-technical text-xs text-[#b85c24] font-bold mb-6">
+                <h4 className="font-label-technical text-xs text-tech-accent font-bold mb-4">
                   {col.category}
                 </h4>
-                <ul className="space-y-3 font-body-md text-[#55433a] font-medium text-sm">
+                <ul className="space-y-2 font-body-md text-on-surface-variant font-medium text-sm">
                   {col.items.map((item, i) => (
                     <li key={i} className="font-semibold">
                       {item}
@@ -451,17 +451,17 @@ export default function ApproachSection({ onStartProject, onExploreServices }: A
         </div>
 
         {/* CTA Section */}
-        <div className="border-t border-transparent pt-16 md:pt-24 pb-8 flex flex-col items-center justify-center text-center">
-          <h3 className="font-headline-md md:font-display-lg text-3xl md:text-5xl text-[#1a1c1b] font-extrabold mb-6 max-w-4xl leading-tight">
+        <div className="border-t border-transparent pt-10 md:pt-14 pb-6 flex flex-col items-center justify-center text-center">
+          <h3 className="font-headline-md md:font-display-lg text-3xl md:text-5xl text-on-surface font-extrabold mb-6 max-w-4xl leading-tight">
             HAVE AN IDEA? LET'S TURN IT INTO SOMETHING REAL.
           </h3>
-          <p className="font-body-lg text-base sm:text-lg text-[#55433a] font-medium max-w-2xl mb-10 leading-relaxed">
+          <p className="font-body-lg text-base sm:text-lg text-on-surface-variant font-medium max-w-2xl mb-6 leading-relaxed">
             Whether you are starting from an idea, improving an existing product or looking to grow your digital presence, PilotNemo can help you plan, design, build and grow it.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <button
               onClick={onStartProject}
-              className="flex items-center justify-center gap-2 px-8 py-4 bg-[#b85c24] text-white hover:bg-[#98440b] transition-colors font-label-technical text-xs font-bold uppercase tracking-widest rounded-xs group cursor-pointer shadow-sm"
+              className="flex items-center justify-center gap-2 px-6 py-3 bg-tech-accent text-white hover:bg-primary transition-colors font-label-technical text-xs font-bold uppercase tracking-widest rounded-xs group cursor-pointer shadow-sm"
             >
               START A CONVERSATION
               <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">
@@ -470,7 +470,7 @@ export default function ApproachSection({ onStartProject, onExploreServices }: A
             </button>
             <button
               onClick={onExploreServices}
-              className="flex items-center justify-center gap-2 px-8 py-4 border border-transparent bg-black/5 text-[#1a1c1b] hover:bg-[#1a1c1b]/10 transition-colors font-label-technical text-xs font-bold uppercase tracking-widest rounded-xs group cursor-pointer"
+              className="flex items-center justify-center gap-2 px-6 py-3 border border-transparent bg-surface-container-highest text-on-surface hover:bg-surface-dim transition-colors font-label-technical text-xs font-bold uppercase tracking-widest rounded-xs group cursor-pointer"
             >
               EXPLORE OUR SERVICES
               <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">

@@ -1,14 +1,14 @@
 import { motion } from 'framer-motion';
 
 const ProgressBar = ({ label, value, delay = 0 }: { label: string; value: number; delay?: number }) => (
-  <div className="mb-3">
+  <div className="mb-2">
     <div className="flex justify-between mb-1">
       <span className="font-label-technical text-[9px] text-gray-400 tracking-widest uppercase font-bold">{label}</span>
-      <span className="font-label-technical text-[9px] text-[#b85c24] font-bold">{value}%</span>
+      <span className="font-label-technical text-[9px] text-tech-accent font-bold">{value}%</span>
     </div>
     <div className="h-[2px] w-full bg-white/10 rounded-full overflow-hidden">
       <motion.div
-        className="h-full bg-[#b85c24] rounded-full"
+        className="h-full bg-tech-accent rounded-full"
         initial={{ width: 0 }}
         whileInView={{ width: `${value}%` }}
         viewport={{ once: true }}
@@ -19,7 +19,7 @@ const ProgressBar = ({ label, value, delay = 0 }: { label: string; value: number
 );
 
 const StatMeter = ({ label, value, delay = 0 }: { label: string; value: number; delay?: number }) => (
-  <div className="mb-4">
+  <div className="mb-2.5">
     <div className="flex justify-between mb-1.5">
       <span className="font-label-technical text-[9px] text-white/70 tracking-widest uppercase font-bold">{label}</span>
       <span className="font-label-technical text-[9px] text-white font-bold">{value}%</span>
@@ -92,26 +92,26 @@ export default function TeamSection() {
   ];
 
   return (
-    <section id="team" className="py-20 border-t border-transparent relative">
+    <section id="team" className="py-12 border-t border-transparent relative">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-8 md:px-16">
         {/* Header */}
-        <header className="mb-16 border-b border-transparent pb-8">
+        <header className="mb-10 border-b border-transparent pb-6">
           <div className="flex items-center gap-2 mb-4">
-            <span className="material-symbols-outlined text-xs text-[#b85c24]">add</span>
-            <span className="font-label-technical text-xs text-[#b85c24] tracking-widest uppercase font-bold">
+            <span className="material-symbols-outlined text-xs text-tech-accent">add</span>
+            <span className="font-label-technical text-xs text-tech-accent tracking-widest uppercase font-bold">
               04 / THE PEOPLE
             </span>
           </div>
-          <h2 className="font-headline-lg text-4xl sm:text-6xl text-[#1a1c1b] mb-6 max-w-3xl font-extrabold">
+          <h2 className="font-headline-lg text-4xl sm:text-6xl text-on-surface mb-6 max-w-3xl font-extrabold">
             People behind the products.
           </h2>
-          <p className="font-body-lg text-base sm:text-lg text-[#55433a] max-w-2xl font-normal">
+          <p className="font-body-lg text-base sm:text-lg text-on-surface-variant max-w-2xl font-normal">
             A multidisciplinary team combining product thinking, engineering, design and digital growth.
           </p>
         </header>
 
         {/* Bento Grid: Capabilities & Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 mb-12">
           {/* Capabilities Grid */}
           <div className="md:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
             {capabilities.map((cap, idx) => (
@@ -134,7 +134,7 @@ export default function TeamSection() {
                   {cap.tags.map((t, i) => (
                     <span
                       key={i}
-                      className="font-label-technical text-[10px] px-3 py-1 border border-white/15 rounded-xs bg-[#f9f9f6] text-[#1a1c1b] font-bold"
+                      className="font-label-technical text-[10px] px-3 py-1 border border-white/15 rounded-xs bg-surface-container-low text-on-surface font-bold"
                     >
                       {t}
                     </span>
@@ -150,7 +150,7 @@ export default function TeamSection() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="md:col-span-4 glass-panel p-8 flex flex-col justify-between min-h-[400px] bg-[#98440b] text-white rounded-xs"
+            className="md:col-span-4 glass-panel p-8 flex flex-col justify-between min-h-[340px] bg-gradient-to-br from-[#0A235C] to-[#1e3e62] text-white rounded-xs"
           >
             <div>
               <div className="font-label-technical text-xs mb-2 opacity-90 uppercase tracking-widest font-bold">
@@ -193,9 +193,9 @@ export default function TeamSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="py-16 border-y border-transparent mb-20 flex items-center justify-center text-center px-4"
+          className="py-10 border-y border-transparent mb-12 flex items-center justify-center text-center px-4"
         >
-          <blockquote className="font-headline-lg text-2xl sm:text-4xl text-[#98440b] max-w-4xl mx-auto font-bold italic leading-snug">
+          <blockquote className="font-headline-lg text-xl sm:text-2xl text-primary max-w-4xl mx-auto font-bold italic leading-snug">
             "Different skills. One shared responsibility: building something useful."
           </blockquote>
         </motion.div>
@@ -203,8 +203,8 @@ export default function TeamSection() {
         {/* Core Team Members Grid */}
         <div>
           <div className="flex items-center gap-2 mb-8">
-            <span className="material-symbols-outlined text-xs text-[#b85c24]">add</span>
-            <span className="font-label-technical text-xs text-[#55433a] tracking-widest uppercase font-bold">
+            <span className="material-symbols-outlined text-xs text-tech-accent">add</span>
+            <span className="font-label-technical text-xs text-on-surface-variant tracking-widest uppercase font-bold">
               CORE TEAM
             </span>
           </div>
@@ -217,7 +217,7 @@ export default function TeamSection() {
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1, duration: 0.5 }}
                 whileHover={{ y: -6 }}
-                className="group cursor-pointer bg-white p-4 border border-transparent rounded-xs shadow-xs"
+                className="group cursor-pointer bg-white p-3 border border-transparent rounded-xs shadow-xs"
               >
                 <div className="aspect-[3/4] mb-4 overflow-hidden bg-[#e2e3e0] relative rounded-xs">
                   <img
@@ -228,13 +228,13 @@ export default function TeamSection() {
                   <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black/60 to-transparent" />
                 </div>
                 <div className="border-t border-[#191919]/10 pt-4">
-                  <h4 className="font-headline-md text-lg font-bold text-[#1a1c1b] uppercase mb-1">
+                  <h4 className="font-headline-md text-lg font-bold text-on-surface uppercase mb-1">
                     {member.name}
                   </h4>
-                  <p className="font-label-technical text-[10px] text-[#b85c24] mb-4 font-bold uppercase tracking-widest">
+                  <p className="font-label-technical text-[10px] text-tech-accent mb-4 font-bold uppercase tracking-widest">
                     {member.role}
                   </p>
-                  <p className="font-body-md text-xs text-[#55433a] leading-relaxed mb-5">
+                  <p className="font-body-md text-xs text-on-surface-variant leading-relaxed mb-5">
                     {member.bio}
                   </p>
                   {/* Skill Progress Bars */}

@@ -40,7 +40,7 @@ export default function NotFound() {
     <div
       className="w-full h-screen overflow-hidden flex flex-col relative"
       style={{
-        background: 'linear-gradient(to bottom, #FF8233, #FDAC55)',
+        background: 'linear-gradient(to bottom, #0A235C, #1e3e62)',
       }}
     >
       {/* ── White Hexagonal Texture Overlay ── */}
@@ -105,7 +105,7 @@ export default function NotFound() {
               key={item}
               href="/"
               className="px-4 py-1.5 text-sm font-medium rounded-full bg-white hover:opacity-90 transition-colors"
-              style={{ color: '#F16524' }}
+              style={{ color: '#1e3e62' }}
             >
               {item}
             </a>
@@ -116,7 +116,7 @@ export default function NotFound() {
         <button
           onClick={() => setMenuOpen(true)}
           className="px-4 py-2 sm:px-5 sm:py-2.5 rounded-full text-white flex items-center gap-2 hover:opacity-90 transition-colors cursor-pointer"
-          style={{ backgroundColor: '#F16524' }}
+          style={{ backgroundColor: '#1e3e62' }}
         >
           <Menu className="w-4 h-4" />
           <span className="text-sm font-medium hidden sm:inline">Menu</span>
@@ -143,7 +143,7 @@ export default function NotFound() {
             menuOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
           style={{
-            background: 'linear-gradient(135deg, #FF6B1A 0%, #FF9642 100%)',
+            background: 'linear-gradient(135deg, #0A235C 0%, #1e3e62 100%)',
           }}
         >
           {/* Panel header */}
@@ -190,7 +190,7 @@ export default function NotFound() {
               href="/"
               className="w-full py-4 rounded-full bg-white font-semibold text-base flex items-center justify-center gap-2 hover:scale-[1.02] transition-all duration-300"
               style={{
-                color: '#F16524',
+                color: '#1e3e62',
                 opacity: menuOpen ? 1 : 0,
                 transitionDelay: menuOpen ? '450ms' : '0ms',
                 transitionProperty: 'opacity, transform',
@@ -228,7 +228,7 @@ export default function NotFound() {
         <a
           href="/"
           className="inline-flex items-center gap-2 px-6 py-3 sm:px-8 sm:py-4 rounded-full text-white font-semibold text-sm sm:text-base hover:scale-105 hover:shadow-lg transition-all"
-          style={{ backgroundColor: '#F16524' }}
+          style={{ backgroundColor: '#1e3e62' }}
         >
           <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5" />
           Back to Home

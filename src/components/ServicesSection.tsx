@@ -43,23 +43,23 @@ export default function ServicesSection() {
   const workflowSteps = ['IDEA', 'STRATEGY', 'DESIGN', 'DEVELOPMENT', 'LAUNCH', 'GROWTH'];
 
   return (
-    <section id="services" className="py-20 border-t border-transparent relative">
+    <section id="services" className="py-12 border-t border-transparent relative">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-8 md:px-16">
         {/* Header */}
-        <header className="pb-16 border-b border-transparent relative">
-          <div className="font-label-technical text-xs text-[#b85c24] mb-4 tracking-widest uppercase font-bold">
+        <header className="pb-10 border-b border-transparent relative">
+          <div className="font-label-technical text-xs text-tech-accent mb-4 tracking-widest uppercase font-bold">
             02 / WHAT WE DO
           </div>
-          <h2 className="font-headline-lg text-4xl sm:text-6xl text-[#1a1c1b] mb-6 max-w-3xl font-extrabold">
+          <h2 className="font-headline-lg text-4xl sm:text-6xl text-on-surface mb-4 max-w-3xl font-extrabold">
             One team. Multiple digital capabilities.
           </h2>
-          <p className="font-body-lg text-base sm:text-lg text-[#55433a] max-w-2xl font-normal leading-relaxed">
+          <p className="font-body-lg text-base sm:text-lg text-on-surface-variant max-w-2xl font-normal leading-relaxed">
             From product design to development and digital growth, PilotNemo brings the essential capabilities together in one connected workflow.
           </p>
         </header>
 
         {/* Services Grid */}
-        <div className="py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="py-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((s, idx) => (
             <motion.div
               key={idx}
@@ -67,20 +67,20 @@ export default function ServicesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.15 }}
               transition={{ duration: 0.5, delay: idx * 0.08 }}
-              className="glass-panel p-6 sm:p-8 flex flex-col justify-between h-full relative group transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl min-h-[480px] rounded-xs"
+              className="glass-panel p-5 sm:p-6 flex flex-col justify-between h-full relative group transition-all duration-300 hover:-translate-y-1 hover:shadow-xl min-h-[410px] rounded-xs"
             >
-              <div className="mb-6 overflow-hidden bg-transparent flex items-center justify-center">
+              <div className="mb-4 overflow-hidden bg-transparent flex items-center justify-center">
                 <img
                   src={s.img}
                   alt={s.title}
-                  className="w-full h-44 object-contain opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+                  className="w-full h-36 object-contain opacity-90 group-hover:opacity-100 group-hover:scale-103 transition-all duration-500"
                 />
               </div>
               <div className="mt-auto">
                 <h3 className="font-headline-md text-2xl text-white mb-3 font-bold">
                   {s.title}
                 </h3>
-                <p className="font-body-md text-sm text-gray-300 mb-6 leading-relaxed font-normal">
+                <p className="font-body-md text-sm text-gray-300 mb-4 leading-relaxed font-normal">
                   {s.desc}
                 </p>
                 <div className="flex flex-wrap gap-2">
@@ -99,8 +99,8 @@ export default function ServicesSection() {
         </div>
 
         {/* Process Flow Diagram */}
-        <div className="py-12 border-t border-transparent relative">
-          <div className="font-label-technical text-xs text-[#929292] mb-8 tracking-widest uppercase font-bold">
+        <div className="py-8 border-t border-transparent relative">
+          <div className="font-label-technical text-xs text-muted-text mb-4 tracking-widest uppercase font-bold">
             WORKFLOW ARCHITECTURE
           </div>
           <div className="flex flex-col md:flex-row items-center overflow-x-auto pb-4 scrollbar-hide justify-start gap-4">
@@ -114,11 +114,11 @@ export default function ServicesSection() {
                 whileHover={{ scale: 1.05 }}
                 className="flex items-center shrink-0"
               >
-                <span className="font-label-technical text-xs px-5 py-2.5 border border-transparent bg-white/80 font-bold text-[#1a1c1b] rounded-xs shadow-xs transition-colors hover:border-[#b85c24]">
+                <span className="font-label-technical text-xs px-5 py-2.5 border border-transparent bg-white/80 font-bold text-on-surface rounded-xs shadow-xs transition-colors hover:border-tech-accent">
                   {step}
                 </span>
                 {idx < workflowSteps.length - 1 && (
-                  <span className="material-symbols-outlined text-[#b85c24] mx-3 text-lg">
+                  <span className="material-symbols-outlined text-tech-accent mx-3 text-lg">
                     arrow_right_alt
                   </span>
                 )}

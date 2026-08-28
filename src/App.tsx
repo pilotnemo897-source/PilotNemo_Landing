@@ -42,7 +42,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white text-[#1a1c1b] antialiased flex flex-col font-sans selection:bg-[#b85c24] selection:text-white">
+    <div className="min-h-screen bg-white text-on-surface antialiased flex flex-col font-sans selection:bg-tech-accent selection:text-white">
       {/* Top Navbar */}
       <Navbar activeSection={activeSection} onNavigate={scrollToSection} />
 

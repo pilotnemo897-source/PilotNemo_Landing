@@ -54,21 +54,21 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-20 border-t border-transparent relative bg-white">
+    <section id="contact" className="py-12 border-t border-transparent relative bg-white">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-8 md:px-16">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 relative">
           {/* Left Side: Form (7 columns) */}
           <div className="md:col-span-7 pt-4 pr-0 md:pr-8 relative z-10">
-            <span className="font-label-technical text-xs text-[#98440b] tracking-widest uppercase mb-6 block border-b border-transparent pb-2 inline-block font-bold">
+            <span className="font-label-technical text-xs text-tech-accent tracking-widest uppercase mb-6 block border-b border-transparent pb-2 inline-block font-bold">
               05 / START A PROJECT
             </span>
-            <h2 className="font-headline-lg text-4xl sm:text-6xl text-[#1a1c1b] mb-6 leading-tight font-extrabold">
+            <h2 className="font-headline-lg text-4xl sm:text-6xl text-on-surface mb-4 leading-tight font-extrabold">
               Have an idea? Let's build it.
             </h2>
-            <p className="font-body-lg text-lg text-[#55433a] mb-4 max-w-2xl font-normal">
+            <p className="font-body-lg text-lg text-on-surface-variant mb-3 max-w-2xl font-normal">
               Tell us what you're building. We'll help you figure out what's next.
             </p>
-            <p className="font-body-md text-sm text-[#929292] mb-12 max-w-2xl border-l-2 border-[#98440b]/40 pl-4 leading-relaxed font-medium">
+            <p className="font-body-md text-sm text-muted-text mb-8 max-w-2xl border-l-2 border-tech-accent/40 pl-4 leading-relaxed font-medium">
               Whether you're starting a new product, improving an existing platform or looking to grow your digital presence, share a few details about your requirements and our team will review your request.
             </p>
 
@@ -78,7 +78,7 @@ export default function ContactSection() {
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
-                  className="mb-8 p-6 bg-[#b85c24] text-white border border-transparent rounded-xs shadow-md"
+                  className="mb-8 p-6 bg-tech-accent text-white border border-transparent rounded-xs shadow-md"
                 >
                   <div className="flex items-center gap-3 mb-2 font-headline-md text-lg font-bold">
                     <span className="material-symbols-outlined text-2xl">check_circle</span>
@@ -91,13 +91,13 @@ export default function ContactSection() {
               )}
             </AnimatePresence>
 
-            <form onSubmit={handleSubmit} className="space-y-10">
+            <form onSubmit={handleSubmit} className="space-y-6">
               {/* Basic Info */}
-              <div className="space-y-6 mb-10">
+              <div className="space-y-4 mb-6">
                 <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
                   <label
                     htmlFor="name"
-                    className="md:w-[32%] font-label-technical text-xs font-bold text-[#1a1c1b] tracking-widest uppercase"
+                    className="md:w-[32%] font-label-technical text-xs font-bold text-on-surface tracking-widest uppercase"
                   >
                     Name *
                   </label>
@@ -109,9 +109,9 @@ export default function ContactSection() {
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       placeholder="Enter your name"
-                      className="w-full bg-[#f4f4f1] border border-transparent px-4 py-3 rounded-xs font-body-md text-[#1a1c1b] focus:border-[#98440b] focus:bg-white focus:outline-none transition-all"
+                      className="w-full bg-surface-container-low border border-transparent px-3 py-2.5 rounded-xs font-body-md text-on-surface focus:border-tech-accent focus:bg-white focus:outline-none transition-all"
                     />
-                    <span className="absolute right-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-[#929292] text-sm">
+                    <span className="absolute right-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-muted-text text-sm">
                       person
                     </span>
                   </div>
@@ -120,7 +120,7 @@ export default function ContactSection() {
                 <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
                   <label
                     htmlFor="email"
-                    className="md:w-[32%] font-label-technical text-xs font-bold text-[#1a1c1b] tracking-widest uppercase"
+                    className="md:w-[32%] font-label-technical text-xs font-bold text-on-surface tracking-widest uppercase"
                   >
                     Work Email *
                   </label>
@@ -132,9 +132,9 @@ export default function ContactSection() {
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       placeholder="email@company.com"
-                      className="w-full bg-[#f4f4f1] border border-transparent px-4 py-3 rounded-xs font-body-md text-[#1a1c1b] focus:border-[#98440b] focus:bg-white focus:outline-none transition-all"
+                      className="w-full bg-surface-container-low border border-transparent px-3 py-2.5 rounded-xs font-body-md text-on-surface focus:border-tech-accent focus:bg-white focus:outline-none transition-all"
                     />
-                    <span className="absolute right-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-[#929292] text-sm">
+                    <span className="absolute right-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-muted-text text-sm">
                       mail
                     </span>
                   </div>
@@ -143,7 +143,7 @@ export default function ContactSection() {
                 <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
                   <label
                     htmlFor="company"
-                    className="md:w-[32%] font-label-technical text-xs font-bold text-[#1a1c1b] tracking-widest uppercase"
+                    className="md:w-[32%] font-label-technical text-xs font-bold text-on-surface tracking-widest uppercase"
                   >
                     Company
                   </label>
@@ -154,9 +154,9 @@ export default function ContactSection() {
                       value={formData.company}
                       onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                       placeholder="Your organization"
-                      className="w-full bg-[#f4f4f1] border border-transparent px-4 py-3 rounded-xs font-body-md text-[#1a1c1b] focus:border-[#98440b] focus:bg-white focus:outline-none transition-all"
+                      className="w-full bg-surface-container-low border border-transparent px-3 py-2.5 rounded-xs font-body-md text-on-surface focus:border-tech-accent focus:bg-white focus:outline-none transition-all"
                     />
-                    <span className="absolute right-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-[#929292] text-sm">
+                    <span className="absolute right-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-muted-text text-sm">
                       domain
                     </span>
                   </div>
@@ -164,8 +164,8 @@ export default function ContactSection() {
               </div>
 
               {/* Services Needed Chips */}
-              <div className="pt-8 border-t border-transparent">
-                <label className="font-label-technical text-xs text-[#1a1c1b] font-bold block mb-6 uppercase tracking-widest">
+              <div className="pt-6 border-t border-transparent">
+                <label className="font-label-technical text-xs text-on-surface font-bold block mb-4 uppercase tracking-widest">
                   WHAT DO YOU NEED?
                 </label>
                 <div className="flex flex-wrap gap-3">
@@ -178,10 +178,10 @@ export default function ContactSection() {
                         type="button"
                         key={srv.val}
                         onClick={() => handleServiceToggle(srv.val)}
-                        className={`flex items-center gap-2 px-4 py-2.5 border rounded-xs font-label-technical text-[10px] font-bold uppercase transition-all cursor-pointer ${
+                        className={`flex items-center gap-2 px-3 py-2 border rounded-xs font-label-technical text-[10px] font-bold uppercase transition-all cursor-pointer ${
                           isSelected
-                            ? 'border-[#98440b] bg-[#98440b]/10 text-[#98440b] shadow-xs'
-                            : 'border-transparent bg-black/5 text-[#55433a] hover:border-[#98440b]/50 hover:bg-black/10'
+                            ? 'border-tech-accent bg-tech-accent/10 text-tech-accent shadow-xs'
+                            : 'border-transparent bg-black/5 text-on-surface-variant hover:border-tech-accent/50 hover:bg-black/10'
                         }`}
                       >
                         <span className="material-symbols-outlined text-sm">{srv.icon}</span>
@@ -193,10 +193,10 @@ export default function ContactSection() {
               </div>
 
               {/* Project Description */}
-              <div className="pt-6 border-t border-transparent">
+              <div className="pt-5 border-t border-transparent">
                 <label
                   htmlFor="details"
-                  className="font-label-technical text-xs text-[#1a1c1b] font-bold block mb-3 uppercase tracking-widest"
+                  className="font-label-technical text-xs text-on-surface font-bold block mb-3 uppercase tracking-widest"
                 >
                   PROJECT DETAILS
                 </label>
@@ -206,14 +206,14 @@ export default function ContactSection() {
                   value={formData.details}
                   onChange={(e) => setFormData({ ...formData, details: e.target.value })}
                   placeholder="Tell us about your project, goals, and target audience..."
-                  className="w-full bg-[#f4f4f1] border border-transparent p-4 rounded-xs font-body-md text-[#1a1c1b] focus:border-[#98440b] focus:bg-white focus:outline-none transition-all resize-none"
+                  className="w-full bg-surface-container-low border border-transparent p-3 rounded-xs font-body-md text-on-surface focus:border-tech-accent focus:bg-white focus:outline-none transition-all resize-none"
                 />
               </div>
 
               {/* Timeline & Budget Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-6 border-t border-transparent">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-5 border-t border-transparent">
                 <div>
-                  <label className="font-label-technical text-xs text-[#55433a] block mb-4 uppercase tracking-widest font-bold">
+                  <label className="font-label-technical text-xs text-on-surface-variant block mb-2 uppercase tracking-widest font-bold">
                     EXPECTED TIMELINE
                   </label>
                   <div className="flex flex-col gap-3">
@@ -237,13 +237,13 @@ export default function ContactSection() {
                         <div
                           className={`w-4 h-4 border rounded-full mr-3 transition-all ${
                             formData.timeline === time.val
-                              ? 'border-[#98440b] border-[5px]'
-                              : 'border-transparent bg-gray-200 group-hover:border-[#98440b]'
+                              ? 'border-tech-accent border-[5px]'
+                              : 'border-transparent bg-gray-200 group-hover:border-tech-accent'
                           }`}
                         />
                         <span
                           className={`font-semibold ${
-                            formData.timeline === time.val ? 'text-[#98440b]' : 'text-[#55433a]'
+                            formData.timeline === time.val ? 'text-tech-accent' : 'text-on-surface-variant'
                           }`}
                         >
                           {time.label}
@@ -254,14 +254,14 @@ export default function ContactSection() {
                 </div>
 
                 <div>
-                  <label className="font-label-technical text-xs text-[#55433a] block mb-4 uppercase tracking-widest font-bold">
+                  <label className="font-label-technical text-xs text-on-surface-variant block mb-2 uppercase tracking-widest font-bold">
                     BUDGET RANGE
                   </label>
                   <div className="relative">
                     <select
                       value={formData.budget}
                       onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-                      className="w-full bg-[#f4f4f1] border border-transparent py-3 px-4 font-body-md text-sm text-[#1a1c1b] focus:border-[#98440b] focus:bg-white focus:outline-none appearance-none rounded-xs cursor-pointer hover:bg-white transition-colors"
+                      className="w-full bg-surface-container-low border border-transparent py-2.5 px-3 font-body-md text-sm text-on-surface focus:border-tech-accent focus:bg-white focus:outline-none appearance-none rounded-xs cursor-pointer hover:bg-white transition-colors"
                     >
                       <option value="" disabled>
                         Select Budget Range...
@@ -272,7 +272,7 @@ export default function ContactSection() {
                       <option value="5l-10l">₹5L – ₹10L</option>
                       <option value="10l+">₹10L+</option>
                     </select>
-                    <span className="absolute right-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-[#929292] pointer-events-none">
+                    <span className="absolute right-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-muted-text pointer-events-none">
                       expand_more
                     </span>
                   </div>
@@ -280,19 +280,19 @@ export default function ContactSection() {
               </div>
 
               {/* Submit Button */}
-              <div className="pt-8 border-t border-transparent flex flex-col sm:flex-row items-center gap-6">
+              <div className="pt-6 border-t border-transparent flex flex-col sm:flex-row items-center gap-6">
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.97 }}
                   type="submit"
-                  className="w-full sm:w-auto bg-[#1a1c1b] text-white font-label-technical text-xs uppercase px-8 py-4 tracking-widest hover:bg-[#98440b] transition-colors flex items-center justify-center gap-2 group rounded-xs cursor-pointer font-bold shadow-sm"
+                  className="w-full sm:w-auto bg-primary text-white font-label-technical text-xs uppercase px-6 py-3 tracking-widest hover:bg-tech-accent transition-colors flex items-center justify-center gap-2 group rounded-xs cursor-pointer font-bold shadow-sm"
                 >
                   SEND PROJECT REQUEST
                   <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">
                     arrow_forward
                   </span>
                 </motion.button>
-                <p className="font-label-small text-[10px] text-[#929292] max-w-xs uppercase leading-tight">
+                <p className="font-label-small text-[10px] text-muted-text max-w-xs uppercase leading-tight">
                   We review every project request and get back with the next steps.
                 </p>
               </div>
@@ -301,35 +301,35 @@ export default function ContactSection() {
 
           {/* Right Side Visual (5 columns) */}
           <div className="hidden md:block md:col-span-5 relative h-full min-h-[700px] md:border-l border-transparent pl-8 z-10">
-            <div className="sticky top-28">
-              <div className="w-full h-[420px] relative flex justify-center items-center p-0 bg-transparent group">
+            <div className="sticky top-24">
+              <div className="w-full h-[340px] relative flex justify-center items-center p-0 bg-transparent group">
                 <img
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrP-zww0blUdHtUmLoCa-CASidtKkqYt9-HGD1iu0acJZ_lEGOqw-5syyvtY_rtbzeWU_f6vNvyGgQGWhEtn6CeqY9DxV4qdWGsGYubvT8ahW0ZgwN2Cx0Ik6cG0EMeHO19vVm74MZ0FtLtdudJxJ-W8GKxVh3fgugYkX6izZINBYafzcigJDZJcASWpSEomLnJw_N6ciVtQ8Y-iBuBPVVmByI5KMF8Vgv2ybQ-f6u0tK_QvUd7xOg6IAS8BEs3iUBfi8Zw1BiXX2l-zo"
                   alt="Product & User Experience Illustration"
                   className="w-full h-full object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute top-4 right-4 bg-white/90 border border-transparent px-3 py-1 rounded-xs backdrop-blur-xs shadow-xs">
-                  <span className="font-label-technical text-[10px] text-[#1a1c1b] tracking-widest uppercase font-bold">
+                  <span className="font-label-technical text-[10px] text-on-surface tracking-widest uppercase font-bold">
                     PRODUCT
                   </span>
                 </div>
                 <div className="absolute bottom-6 left-4 bg-white/90 border border-transparent px-3 py-1 rounded-xs backdrop-blur-xs shadow-xs">
-                  <span className="font-label-technical text-[10px] text-[#1a1c1b] tracking-widest uppercase font-bold">
+                  <span className="font-label-technical text-[10px] text-on-surface tracking-widest uppercase font-bold">
                     USER EXPERIENCE
                   </span>
                 </div>
               </div>
 
               {/* Typography Lockup */}
-              <div className="mt-8 border-l-2 border-[#98440b]/50 pl-4">
-                <p className="font-label-technical text-xs text-[#55433a] uppercase tracking-[0.2em] leading-loose">
+              <div className="mt-4 border-l-2 border-tech-accent/50 pl-4">
+                <p className="font-label-technical text-xs text-on-surface-variant uppercase tracking-[0.2em] leading-loose">
                   FROM FIRST IDEA TO FINAL PRODUCT.
                   <br />
-                  <span className="text-[#98440b] font-bold">DESIGN.</span>
+                  <span className="text-tech-accent font-bold">DESIGN.</span>
                   <br />
-                  <span className="text-[#98440b] font-bold">DEVELOPMENT.</span>
+                  <span className="text-tech-accent font-bold">DEVELOPMENT.</span>
                   <br />
-                  <span className="text-[#98440b] font-bold">GROWTH.</span>
+                  <span className="text-tech-accent font-bold">GROWTH.</span>
                   <br />
                   ONE CONNECTED TEAM.
                 </p>
@@ -339,18 +339,18 @@ export default function ContactSection() {
         </div>
 
         {/* Bottom Section */}
-        <div className="mt-20 pt-10 border-t border-transparent flex flex-col md:flex-row justify-between items-start md:items-center gap-6 relative z-10">
+        <div className="mt-12 pt-6 border-t border-transparent flex flex-col md:flex-row justify-between items-start md:items-center gap-6 relative z-10">
           <div>
-            <h3 className="font-headline-md text-2xl text-[#1a1c1b] mb-1 font-bold">
+            <h3 className="font-headline-md text-2xl text-on-surface mb-1 font-bold">
               READY WHEN YOU ARE.
             </h3>
-            <p className="font-label-technical text-xs text-[#929292] uppercase tracking-widest">
+            <p className="font-label-technical text-xs text-muted-text uppercase tracking-widest">
               START WITH AN IDEA. WE'LL HELP YOU BUILD THE REST.
             </p>
           </div>
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="font-label-technical text-xs text-[#98440b] border border-[#98440b] px-6 py-3 hover:bg-[#98440b] hover:text-white transition-colors flex items-center gap-2 uppercase tracking-widest font-bold rounded-xs cursor-pointer"
+            className="font-label-technical text-xs text-tech-accent border border-tech-accent px-5 py-2 hover:bg-tech-accent hover:text-white transition-colors flex items-center gap-2 uppercase tracking-widest font-bold rounded-xs cursor-pointer"
           >
             BACK TO TOP
             <span className="material-symbols-outlined text-sm">arrow_upward</span>

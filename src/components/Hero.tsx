@@ -15,9 +15,9 @@ export default function Hero({ onStartProject, onViewWork }: HeroProps) {
   ];
 
   return (
-    <section id="hero" className="relative pt-28 pb-16 overflow-hidden">
+    <section id="hero" className="relative pt-20 pb-8 overflow-hidden">
       {/* Main Hero Container */}
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 md:px-16 flex flex-col md:flex-row gap-12 lg:gap-20 items-center min-h-[calc(100vh-140px)]">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 md:px-16 flex flex-col md:flex-row gap-10 lg:gap-16 items-center min-h-[calc(100vh-220px)]">
         {/* Left Content */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
@@ -26,29 +26,29 @@ export default function Hero({ onStartProject, onViewWork }: HeroProps) {
           className="w-full md:w-1/2 flex flex-col justify-center z-10"
         >
           {/* Badge */}
-          <div className="mb-6">
-            <span className="font-label-technical text-xs text-[#b85c24] tracking-widest uppercase border border-[#b85c24]/30 px-3.5 py-1.5 bg-[#b85c24]/10 rounded-xs inline-block">
+          <div className="mb-4">
+            <span className="font-label-technical text-xs text-tech-accent tracking-widest uppercase border border-tech-accent/30 px-3.5 py-1.5 bg-tech-accent/10 rounded-xs inline-block">
               PILOTNEMO / DIGITAL PRODUCT STUDIO
             </span>
           </div>
 
           {/* Headline */}
-          <h1 className="font-headline-lg text-3xl sm:text-5xl lg:text-6xl text-[#1a1c1b] leading-[1.1] mb-6 font-extrabold">
+          <h1 className="font-headline-lg text-3xl sm:text-4xl lg:text-5xl text-on-surface leading-[1.1] mb-4 font-extrabold">
             We build digital products that move businesses forward.
           </h1>
 
           {/* Subtitle */}
-          <p className="font-body-lg text-base sm:text-lg text-[#55433a] max-w-xl mb-10 font-normal leading-relaxed">
+          <p className="font-body-lg text-base text-on-surface-variant max-w-xl mb-6 font-normal leading-relaxed">
             From first idea to final product, we design, develop and grow digital experiences for modern businesses.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 mb-12">
+          <div className="flex flex-col sm:flex-row gap-4 mb-6">
             <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               onClick={onStartProject}
-              className="inline-flex justify-center items-center px-8 py-4 bg-[#1a1c1b] text-white font-label-technical text-xs font-bold tracking-widest hover:bg-[#b85c24] transition-all border border-[#191919]/20 group cursor-pointer rounded-xs shadow-sm"
+              className="inline-flex justify-center items-center px-8 py-4 bg-primary text-white font-label-technical text-xs font-bold tracking-widest hover:bg-tech-accent transition-all border border-on-surface/20 group cursor-pointer rounded-xs shadow-sm"
             >
               START A PROJECT
               <span className="material-symbols-outlined ml-2 text-sm group-hover:translate-x-1 transition-transform">
@@ -59,7 +59,7 @@ export default function Hero({ onStartProject, onViewWork }: HeroProps) {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               onClick={onViewWork}
-              className="inline-flex justify-center items-center px-8 py-4 border border-[#897268]/40 text-[#1a1c1b] font-label-technical text-xs font-bold tracking-widest hover:bg-[#e2e3e0]/60 transition-all cursor-pointer rounded-xs"
+              className="inline-flex justify-center items-center px-8 py-4 border border-outline/40 text-on-surface font-label-technical text-xs font-bold tracking-widest hover:bg-surface-container-highest/60 transition-all cursor-pointer rounded-xs"
             >
               VIEW OUR WORK
             </motion.button>
@@ -67,10 +67,10 @@ export default function Hero({ onStartProject, onViewWork }: HeroProps) {
 
           {/* Architectural Subtext Detail */}
           <div className="flex items-center gap-4 mt-auto opacity-80 pt-4">
-            <span className="font-label-small text-[10px] uppercase tracking-widest text-[#929292] font-semibold">
+            <span className="font-label-small text-[10px] uppercase tracking-widest text-muted-text font-semibold">
               ONE TEAM. FROM IDEA TO SCALE.
             </span>
-            <div className="h-px bg-[#191919]/15 flex-grow" />
+            <div className="h-px bg-on-surface/15 flex-grow" />
           </div>
         </motion.div>
 
@@ -92,7 +92,7 @@ export default function Hero({ onStartProject, onViewWork }: HeroProps) {
       </div>
 
       {/* Bottom Info Strip */}
-      <div className="border-t border-transparent bg-white py-6 px-4 sm:px-8 md:px-16 w-full mt-12">
+      <div className="border-t border-transparent bg-white py-4 px-4 sm:px-8 md:px-16 w-full mt-6">
         <div className="max-w-[1440px] mx-auto flex flex-wrap justify-between items-center gap-4">
           {infoStrips.map((item, idx) => (
             <motion.div
@@ -102,11 +102,11 @@ export default function Hero({ onStartProject, onViewWork }: HeroProps) {
               transition={{ delay: 0.4 + idx * 0.08, duration: 0.4 }}
               className="flex items-center gap-4"
             >
-              <span className="font-label-technical text-xs text-[#55433a] tracking-widest font-semibold">
+              <span className="font-label-technical text-xs text-on-surface-variant tracking-widest font-semibold">
                 {item}
               </span>
               {idx < infoStrips.length - 1 && (
-                <span className="hidden md:inline-block h-4 w-px bg-[#191919]/15 ml-4" />
+                <span className="hidden md:inline-block h-4 w-px bg-on-surface/15 ml-4" />
               )}
             </motion.div>
           ))}
