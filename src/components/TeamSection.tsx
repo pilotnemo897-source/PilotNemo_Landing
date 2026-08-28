@@ -1,117 +1,186 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-import { Globe } from 'lucide-react';
 
-const team = [
-  {
-    id: 1,
-    image: '/assets/team_1.png',
-    name: 'Priya Anand',
-    role: 'Founder & CEO',
-    bio: 'Digital strategist with 12+ years driving enterprise transformation across B2B SaaS, retail, and healthcare.',
-    social: { linkedin: '#', twitter: '#' }
-  },
-  {
-    id: 2,
-    image: '/assets/team_2.png',
-    name: 'Rajesh Kumar',
-    role: 'Lead Software Architect',
-    bio: 'Full-stack expert in React, Node.js, and cloud systems delivering scalable, 99.9% uptime solutions.',
-    social: { linkedin: '#', twitter: '#' }
-  },
-  {
-    id: 3,
-    image: '/assets/team_3.png',
-    name: 'Sneha Nair',
-    role: 'Head of UI/UX Design',
-    bio: 'Product designer creating research-backed, conversion-first digital experiences loved by millions of users.',
-    social: { linkedin: '#', twitter: '#' }
-  },
-  {
-    id: 4,
-    image: '/assets/team_4.png',
-    name: 'Arjun Mehta',
-    role: 'Growth & Performance Lead',
-    bio: 'Performance marketing specialist managing multi-million dollar ad budgets with consistently measurable ROI.',
-    social: { linkedin: '#', twitter: '#' }
-  },
-];
+export default function TeamSection() {
+  const capabilities = [
+    { title: 'PRODUCT', tags: ['STRATEGY', 'ROADMAP', 'ANALYTICS'] },
+    { title: 'DESIGN', tags: ['UI/UX', 'SYSTEMS', 'INTERACTION'] },
+    { title: 'ENGINEERING', tags: ['FRONTEND', 'BACKEND', 'DEVOPS'] },
+    { title: 'GROWTH', tags: ['SEO', 'MARKETING', 'CONVERSION'] },
+  ];
 
-export const TeamSection: React.FC = () => {
+  const teamMembers = [
+    {
+      name: 'PRIYA ANAND',
+      role: 'FOUNDER & PRODUCT STRATEGIST',
+      bio: 'A highly skilled professional focusing on bringing structure and clarity to complex digital systems. 10+ years scaling technical operations.',
+      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCMCmcfSd2y4go82HDTDONNVfnwRQwVcgLHoOlIsiORn5QIF_4CmyR6VPh-DHA5ZiX0ttJKnESfCjgVaePZ2URTVLGI4DVEiiEQHyD2cNkMPhapEsOIBaZDtQ7_cTTNR4otSehK5i_mK5Rt2O9nWKz0ZCctsN0Xvk8SRsZzLO2_sqG8LPLwqO47QJX6T2gxMVjVS22VouB4BUyFCT-zTZQAykqM0pclKD4PuehDd6rPzladYShKUoGQqg',
+    },
+    {
+      name: 'RAJESH KUMAR',
+      role: 'LEAD SOFTWARE ARCHITECT',
+      bio: 'Specializes in crafting intuitive user experiences based on rigorous research, clean code, and architectural design principles.',
+      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA-s0ZWd2h12oCfmYy0mRaWkRZSe1PhGvcbqWKR-KdlAaMlvfS0HMrNrA3d3GDJbwyZXGpH-Z0f-1AyZtjafFsxPDQ3mVQQttH0cSxFLlZPd7wwsJBwBl2GGHaLr5Znff5Fl6KOAJjZRuEeMPvpbVQfxrD8XEwVRfMYUjrYrx6ac6r8ggFt4KaDb3eLzVlKwuYYUn_i4UaKbxQtEfqqIHSBnFofhCZEpj_fRM1JDu_W3lFihtUybBA2ug',
+    },
+    {
+      name: 'SNEHA NAIR',
+      role: 'HEAD OF UI/UX DESIGN',
+      bio: 'Engineering lead bridging the gap between elegant frontend interfaces and robust scalable backend architectures.',
+      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDfn8zzGwD27t7gZ5GEWyn8ZXTWxpMJc_K2qJ17AqIJBd1MVyhk9Bj9fJjMQyNLCu8-vIQdeO-m_A_H8dE4r8dbaKx79a6gpnWo9S1enG2Cyd-000BqdrlgE90dFOAPM_0ySVsFB0-mTmAbqcKu1KSuhNTP5M5n_6LMWtlrGAPHt9ZAM3eFHB16lWPewL4SWRw_njSNvmg9VSbrhZ6Djj_O96SRdVn4JMPEQwf38y_EmlVPjzr7IKJzhA',
+    },
+    {
+      name: 'ARJUN MEHTA',
+      role: 'GROWTH & PERFORMANCE LEAD',
+      bio: 'Drives product adoption through data-driven performance strategies, conversion rate optimization, and market analytics.',
+      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBksJONIxHoT6GZUa1R90gz9tMBLoaRB5GYiNKnyTsNRAzWUfendozgdR1Prav-3eP6WJ2SCqozL5R9rwtwkc5sm-_rJwMQZSTryAuiv-OmZGeZ3HCmgaSKHWLK4xCS0wDvGUAQBpMFJXzIfRoA-L0PUgFN5G1G1Gw2o1wEBhsDYVA0ghVva5Jss0w7ivoUm4awalDGELJoHVrdK3x2WKDzsAxF2889ad-DDnc7bwFNJRdW4y1VZdN_CA',
+    },
+  ];
+
   return (
-    <section id="team" className="py-20 sm:py-28 bg-white relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-        {/* Section Header */}
-        <div className="text-center mb-14 max-w-2xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-extrabold uppercase tracking-wider mb-4">
-            MEET THE TEAM
+    <section id="team" className="py-20 border-t border-transparent relative">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 md:px-16">
+        {/* Header */}
+        <header className="mb-16 border-b border-transparent pb-8">
+          <div className="flex items-center gap-2 mb-4">
+            <span className="material-symbols-outlined text-xs text-[#b85c24]">add</span>
+            <span className="font-label-technical text-xs text-[#b85c24] tracking-widest uppercase font-bold">
+              04 / THE PEOPLE
+            </span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 leading-tight">
-            The Experts Behind Your Growth
+          <h2 className="font-headline-lg text-4xl sm:text-6xl text-[#1a1c1b] mb-6 max-w-3xl font-extrabold">
+            People behind the products.
           </h2>
-          <p className="text-sm text-slate-500 mt-4 leading-relaxed">
-            A dedicated cross-functional team of engineers, designers, and growth strategists ready to deliver world-class results.
+          <p className="font-body-lg text-base sm:text-lg text-[#55433a] max-w-2xl font-normal">
+            A multidisciplinary team combining product thinking, engineering, design and digital growth.
           </p>
-        </div>
+        </header>
 
-        {/* Team Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {team.map((member, idx) => (
-            <motion.div
-              key={member.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: idx * 0.1 }}
-              className="group bg-white rounded-3xl border border-slate-200/80 shadow-md hover:shadow-2xl hover:border-blue-300 overflow-hidden transition-all duration-300 text-center"
-            >
-              {/* Photo */}
-              <div className="relative overflow-hidden h-56">
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-blue-950/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        {/* Bento Grid: Capabilities & Stats */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 mb-20">
+          {/* Capabilities Grid */}
+          <div className="md:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {capabilities.map((cap, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.08, duration: 0.5 }}
+                whileHover={{ y: -5 }}
+                className="glass-panel p-6 relative flex flex-col justify-between min-h-[190px] rounded-xs"
+              >
+                <span className="absolute top-4 right-4 material-symbols-outlined text-xs text-[#929292]">
+                  add
+                </span>
+                <h3 className="font-headline-md text-2xl text-white mb-4 font-bold">
+                  {cap.title}
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {cap.tags.map((t, i) => (
+                    <span
+                      key={i}
+                      className="font-label-technical text-[10px] px-3 py-1 border border-white/15 rounded-xs bg-[#f9f9f6] text-[#1a1c1b] font-bold"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
 
-                {/* Social Links (Appear on Hover) */}
-                <div className="absolute bottom-0 left-0 right-0 p-3 flex justify-center gap-2 translate-y-full group-hover:translate-y-0 transition-transform duration-400">
-                  <a
-                    href={member.social.linkedin}
-                    className="w-8 h-8 rounded-full bg-white text-blue-700 flex items-center justify-center shadow-md hover:bg-blue-700 hover:text-white transition-all"
-                    aria-label={`${member.name} LinkedIn`}
-                  >
-                    <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
-                  </a>
-                  <a
-                    href={member.social.twitter}
-                    className="w-8 h-8 rounded-full bg-white text-blue-700 flex items-center justify-center shadow-md hover:bg-blue-700 hover:text-white transition-all"
-                    aria-label={`${member.name} Twitter`}
-                  >
-                    <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/></svg>
-                  </a>
-                  <a
-                    href="#"
-                    className="w-8 h-8 rounded-full bg-white text-blue-700 flex items-center justify-center shadow-md hover:bg-blue-700 hover:text-white transition-all"
-                    aria-label={`${member.name} Website`}
-                  >
-                    <Globe className="w-3.5 h-3.5" />
-                  </a>
+          {/* Stats Panel */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="md:col-span-4 glass-panel p-8 flex flex-col justify-between min-h-[400px] bg-[#98440b] text-white rounded-xs"
+          >
+            <div>
+              <div className="font-label-technical text-xs mb-2 opacity-90 uppercase tracking-widest font-bold">
+                TEAM METRICS
+              </div>
+              <div className="border-t border-white/20 my-4 w-full" />
+            </div>
+            <div className="space-y-6">
+              <div>
+                <div className="font-headline-lg text-5xl font-extrabold">05+</div>
+                <div className="font-label-technical text-xs opacity-90 uppercase tracking-widest font-bold">
+                  CORE CAPABILITIES
                 </div>
               </div>
-
-              {/* Info Block */}
-              <div className="p-5">
-                <h3 className="font-black text-slate-900 text-base mb-0.5 group-hover:text-blue-600 transition-colors">{member.name}</h3>
-                <p className="text-[11px] font-extrabold text-blue-600 uppercase tracking-wider mb-3">{member.role}</p>
-                <p className="text-xs text-slate-500 leading-relaxed font-normal">{member.bio}</p>
+              <div>
+                <div className="font-headline-lg text-5xl font-extrabold">08+</div>
+                <div className="font-label-technical text-xs opacity-90 uppercase tracking-widest font-bold">
+                  DISCIPLINES
+                </div>
               </div>
-            </motion.div>
-          ))}
+              <div>
+                <div className="font-headline-md text-3xl font-extrabold mb-1">ONE</div>
+                <div className="font-label-technical text-xs opacity-90 uppercase tracking-widest font-bold">
+                  SHARED WORKFLOW
+                </div>
+              </div>
+            </div>
+          </motion.div>
         </div>
 
+        {/* Quote Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="py-16 border-y border-transparent mb-20 flex items-center justify-center text-center px-4"
+        >
+          <blockquote className="font-headline-lg text-2xl sm:text-4xl text-[#98440b] max-w-4xl mx-auto font-bold italic leading-snug">
+            "Different skills. One shared responsibility: building something useful."
+          </blockquote>
+        </motion.div>
+
+        {/* Core Team Members Grid */}
+        <div>
+          <div className="flex items-center gap-2 mb-8">
+            <span className="material-symbols-outlined text-xs text-[#b85c24]">add</span>
+            <span className="font-label-technical text-xs text-[#55433a] tracking-widest uppercase font-bold">
+              CORE TEAM
+            </span>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {teamMembers.map((member, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1, duration: 0.5 }}
+                whileHover={{ y: -6 }}
+                className="group cursor-pointer bg-white p-4 border border-transparent rounded-xs shadow-xs"
+              >
+                <div className="aspect-[3/4] mb-4 overflow-hidden bg-[#e2e3e0] relative rounded-xs">
+                  <img
+                    src={member.img}
+                    alt={member.name}
+                    className="w-full h-full object-cover grayscale opacity-85 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
+                  />
+                  <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black/60 to-transparent" />
+                </div>
+                <div className="border-t border-[#191919]/10 pt-4">
+                  <h4 className="font-headline-md text-lg font-bold text-[#1a1c1b] uppercase mb-1">
+                    {member.name}
+                  </h4>
+                  <p className="font-label-technical text-[10px] text-[#b85c24] mb-3 font-bold uppercase tracking-widest">
+                    {member.role}
+                  </p>
+                  <p className="font-body-md text-xs text-[#55433a] leading-relaxed">
+                    {member.bio}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
-};
+}

@@ -103,7 +103,7 @@ export default function NotFound() {
           {NAV_ITEMS.map((item) => (
             <a
               key={item}
-              href="#"
+              href="/"
               className="px-4 py-1.5 text-sm font-medium rounded-full bg-white hover:opacity-90 transition-colors"
               style={{ color: '#F16524' }}
             >
@@ -168,7 +168,7 @@ export default function NotFound() {
             {NAV_ITEMS.map((item, i) => (
               <a
                 key={item}
-                href="#"
+                href="/"
                 className="px-6 py-4 text-lg font-semibold text-white rounded-2xl bg-white/10 hover:bg-white/20 transition-all duration-300"
                 style={{
                   opacity: menuOpen ? 1 : 0,

@@ -1,158 +1,144 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, Menu, X, Compass, Sparkles } from 'lucide-react';
-import { Button } from './ui/Button';
 
-export const Navbar: React.FC = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
+interface NavbarProps {
+  activeSection?: string;
+  onNavigate?: (id: string) => void;
+}
+
+export default function Navbar({ activeSection = 'hero', onNavigate }: NavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('hero');
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-
-      const sections = ['hero', 'about', 'services', 'projects', 'team', 'contact'];
-      const scrollPosition = window.scrollY + 200;
-
-      for (const sectionId of sections) {
-        const el = document.getElementById(sectionId);
-        if (el) {
-          const top = el.offsetTop;
-          const height = el.offsetHeight;
-          if (scrollPosition >= top && scrollPosition < top + height) {
-            setActiveSection(sectionId);
-            break;
-          }
-        }
-      }
+      setScrolled(window.scrollY > 20);
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = [
-    { label: 'Home', href: '#hero' },
-    { label: 'About Us', href: '#about' },
-    { label: 'Services', href: '#services' },
-    { label: 'Projects', href: '#projects' },
-    { label: 'Team', href: '#team' },
-    { label: 'Contact', href: '#contact' },
+  const navItems = [
+    { label: 'Work', id: 'services' },
+    { label: 'Services', id: 'services' },
+    { label: 'Process', id: 'approach' },
+    { label: 'Team', id: 'team' },
+    { label: 'About', id: 'about' },
   ];
 
-  return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-white/90 backdrop-blur-md shadow-md py-3 border-b border-slate-200/80'
-          : 'bg-transparent py-4'
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        
-        {/* Brand Logo */}
-        <a href="#hero" className="flex items-center gap-2 group py-1" aria-label="PilotNemo Home">
-          <div className="w-10 h-10 rounded-2xl bg-nexus-blue text-white flex items-center justify-center font-bold shadow-md group-hover:scale-105 transition-transform">
-            <Compass className="w-6 h-6" />
-          </div>
-          <span className="text-xl font-black text-nexus-text tracking-tight">
-            Pilot<span className="text-nexus-blue">Nemo</span>
-          </span>
-        </a>
+  const handleNavClick = (id: string) => {
+    setMobileMenuOpen(false);
+    if (onNavigate) {
+      onNavigate(id);
+    } else {
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
 
-        {/* Desktop Navigation Links */}
-        <nav className="hidden md:flex items-center gap-1 bg-slate-100/90 backdrop-blur-md px-4 py-1.5 rounded-full border border-slate-200/80 shadow-inner">
-          {navLinks.map((link) => {
-            const sectionId = link.href.replace('#', '');
-            const isActive = activeSection === sectionId;
-            return (
+  return (
+    <>
+      <nav
+        className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 ${
+          scrolled
+            ? 'bg-[#202124] backdrop-blur-md border-b border-transparent shadow-md py-3'
+            : 'bg-[#202124] backdrop-blur-md border-b border-transparent py-4'
+        }`}
+      >
+        <div className="w-full px-6 sm:px-10 md:px-12 flex justify-between items-center">
+          {/* Logo */}
+          <a
+            href="#hero"
+            onClick={(e) => {
+              e.preventDefault();
+              handleNavClick('hero');
+            }}
+            className="font-headline-md text-xl md:text-2xl font-bold tracking-tighter text-white hover:text-[#b85c24] transition-colors"
+          >
+            PILOTNEMO
+          </a>
+
+          {/* Web Navigation */}
+          <div className="hidden md:flex gap-8 items-center font-label-technical">
+            {navItems.map((item) => (
               <a
-                key={link.label}
-                href={link.href}
-                className={`relative px-4 py-2 text-xs sm:text-sm font-bold transition-colors duration-200 rounded-full ${
-                  isActive
-                    ? 'text-nexus-blue font-extrabold'
-                    : 'text-slate-600 hover:text-nexus-text'
+                key={item.label}
+                href={`#${item.id}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavClick(item.id);
+                }}
+                className={`text-xs uppercase tracking-widest transition-all ${
+                  activeSection === item.id
+                    ? 'text-[#b85c24] font-bold border-b border-[#b85c24] pb-0.5'
+                    : 'text-gray-300 hover:text-[#b85c24]'
                 }`}
               >
-                {isActive && (
-                  <motion.span
-                    layoutId="activeTab"
-                    className="absolute inset-0 bg-white rounded-full -z-10 shadow-sm border border-slate-200/60"
-                    transition={{ type: 'spring', stiffness: 380, damping: 30 }}
-                  />
-                )}
-                {link.label}
+                {item.label}
               </a>
-            );
-          })}
-        </nav>
+            ))}
+          </div>
 
-        {/* Desktop CTA Button */}
-        <div className="hidden md:flex items-center gap-3">
-          <a href="#contact">
-            <Button
-              variant="primary"
-              size="md"
-              icon={<ArrowRight className="w-4 h-4" />}
+          {/* CTA Button (Full Right Side, Solid Fill, No Outline Border) */}
+          <div className="hidden md:flex items-center">
+            <button
+              onClick={() => handleNavClick('contact')}
+              className="font-label-technical text-xs px-6 py-2.5 bg-[#b85c24] text-white hover:bg-[#9a460d] transition-all uppercase tracking-widest font-bold cursor-pointer rounded-xs shadow-xs"
             >
-              Get A Quote
-            </Button>
-          </a>
+              START A PROJECT
+            </button>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden text-white p-2 focus:outline-none cursor-pointer"
+            aria-label="Toggle Navigation Menu"
+          >
+            <span className="material-symbols-outlined text-2xl">
+              {mobileMenuOpen ? 'close' : 'menu'}
+            </span>
+          </button>
         </div>
+      </nav>
 
-        {/* Mobile Hamburger Toggle */}
-        <button
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden p-2.5 rounded-xl bg-white border border-slate-200 text-nexus-text hover:text-nexus-blue transition-colors shadow-sm"
-          aria-label="Toggle Navigation Menu"
-        >
-          {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
-      </div>
-
-      {/* Mobile Animated Menu Drawer */}
+      {/* Mobile Drawer */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3, ease: 'easeInOut' }}
-            className="md:hidden bg-white border-b border-slate-200 shadow-xl overflow-hidden"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.25 }}
+            className="fixed inset-x-0 top-[60px] z-40 bg-[#202124] border-b border-white/10 shadow-2xl md:hidden px-6 py-6"
           >
-            <div className="px-6 py-6 space-y-3 flex flex-col">
-              {navLinks.map((link) => (
+            <div className="flex flex-col gap-5">
+              {navItems.map((item) => (
                 <a
-                  key={link.label}
-                  href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="text-base font-bold text-nexus-text hover:text-nexus-blue py-2 border-b border-slate-100 transition-colors flex items-center justify-between"
+                  key={item.label}
+                  href={`#${item.id}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavClick(item.id);
+                  }}
+                  className="font-label-technical text-sm text-gray-200 hover:text-[#b85c24] tracking-widest uppercase py-2 border-b border-white/5"
                 >
-                  <span>{link.label}</span>
-                  <ArrowRight className="w-4 h-4 text-nexus-muted" />
+                  {item.label}
                 </a>
               ))}
-              <a
-                href="#contact"
-                onClick={() => setMobileMenuOpen(false)}
-                className="pt-3"
+              <button
+                onClick={() => handleNavClick('contact')}
+                className="mt-2 w-full font-label-technical text-xs px-6 py-3.5 bg-[#b85c24] text-white font-bold tracking-widest uppercase cursor-pointer rounded-xs flex items-center justify-center gap-2"
               >
-                <Button
-                  variant="primary"
-                  size="lg"
-                  fullWidth
-                  icon={<Sparkles className="w-5 h-5" />}
-                >
-                  Get A Quote
-                </Button>
-              </a>
+                START A PROJECT
+                <span className="material-symbols-outlined text-sm">arrow_forward</span>
+              </button>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </header>
+    </>
   );
-};
-
+}
