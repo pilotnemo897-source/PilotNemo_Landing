@@ -1,4 +1,4 @@
-
+import { motion } from 'framer-motion';
 
 interface ApproachSectionProps {
   onStartProject?: () => void;
@@ -119,52 +119,108 @@ export default function ApproachSection({ onStartProject, onExploreServices }: A
             </h3>
           </div>
 
-          {/* Strategy Steps Horizontal Grid */}
-          <div className="overflow-x-auto pb-6 scrollbar-hide">
-            <div className="flex flex-nowrap min-w-max md:min-w-0 md:grid md:grid-cols-5 border border-transparent bg-[#f9f9f6] rounded-xs shadow-xs">
-              {strategySteps.map((step, idx) => (
-                <div
-                  key={idx}
-                  className="w-72 md:w-auto p-6 md:p-8 border-r border-transparent relative group hover:bg-[#e2e3e0]/40 transition-colors bg-[#f4f4f1]"
-                >
-                  <div className="font-label-technical text-xs text-[#b85c24] font-bold mb-4">
-                    {step.num}
-                  </div>
-                  <div className="mb-6 overflow-hidden bg-transparent flex justify-center items-center">
-                    <img
-                      src={step.img}
-                      alt={step.title}
-                      className="w-[110%] h-auto object-cover group-hover:scale-105 transition-transform duration-500 mix-blend-multiply"
-                    />
-                  </div>
-                  <h4 className="font-headline-md text-xl md:text-2xl text-[#1a1c1b] font-bold mb-4">
-                    {step.title}
-                  </h4>
-                  <ul className="space-y-2 font-body-md text-xs sm:text-sm text-[#55433a] font-medium">
-                    {step.items.map((item, i) => (
-                      <li key={i} className="font-semibold flex items-center gap-1.5">
-                        <span className="w-1 h-1 rounded-full bg-[#b85c24]" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                  {idx < strategySteps.length - 1 && (
-                    <span className="material-symbols-outlined absolute top-1/2 -right-3 text-[#191919]/30 bg-[#f9f9f6] hidden md:block z-10 group-hover:text-[#b85c24] transition-colors">
-                      arrow_forward
-                    </span>
-                  )}
-                </div>
+          {/* Animated progress bar across all steps */}
+          <div className="mb-10">
+            <div className="flex justify-between mb-2">
+              <span className="font-label-technical text-[9px] text-[#b85c24] tracking-widest uppercase font-bold">WORKFLOW PROGRESS</span>
+              <span className="font-label-technical text-[9px] text-[#929292] font-bold">IDEA → GROWTH</span>
+            </div>
+            <div className="h-[2px] w-full bg-[#191919]/10 rounded-full overflow-hidden">
+              <motion.div
+                className="h-full bg-[#b85c24] rounded-full"
+                initial={{ width: 0 }}
+                whileInView={{ width: '100%' }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.5, ease: 'easeOut', delay: 0.2 }}
+              />
+            </div>
+            <div className="flex justify-between mt-1.5">
+              {strategySteps.map((s) => (
+                <span key={s.num} className="font-label-technical text-[8px] text-[#929292] tracking-widest">{s.num}</span>
               ))}
             </div>
           </div>
 
-          <div className="mt-4 flex items-center justify-center p-4 border border-transparent bg-white/50 rounded-xs shadow-2xs">
+          {/* Strategy Steps — animated progress timeline */}
+          <div className="relative">
+            {/* Connector line behind cards (desktop) */}
+            <div className="hidden md:block absolute top-9 left-0 right-0 h-[2px] bg-[#191919]/8 z-0">
+              <motion.div
+                className="h-full bg-[#b85c24]/40"
+                initial={{ width: 0 }}
+                whileInView={{ width: '100%' }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.4, delay: 0.4, ease: 'easeOut' }}
+              />
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-4 relative z-10">
+              {strategySteps.map((step, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 28 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.12, duration: 0.5, ease: 'easeOut' }}
+                  className="flex flex-col items-center md:items-start group"
+                >
+                  {/* Step badge */}
+                  <div className="relative mb-4 flex items-center justify-center">
+                    <motion.div
+                      initial={{ scale: 0 }}
+                      whileInView={{ scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: idx * 0.12 + 0.2, duration: 0.4, type: 'spring', stiffness: 200 }}
+                      className="w-10 h-10 rounded-full bg-[#b85c24] flex items-center justify-center shadow-md border-2 border-white"
+                    >
+                      <span className="font-label-technical text-[10px] text-white font-extrabold">{step.num}</span>
+                    </motion.div>
+                  </div>
+
+                  {/* Card */}
+                  <div className="w-full p-5 bg-[#f4f4f1] border border-transparent group-hover:border-[#b85c24]/30 group-hover:bg-white transition-all rounded-xs shadow-xs hover:shadow-sm">
+                    <div className="mb-4 overflow-hidden bg-transparent flex justify-center items-center">
+                      <img
+                        src={step.img}
+                        alt={step.title}
+                        className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500 mix-blend-multiply"
+                      />
+                    </div>
+                    <h4 className="font-headline-md text-lg text-[#1a1c1b] font-bold mb-3">
+                      {step.title}
+                    </h4>
+                    <ul className="space-y-1.5 font-body-md text-xs text-[#55433a] font-medium">
+                      {step.items.map((item, i) => (
+                        <li key={i} className="font-semibold flex items-center gap-1.5">
+                          <span className="w-1 h-1 rounded-full bg-[#b85c24] shrink-0" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                    {/* Mini progress strip per step */}
+                    <div className="mt-4 h-[2px] w-full bg-[#191919]/8 rounded-full overflow-hidden">
+                      <motion.div
+                        className="h-full bg-[#b85c24]"
+                        initial={{ width: 0 }}
+                        whileInView={{ width: '100%' }}
+                        viewport={{ once: true }}
+                        transition={{ delay: idx * 0.15 + 0.5, duration: 0.8, ease: 'easeOut' }}
+                      />
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-6 flex items-center justify-center p-4 border border-transparent bg-white/50 rounded-xs shadow-2xs">
             <p className="font-label-technical text-xs text-[#1a1c1b] font-bold tracking-widest uppercase text-center">
               FROM IDEA <span className="text-[#b85c24] mx-2 font-extrabold">→</span> PRODUCT{' '}
               <span className="text-[#b85c24] mx-2 font-extrabold">→</span> GROWTH. One connected process. One team.
             </p>
           </div>
-        </div>
+          </div>
+
 
         {/* SECTION 02 — WHY PILOTNEMO */}
         <div className="mb-24">

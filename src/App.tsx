@@ -21,7 +21,7 @@ export default function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['hero', 'about', 'services', 'team', 'approach', 'contact'];
+      const sections = ['hero', 'about', 'services', 'approach', 'team', 'contact'];
       const scrollPos = window.scrollY + 200;
 
       for (const sectionId of sections) {
@@ -54,11 +54,11 @@ export default function App() {
         />
         <AboutSection onStartProject={() => scrollToSection('contact')} />
         <ServicesSection />
-        <TeamSection />
         <ApproachSection
           onStartProject={() => scrollToSection('contact')}
           onExploreServices={() => scrollToSection('services')}
         />
+        <TeamSection />
         <ContactSection />
       </main>
 

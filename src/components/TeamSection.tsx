@@ -1,5 +1,41 @@
 import { motion } from 'framer-motion';
 
+const ProgressBar = ({ label, value, delay = 0 }: { label: string; value: number; delay?: number }) => (
+  <div className="mb-3">
+    <div className="flex justify-between mb-1">
+      <span className="font-label-technical text-[9px] text-gray-400 tracking-widest uppercase font-bold">{label}</span>
+      <span className="font-label-technical text-[9px] text-[#b85c24] font-bold">{value}%</span>
+    </div>
+    <div className="h-[2px] w-full bg-white/10 rounded-full overflow-hidden">
+      <motion.div
+        className="h-full bg-[#b85c24] rounded-full"
+        initial={{ width: 0 }}
+        whileInView={{ width: `${value}%` }}
+        viewport={{ once: true }}
+        transition={{ duration: 1.1, delay, ease: 'easeOut' }}
+      />
+    </div>
+  </div>
+);
+
+const StatMeter = ({ label, value, delay = 0 }: { label: string; value: number; delay?: number }) => (
+  <div className="mb-4">
+    <div className="flex justify-between mb-1.5">
+      <span className="font-label-technical text-[9px] text-white/70 tracking-widest uppercase font-bold">{label}</span>
+      <span className="font-label-technical text-[9px] text-white font-bold">{value}%</span>
+    </div>
+    <div className="h-[3px] w-full bg-white/15 rounded-full overflow-hidden">
+      <motion.div
+        className="h-full bg-white rounded-full"
+        initial={{ width: 0 }}
+        whileInView={{ width: `${value}%` }}
+        viewport={{ once: true }}
+        transition={{ duration: 1.2, delay, ease: 'easeOut' }}
+      />
+    </div>
+  </div>
+);
+
 export default function TeamSection() {
   const capabilities = [
     { title: 'PRODUCT', tags: ['STRATEGY', 'ROADMAP', 'ANALYTICS'] },
@@ -14,24 +50,44 @@ export default function TeamSection() {
       role: 'FOUNDER & PRODUCT STRATEGIST',
       bio: 'A highly skilled professional focusing on bringing structure and clarity to complex digital systems. 10+ years scaling technical operations.',
       img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCMCmcfSd2y4go82HDTDONNVfnwRQwVcgLHoOlIsiORn5QIF_4CmyR6VPh-DHA5ZiX0ttJKnESfCjgVaePZ2URTVLGI4DVEiiEQHyD2cNkMPhapEsOIBaZDtQ7_cTTNR4otSehK5i_mK5Rt2O9nWKz0ZCctsN0Xvk8SRsZzLO2_sqG8LPLwqO47QJX6T2gxMVjVS22VouB4BUyFCT-zTZQAykqM0pclKD4PuehDd6rPzladYShKUoGQqg',
+      skills: [
+        { label: 'Product Strategy', value: 95 },
+        { label: 'Roadmapping', value: 90 },
+        { label: 'Analytics', value: 82 },
+      ],
     },
     {
       name: 'RAJESH KUMAR',
       role: 'LEAD SOFTWARE ARCHITECT',
       bio: 'Specializes in crafting intuitive user experiences based on rigorous research, clean code, and architectural design principles.',
       img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA-s0ZWd2h12oCfmYy0mRaWkRZSe1PhGvcbqWKR-KdlAaMlvfS0HMrNrA3d3GDJbwyZXGpH-Z0f-1AyZtjafFsxPDQ3mVQQttH0cSxFLlZPd7wwsJBwBl2GGHaLr5Znff5Fl6KOAJjZRuEeMPvpbVQfxrD8XEwVRfMYUjrYrx6ac6r8ggFt4KaDb3eLzVlKwuYYUn_i4UaKbxQtEfqqIHSBnFofhCZEpj_fRM1JDu_W3lFihtUybBA2ug',
+      skills: [
+        { label: 'System Architecture', value: 97 },
+        { label: 'Backend Engineering', value: 93 },
+        { label: 'DevOps', value: 85 },
+      ],
     },
     {
       name: 'SNEHA NAIR',
       role: 'HEAD OF UI/UX DESIGN',
       bio: 'Engineering lead bridging the gap between elegant frontend interfaces and robust scalable backend architectures.',
       img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDfn8zzGwD27t7gZ5GEWyn8ZXTWxpMJc_K2qJ17AqIJBd1MVyhk9Bj9fJjMQyNLCu8-vIQdeO-m_A_H8dE4r8dbaKx79a6gpnWo9S1enG2Cyd-000BqdrlgE90dFOAPM_0ySVsFB0-mTmAbqcKu1KSuhNTP5M5n_6LMWtlrGAPHt9ZAM3eFHB16lWPewL4SWRw_njSNvmg9VSbrhZ6Djj_O96SRdVn4JMPEQwf38y_EmlVPjzr7IKJzhA',
+      skills: [
+        { label: 'UI/UX Design', value: 96 },
+        { label: 'Prototyping', value: 91 },
+        { label: 'Design Systems', value: 88 },
+      ],
     },
     {
       name: 'ARJUN MEHTA',
       role: 'GROWTH & PERFORMANCE LEAD',
       bio: 'Drives product adoption through data-driven performance strategies, conversion rate optimization, and market analytics.',
       img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBksJONIxHoT6GZUa1R90gz9tMBLoaRB5GYiNKnyTsNRAzWUfendozgdR1Prav-3eP6WJ2SCqozL5R9rwtwkc5sm-_rJwMQZSTryAuiv-OmZGeZ3HCmgaSKHWLK4xCS0wDvGUAQBpMFJXzIfRoA-L0PUgFN5G1G1Gw2o1wEBhsDYVA0ghVva5Jss0w7ivoUm4awalDGELJoHVrdK3x2WKDzsAxF2889ad-DDnc7bwFNJRdW4y1VZdN_CA',
+      skills: [
+        { label: 'Performance Marketing', value: 94 },
+        { label: 'SEO & Content', value: 89 },
+        { label: 'Conversion Optim.', value: 86 },
+      ],
     },
   ];
 
@@ -88,7 +144,7 @@ export default function TeamSection() {
             ))}
           </div>
 
-          {/* Stats Panel */}
+          {/* Stats Panel with progress meters */}
           <motion.div
             initial={{ opacity: 0, scale: 0.96 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -120,6 +176,12 @@ export default function TeamSection() {
                 <div className="font-label-technical text-xs opacity-90 uppercase tracking-widest font-bold">
                   SHARED WORKFLOW
                 </div>
+              </div>
+              {/* Progress meters */}
+              <div className="pt-2 border-t border-white/20">
+                <StatMeter label="Client Satisfaction" value={99} delay={0.2} />
+                <StatMeter label="On-Time Delivery" value={98} delay={0.4} />
+                <StatMeter label="Code Ownership" value={100} delay={0.6} />
               </div>
             </div>
           </motion.div>
@@ -169,12 +231,23 @@ export default function TeamSection() {
                   <h4 className="font-headline-md text-lg font-bold text-[#1a1c1b] uppercase mb-1">
                     {member.name}
                   </h4>
-                  <p className="font-label-technical text-[10px] text-[#b85c24] mb-3 font-bold uppercase tracking-widest">
+                  <p className="font-label-technical text-[10px] text-[#b85c24] mb-4 font-bold uppercase tracking-widest">
                     {member.role}
                   </p>
-                  <p className="font-body-md text-xs text-[#55433a] leading-relaxed">
+                  <p className="font-body-md text-xs text-[#55433a] leading-relaxed mb-5">
                     {member.bio}
                   </p>
+                  {/* Skill Progress Bars */}
+                  <div className="glass-panel p-3 rounded-xs">
+                    {member.skills.map((skill, i) => (
+                      <ProgressBar
+                        key={i}
+                        label={skill.label}
+                        value={skill.value}
+                        delay={idx * 0.1 + i * 0.15}
+                      />
+                    ))}
+                  </div>
                 </div>
               </motion.div>
             ))}
