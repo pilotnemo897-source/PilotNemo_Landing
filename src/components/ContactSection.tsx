@@ -206,7 +206,7 @@ export default function ContactSection() {
                   value={formData.details}
                   onChange={(e) => setFormData({ ...formData, details: e.target.value })}
                   placeholder="Tell us about your project, goals, and target audience..."
-                  className="form-input resize-none" rows={4}
+                  className="form-input resize-none"
                 />
               </div>
 
