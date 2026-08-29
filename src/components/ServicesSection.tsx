@@ -29,7 +29,7 @@ export default function ServicesSection() {
     {
       title: 'Branding & Creative',
       desc: 'Strategic brand identity development, visual language systems, and compelling creative direction for digital touchpoints.',
-      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCjCV_UEYyVTFVwCHY8JYU4LpK7pST95317pC-_w4i6VfwuCnqm4M1jswTRExhwCEzRqwgOpi4kJ7t_Ba4TNMjf1QGJYJlcHkxNX8XH_w58ujTZBkLv9HLggZbkc2_vcDTtdi9j7ukSD2ML4sOb196yPVWxcpiW0BGJADHoQHA6h3IINdnI2hSwcxKeEUvQ8i3Tw6OI0t7lgThfjYnexiva4MjXrBVSHuV3AWMO1dpvlMiEZmnWUxgH5r03PLWwGKzfSL1MukACklSMbtc',
+      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCjCV_UEYyVTFVwCHY8JYU4LpK7pST95317pC-_w4i6VfwuCnqm4M1jswTRExhwCEzRqwgOpi4kJ7t_Ba4TNMjf1QGJYJlcHkxNX8XH_w58ujTZBkLv9HLggZbkc2_vcDTtdi9j7ukSD2ML4sOb196yPVWxcpiW0BGJADHoQHA6h3IINdnI2hSwcxKeEUvQ8i3Tw6OI0t7lgThfjYnexiva4MjXrBRVSHuV3AWMO1dpvlMiEZmnWUxgH5r03PLWwGKzfSL1MukACklSMbtc',
       tags: ['Identity', 'Guidelines', 'Motion', '3D', 'Copywriting'],
     },
     {
@@ -43,23 +43,25 @@ export default function ServicesSection() {
   const workflowSteps = ['IDEA', 'STRATEGY', 'DESIGN', 'DEVELOPMENT', 'LAUNCH', 'GROWTH'];
 
   return (
-    <section id="services" className="py-12 border-t border-transparent relative">
+    <section id="services" className="py-16 border-t border-white/8 relative">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-8 md:px-16">
         {/* Header */}
-        <header className="pb-10 border-b border-transparent relative">
-          <div className="font-label-technical text-xs text-tech-accent mb-4 tracking-widest uppercase font-bold">
+        <header className="pb-10 border-b border-white/8 relative mb-10">
+          <div className="font-label-technical text-xs text-blue-300 mb-4 tracking-widest uppercase font-bold">
             02 / WHAT WE DO
           </div>
-          <h2 className="font-headline-lg text-4xl sm:text-6xl text-on-surface mb-4 max-w-3xl font-extrabold">
-            One team. Multiple digital capabilities.
+          <h2 className="font-headline-lg text-4xl sm:text-6xl text-white mb-4 max-w-3xl font-extrabold">
+            One team.{' '}
+            <span className="text-blue-300">Multiple digital</span>{' '}
+            capabilities.
           </h2>
-          <p className="font-body-lg text-base sm:text-lg text-on-surface-variant max-w-2xl font-normal leading-relaxed">
+          <p className="font-body-lg text-base sm:text-lg text-blue-100/70 max-w-2xl font-normal leading-relaxed">
             From product design to development and digital growth, PilotNemo brings the essential capabilities together in one connected workflow.
           </p>
         </header>
 
         {/* Services Grid */}
-        <div className="py-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="py-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((s, idx) => (
             <motion.div
               key={idx}
@@ -67,27 +69,28 @@ export default function ServicesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.15 }}
               transition={{ duration: 0.5, delay: idx * 0.08 }}
-              className="glass-panel p-5 sm:p-6 flex flex-col justify-between h-full relative group transition-all duration-300 hover:-translate-y-1 hover:shadow-xl min-h-[410px] rounded-xs"
+              whileHover={{ y: -6, boxShadow: '0 20px 50px rgba(0,0,0,0.25)' }}
+              className="bg-white p-6 flex flex-col justify-between h-full relative group transition-all duration-300 min-h-[410px] rounded-2xl shadow-md border border-white/80"
             >
-              <div className="mb-4 overflow-hidden bg-transparent flex items-center justify-center">
+              <div className="mb-5 overflow-hidden flex items-center justify-center bg-[#f0f4ff] rounded-xl p-3">
                 <img
                   src={s.img}
                   alt={s.title}
-                  className="w-full h-36 object-contain opacity-90 group-hover:opacity-100 group-hover:scale-103 transition-all duration-500"
+                  className="w-full h-36 object-contain group-hover:scale-105 transition-all duration-500"
                 />
               </div>
               <div className="mt-auto">
-                <h3 className="font-headline-md text-2xl text-white mb-3 font-bold">
+                <h3 className="font-headline-md text-2xl text-[#002D72] mb-2 font-bold">
                   {s.title}
                 </h3>
-                <p className="font-body-md text-sm text-gray-300 mb-4 leading-relaxed font-normal">
+                <p className="font-body-md text-sm text-[#374f8a] mb-4 leading-relaxed font-normal">
                   {s.desc}
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {s.tags.map((t, i) => (
                     <span
                       key={i}
-                      className="font-label-technical text-[10px] px-2.5 py-1 border border-white/15 text-gray-300 bg-white/5 rounded-xs font-semibold"
+                      className="font-label-technical text-[10px] px-2.5 py-1 border border-[#002D72]/15 text-[#002D72] bg-[#002D72]/6 rounded-full font-semibold"
                     >
                       {t}
                     </span>
@@ -99,11 +102,11 @@ export default function ServicesSection() {
         </div>
 
         {/* Process Flow Diagram */}
-        <div className="py-8 border-t border-transparent relative">
-          <div className="font-label-technical text-xs text-muted-text mb-4 tracking-widest uppercase font-bold">
+        <div className="py-8 border-t border-white/8 mt-4">
+          <div className="font-label-technical text-xs text-blue-300/70 mb-5 tracking-widest uppercase font-bold">
             WORKFLOW ARCHITECTURE
           </div>
-          <div className="flex flex-col md:flex-row items-center overflow-x-auto pb-4 scrollbar-hide justify-start gap-4">
+          <div className="flex flex-col md:flex-row items-center overflow-x-auto pb-4 scrollbar-hide justify-start gap-3">
             {workflowSteps.map((step, idx) => (
               <motion.div
                 key={idx}
@@ -111,14 +114,14 @@ export default function ServicesSection() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.08, duration: 0.4 }}
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ scale: 1.06 }}
                 className="flex items-center shrink-0"
               >
-                <span className="font-label-technical text-xs px-5 py-2.5 border border-transparent bg-white/80 font-bold text-on-surface rounded-xs shadow-xs transition-colors hover:border-tech-accent">
+                <span className="font-label-technical text-xs px-5 py-2.5 border border-white/20 bg-white/10 backdrop-blur-sm font-bold text-white rounded-full shadow-sm transition-colors hover:border-blue-400 hover:bg-blue-400/20">
                   {step}
                 </span>
                 {idx < workflowSteps.length - 1 && (
-                  <span className="material-symbols-outlined text-tech-accent mx-3 text-lg">
+                  <span className="material-symbols-outlined text-blue-400 mx-2 text-lg">
                     arrow_right_alt
                   </span>
                 )}

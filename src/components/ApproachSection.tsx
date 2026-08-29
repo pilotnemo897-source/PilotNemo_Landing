@@ -86,24 +86,24 @@ export default function ApproachSection({ onStartProject, onExploreServices }: A
   ];
 
   return (
-    <section id="approach" className="py-12 border-t border-transparent relative">
+    <section id="approach" className="py-16 border-t border-white/8 relative">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-8 md:px-16">
         {/* Header Section */}
         <header className="mb-12 border-b border-transparent pb-8">
           <div className="flex items-center gap-2 mb-4">
             <span className="material-symbols-outlined text-xs text-tech-accent">add</span>
-            <span className="font-label-technical text-xs text-muted-text font-bold uppercase tracking-widest">
+            <span className="font-label-technical text-xs text-blue-300/70 font-bold uppercase tracking-widest">
               03 / OUR APPROACH
             </span>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-end">
             <div className="md:col-span-7">
-              <h2 className="font-headline-lg text-4xl sm:text-6xl text-on-surface font-extrabold leading-tight">
-                Strategy first. Built for what comes next.
+              <h2 className="font-headline-lg text-4xl sm:text-6xl text-white font-extrabold leading-tight">
+                Strategy first. <span className="text-blue-300">Built for what comes next.</span>
               </h2>
             </div>
             <div className="md:col-span-5">
-              <p className="font-body-lg text-base sm:text-lg text-on-surface-variant border-l-2 border-tech-accent/40 pl-6 font-medium leading-relaxed">
+              <p className="font-body-lg text-base sm:text-lg text-blue-100/70 border-l-2 border-blue-400/40 pl-6 font-medium leading-relaxed">
                 At PilotNemo, we don't start with code. We first understand the business, the users and the problem — then design and build the right digital solution.
               </p>
             </div>
@@ -114,7 +114,7 @@ export default function ApproachSection({ onStartProject, onExploreServices }: A
         <div className="mb-16">
           <div className="flex items-center gap-2 mb-8">
             <span className="material-symbols-outlined text-xs text-tech-accent">add</span>
-            <h3 className="font-label-technical text-xs text-on-surface font-bold uppercase tracking-widest">
+            <h3 className="font-label-technical text-xs text-white font-bold uppercase tracking-widest">
               SECTION 01 — OUR STRATEGY
             </h3>
           </div>
@@ -125,7 +125,7 @@ export default function ApproachSection({ onStartProject, onExploreServices }: A
               <span className="font-label-technical text-[9px] text-tech-accent tracking-widest uppercase font-bold">WORKFLOW PROGRESS</span>
               <span className="font-label-technical text-[9px] text-muted-text font-bold">IDEA → GROWTH</span>
             </div>
-            <div className="h-[2px] w-full bg-on-surface/10 rounded-full overflow-hidden">
+            <div className="h-[2px] w-full bg-white/10 rounded-full overflow-hidden">
               <motion.div
                 className="h-full bg-tech-accent rounded-full"
                 initial={{ width: 0 }}
@@ -144,7 +144,7 @@ export default function ApproachSection({ onStartProject, onExploreServices }: A
           {/* Strategy Steps — animated progress timeline */}
           <div className="relative">
             {/* Connector line behind cards (desktop) */}
-            <div className="hidden md:block absolute top-9 left-0 right-0 h-[2px] bg-on-surface/8 z-0">
+            <div className="hidden md:block absolute top-9 left-0 right-0 h-[2px] bg-white/8 z-0">
               <motion.div
                 className="h-full bg-tech-accent/40"
                 initial={{ width: 0 }}
@@ -178,7 +178,7 @@ export default function ApproachSection({ onStartProject, onExploreServices }: A
                   </div>
 
                   {/* Card */}
-                  <div className="w-full p-4 bg-surface-container-low border border-transparent group-hover:border-tech-accent/30 group-hover:bg-white transition-all rounded-xs shadow-xs hover:shadow-sm">
+                  <div className="w-full p-4 bg-white border border-white/80 group-hover:border-blue-400/30 group-hover:shadow-lg transition-all rounded-xl shadow-sm">
                     <div className="mb-4 overflow-hidden bg-transparent flex justify-center items-center">
                       <img
                         src={step.img}
@@ -186,19 +186,19 @@ export default function ApproachSection({ onStartProject, onExploreServices }: A
                         className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500 mix-blend-multiply"
                       />
                     </div>
-                    <h4 className="font-headline-md text-lg text-on-surface font-bold mb-3">
+                    <h4 className="font-headline-md text-lg text-[#002D72] font-bold mb-3">
                       {step.title}
                     </h4>
                     <ul className="space-y-1.5 font-body-md text-xs text-on-surface-variant font-medium">
                       {step.items.map((item, i) => (
-                        <li key={i} className="font-semibold flex items-center gap-1.5">
+                        <li key={i} className="font-semibold flex items-center gap-1.5 text-[#374f8a]">
                           <span className="w-1 h-1 rounded-full bg-tech-accent shrink-0" />
                           {item}
                         </li>
                       ))}
                     </ul>
                     {/* Mini progress strip per step */}
-                    <div className="mt-4 h-[2px] w-full bg-on-surface/8 rounded-full overflow-hidden">
+                    <div className="mt-4 h-[2px] w-full bg-[#002D72]/10 rounded-full overflow-hidden">
                       <motion.div
                         className="h-full bg-tech-accent"
                         initial={{ width: 0 }}
@@ -213,10 +213,10 @@ export default function ApproachSection({ onStartProject, onExploreServices }: A
             </div>
           </div>
 
-          <div className="mt-4 flex items-center justify-center p-3 border border-transparent bg-white/50 rounded-xs shadow-2xs">
-            <p className="font-label-technical text-xs text-on-surface font-bold tracking-widest uppercase text-center">
-              FROM IDEA <span className="text-tech-accent mx-2 font-extrabold">→</span> PRODUCT{' '}
-              <span className="text-tech-accent mx-2 font-extrabold">→</span> GROWTH. One connected process. One team.
+          <div className="mt-4 flex items-center justify-center p-4 border border-white/10 bg-white/8 backdrop-blur-sm rounded-xl">
+            <p className="font-label-technical text-xs text-white font-bold tracking-widest uppercase text-center">
+              FROM IDEA <span className="text-blue-400 mx-2 font-extrabold">→</span> PRODUCT{' '}
+              <span className="text-blue-400 mx-2 font-extrabold">→</span> GROWTH. One connected process. One team.
             </p>
           </div>
           </div>
@@ -226,23 +226,23 @@ export default function ApproachSection({ onStartProject, onExploreServices }: A
         <div className="mb-16">
           <div className="flex items-center gap-2 mb-4">
             <span className="material-symbols-outlined text-xs text-tech-accent">add</span>
-            <h3 className="font-label-technical text-xs text-on-surface font-bold uppercase tracking-widest">
+            <h3 className="font-label-technical text-xs text-white font-bold uppercase tracking-widest">
               SECTION 02 — WHY PILOTNEMO
             </h3>
           </div>
-          <h4 className="font-headline-md text-2xl sm:text-3xl text-on-surface font-bold mb-6">
+          <h4 className="font-headline-md text-2xl sm:text-3xl text-white font-bold mb-6">
             More than development. A complete digital partner.
           </h4>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {whyBlocks.map((block, idx) => (
               <div
                 key={idx}
-                className="p-6 border border-transparent hover:border-tech-accent/40 transition-all bg-surface-container-low rounded-xs shadow-xs"
+                className="p-6 border border-white/10 bg-white/8 backdrop-blur-sm hover:border-blue-400/40 hover:bg-white/12 transition-all rounded-2xl"
               >
-                <h5 className="font-headline-md text-xl text-on-surface font-bold mb-4">
+                <h5 className="font-headline-md text-xl text-white font-bold mb-4">
                   {block.title}
                 </h5>
-                <p className="font-body-md text-sm text-on-surface-variant font-medium leading-relaxed">
+                <p className="font-body-md text-sm text-blue-100/70 font-medium leading-relaxed">
                   {block.desc}
                 </p>
               </div>
@@ -254,11 +254,11 @@ export default function ApproachSection({ onStartProject, onExploreServices }: A
         <div className="mb-16">
           <div className="flex items-center gap-2 mb-4">
             <span className="material-symbols-outlined text-xs text-tech-accent">add</span>
-            <h3 className="font-label-technical text-xs text-on-surface font-bold uppercase tracking-widest">
+            <h3 className="font-label-technical text-xs text-white font-bold uppercase tracking-widest">
               SECTION 03 — PILOTNEMO DIFFERENCE
             </h3>
           </div>
-          <h4 className="font-headline-md text-2xl sm:text-4xl text-on-surface font-extrabold mb-6 max-w-3xl leading-tight">
+          <h4 className="font-headline-md text-2xl sm:text-4xl text-white font-extrabold mb-6 max-w-3xl leading-tight">
             Why work with multiple teams when one team can connect everything?
           </h4>
 
@@ -286,7 +286,7 @@ export default function ApproachSection({ onStartProject, onExploreServices }: A
                   {/* Step 1 */}
                   <div className="p-4 bg-white border border-transparent rounded-xs shadow-2xs relative">
                     <div className="flex items-center justify-between mb-1">
-                      <span className="font-headline-md text-sm font-bold text-on-surface">
+                      <span className="font-headline-md text-sm font-bold text-[#002D72]">
                         01. Strategy → Agency A
                       </span>
                       <span className="font-label-small text-[10px] text-red-600 font-semibold bg-red-50 px-2 py-0.5 rounded-xs">
@@ -309,7 +309,7 @@ export default function ApproachSection({ onStartProject, onExploreServices }: A
                   {/* Step 2 */}
                   <div className="p-4 bg-white border border-transparent rounded-xs shadow-2xs relative">
                     <div className="flex items-center justify-between mb-1">
-                      <span className="font-headline-md text-sm font-bold text-on-surface">
+                      <span className="font-headline-md text-sm font-bold text-[#002D72]">
                         02. Design → Agency B
                       </span>
                       <span className="font-label-small text-[10px] text-red-600 font-semibold bg-red-50 px-2 py-0.5 rounded-xs">
@@ -332,7 +332,7 @@ export default function ApproachSection({ onStartProject, onExploreServices }: A
                   {/* Step 3 */}
                   <div className="p-4 bg-white border border-transparent rounded-xs shadow-2xs relative">
                     <div className="flex items-center justify-between mb-1">
-                      <span className="font-headline-md text-sm font-bold text-on-surface">
+                      <span className="font-headline-md text-sm font-bold text-[#002D72]">
                         03. Development → Freelancers
                       </span>
                       <span className="font-label-small text-[10px] text-red-600 font-semibold bg-red-50 px-2 py-0.5 rounded-xs">
@@ -425,20 +425,20 @@ export default function ApproachSection({ onStartProject, onExploreServices }: A
         <div className="mb-16">
           <div className="flex items-center gap-2 mb-6">
             <span className="material-symbols-outlined text-xs text-tech-accent">add</span>
-            <h3 className="font-label-technical text-xs text-on-surface font-bold uppercase tracking-widest">
+            <h3 className="font-label-technical text-xs text-white font-bold uppercase tracking-widest">
               SECTION 04 — WHAT WE BRING TO THE TABLE
             </h3>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 border border-transparent bg-surface-container-low rounded-xs overflow-hidden shadow-xs">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 border border-white/10 bg-white/8 backdrop-blur-sm rounded-2xl overflow-hidden">
             {matrixData.map((col, idx) => (
               <div
                 key={idx}
-                className="p-5 border-b sm:border-b-0 sm:border-r border-transparent last:border-r-0"
+                className="p-5 border-b sm:border-b-0 sm:border-r border-white/8 last:border-r-0"
               >
                 <h4 className="font-label-technical text-xs text-tech-accent font-bold mb-4">
                   {col.category}
                 </h4>
-                <ul className="space-y-2 font-body-md text-on-surface-variant font-medium text-sm">
+                <ul className="space-y-2 font-body-md text-blue-100/70 font-medium text-sm">
                   {col.items.map((item, i) => (
                     <li key={i} className="font-semibold">
                       {item}
@@ -452,16 +452,16 @@ export default function ApproachSection({ onStartProject, onExploreServices }: A
 
         {/* CTA Section */}
         <div className="border-t border-transparent pt-10 md:pt-14 pb-6 flex flex-col items-center justify-center text-center">
-          <h3 className="font-headline-md md:font-display-lg text-3xl md:text-5xl text-on-surface font-extrabold mb-6 max-w-4xl leading-tight">
+          <h3 className="font-headline-md md:font-display-lg text-3xl md:text-5xl text-white font-extrabold mb-6 max-w-4xl leading-tight">
             HAVE AN IDEA? LET'S TURN IT INTO SOMETHING REAL.
           </h3>
-          <p className="font-body-lg text-base sm:text-lg text-on-surface-variant font-medium max-w-2xl mb-6 leading-relaxed">
+          <p className="font-body-lg text-base sm:text-lg text-blue-100/70 font-medium max-w-2xl mb-6 leading-relaxed">
             Whether you are starting from an idea, improving an existing product or looking to grow your digital presence, PilotNemo can help you plan, design, build and grow it.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <button
               onClick={onStartProject}
-              className="flex items-center justify-center gap-2 px-6 py-3 bg-tech-accent text-white hover:bg-primary transition-colors font-label-technical text-xs font-bold uppercase tracking-widest rounded-xs group cursor-pointer shadow-sm"
+              className="flex items-center justify-center gap-2 px-8 py-4 bg-[#4a8ef0] text-white hover:bg-blue-400 transition-all font-label-technical text-xs font-bold uppercase tracking-widest rounded-full group cursor-pointer shadow-lg hover:shadow-blue-500/30"
             >
               START A CONVERSATION
               <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">
@@ -470,7 +470,7 @@ export default function ApproachSection({ onStartProject, onExploreServices }: A
             </button>
             <button
               onClick={onExploreServices}
-              className="flex items-center justify-center gap-2 px-6 py-3 border border-transparent bg-surface-container-highest text-on-surface hover:bg-surface-dim transition-colors font-label-technical text-xs font-bold uppercase tracking-widest rounded-xs group cursor-pointer"
+              className="flex items-center justify-center gap-2 px-8 py-4 border border-white/20 bg-white/10 text-white hover:bg-white/20 transition-all font-label-technical text-xs font-bold uppercase tracking-widest rounded-full group cursor-pointer backdrop-blur-sm"
             >
               EXPLORE OUR SERVICES
               <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">

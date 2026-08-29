@@ -1,14 +1,14 @@
 import { motion } from 'framer-motion';
 
 const ProgressBar = ({ label, value, delay = 0 }: { label: string; value: number; delay?: number }) => (
-  <div className="mb-2">
+  <div className="mb-2.5">
     <div className="flex justify-between mb-1">
-      <span className="font-label-technical text-[9px] text-gray-400 tracking-widest uppercase font-bold">{label}</span>
-      <span className="font-label-technical text-[9px] text-tech-accent font-bold">{value}%</span>
+      <span className="font-label-technical text-[9px] text-[#374f8a] tracking-widest uppercase font-bold">{label}</span>
+      <span className="font-label-technical text-[9px] text-[#4a8ef0] font-bold">{value}%</span>
     </div>
-    <div className="h-[2px] w-full bg-white/10 rounded-full overflow-hidden">
+    <div className="h-[2px] w-full bg-[#002D72]/10 rounded-full overflow-hidden">
       <motion.div
-        className="h-full bg-tech-accent rounded-full"
+        className="h-full bg-[#4a8ef0] rounded-full"
         initial={{ width: 0 }}
         whileInView={{ width: `${value}%` }}
         viewport={{ once: true }}
@@ -38,10 +38,26 @@ const StatMeter = ({ label, value, delay = 0 }: { label: string; value: number; 
 
 export default function TeamSection() {
   const capabilities = [
-    { title: 'PRODUCT', tags: ['STRATEGY', 'ROADMAP', 'ANALYTICS'] },
-    { title: 'DESIGN', tags: ['UI/UX', 'SYSTEMS', 'INTERACTION'] },
-    { title: 'ENGINEERING', tags: ['FRONTEND', 'BACKEND', 'DEVOPS'] },
-    { title: 'GROWTH', tags: ['SEO', 'MARKETING', 'CONVERSION'] },
+    {
+      title: 'PRODUCT',
+      tags: ['STRATEGY', 'ROADMAP', 'ANALYTICS'],
+      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAGYAD0cqclkryJR4BojRwwG_tOJ3WtrNaSngwWYChFd8D6wapj_t6XPUjqWju__E3fdNyyPIv8dapN7o038VU43x57pENRidZ_DQnueOvAC_InTJv7sR2I-e33_McT2fDCUEy_sZ2CTAWEQjQ_PVZ4WLxPBiKX4Y4LIX72fxZchAGhMQYjxLihvA2ptqSEmysEyn7HqpaYddWIF1suK3jI-9to1xJSpasKHqn0DMjp1x7orUTIZrqC5-5F6adgaqyZ_s_iz0ytjJPlKsA',
+    },
+    {
+      title: 'DESIGN',
+      tags: ['UI/UX', 'SYSTEMS', 'INTERACTION'],
+      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB_8NMmc43kqG7A8jn-f-uRvdaPDQJqT9RGQZ22orzZPQ7S-RpIEmXmolyatwBxgM-H1TMA6ZcCk27TqDWVlDwon-A2zyAHBkECjKRI8JnQU1XwmRUjdbbJLAt1lo7drAWaSwvYoobA2Se8UHsgtQwNSGV4-R9M_Rw2TpsVVUjMvLOwyYrU5MIW9lS59nFRivm3mAMCuDCg8pAPsO8DnQDmiclIccSiQ6QbTziYnH2YjwjlXq08pxAxBYl5pODE6J8q6yYwAXSyO2TCnAY',
+    },
+    {
+      title: 'ENGINEERING',
+      tags: ['FRONTEND', 'BACKEND', 'DEVOPS'],
+      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCrkX_7bkg9_solx9tD8vBo4CvqYwY38CXOo_s8rY5Pkmegff4LYawT0-sKelerngWo8cKXAaD3OE8rXIXPIJcrXxW-8D9UyXoMqzB5SlvhCMrPDMqrtSRoMJ87gXPtaeg6AeXdq9Dheewc-N08BDqtRtHJ5kMZN2fP8iD9pCATWLWy2ZCrjb2WxrMscMaeJE6McXbCQwaVJwkRwlvvu2CweKMFOuIrt2xL7XqZkp9QTnvbiWFfFdBNSOV2pM7GbwsffJgcQQrQHb8WxNM',
+    },
+    {
+      title: 'GROWTH',
+      tags: ['SEO', 'MARKETING', 'CONVERSION'],
+      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA45OBCBm564L0zsvporIiYAgAScylxARv16qtNcm22GhBOftkmAtwWYsX5P86m0bZAUTtg6Kd-boo7WzCZZC-qKJS7aZ8Qdv-oPJ3J2s3WvSSpOCT6fBx4VJ5i1Op8Fdw2zv6wSIxsPmIOQTc68Ir-7JEauFx3_LqsqxDyHpwvWqhMPzzXrgrya7rBbZVxQZSppaWRU5MPudg_K8znZQvi7xpnHJWRcApzuY50FBUbUuvIRvAF_9TH3cAPzE_dhS9XcBHLNQNMmTD1ihM',
+    },
   ];
 
   const teamMembers = [
@@ -92,20 +108,21 @@ export default function TeamSection() {
   ];
 
   return (
-    <section id="team" className="py-12 border-t border-transparent relative">
+    <section id="team" className="py-16 border-t border-white/8 relative">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-8 md:px-16">
         {/* Header */}
-        <header className="mb-10 border-b border-transparent pb-6">
+        <header className="mb-10 border-b border-white/8 pb-8">
           <div className="flex items-center gap-2 mb-4">
-            <span className="material-symbols-outlined text-xs text-tech-accent">add</span>
-            <span className="font-label-technical text-xs text-tech-accent tracking-widest uppercase font-bold">
+            <span className="material-symbols-outlined text-xs text-blue-400">add</span>
+            <span className="font-label-technical text-xs text-blue-300 tracking-widest uppercase font-bold">
               04 / THE PEOPLE
             </span>
           </div>
-          <h2 className="font-headline-lg text-4xl sm:text-6xl text-on-surface mb-6 max-w-3xl font-extrabold">
-            People behind the products.
+          <h2 className="font-headline-lg text-4xl sm:text-6xl text-white mb-6 max-w-3xl font-extrabold">
+            People behind the{' '}
+            <span className="text-blue-300">products.</span>
           </h2>
-          <p className="font-body-lg text-base sm:text-lg text-on-surface-variant max-w-2xl font-normal">
+          <p className="font-body-lg text-base sm:text-lg text-blue-100/70 max-w-2xl font-normal">
             A multidisciplinary team combining product thinking, engineering, design and digital growth.
           </p>
         </header>
@@ -113,7 +130,7 @@ export default function TeamSection() {
         {/* Bento Grid: Capabilities & Stats */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 mb-12">
           {/* Capabilities Grid */}
-          <div className="md:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="md:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
             {capabilities.map((cap, idx) => (
               <motion.div
                 key={idx}
@@ -121,20 +138,32 @@ export default function TeamSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.08, duration: 0.5 }}
-                whileHover={{ y: -5 }}
-                className="glass-panel p-6 relative flex flex-col justify-between min-h-[190px] rounded-xs"
+                whileHover={{ y: -4, boxShadow: '0 12px 32px rgba(0,0,0,0.2)' }}
+                className="bg-white p-4 relative rounded-xl shadow-md border border-white/80 transition-all group"
               >
-                <span className="absolute top-4 right-4 material-symbols-outlined text-xs text-[#929292]">
-                  add
-                </span>
-                <h3 className="font-headline-md text-2xl text-white mb-4 font-bold">
-                  {cap.title}
-                </h3>
-                <div className="flex flex-wrap gap-2">
+                {/* Title row */}
+                <div className="flex items-center justify-between mb-3">
+                  <h3 className="font-label-technical text-xs text-[#002D72] font-bold tracking-widest">
+                    {cap.title}
+                  </h3>
+                  <span className="material-symbols-outlined text-xs text-[#002D72]/20">add</span>
+                </div>
+
+                {/* Illustration */}
+                <div className="w-full rounded-lg overflow-hidden bg-[#f0f4ff] mb-3 flex items-center justify-center">
+                  <img
+                    src={cap.img}
+                    alt={cap.title}
+                    className="w-full h-24 object-contain p-2 group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+
+                {/* Tags */}
+                <div className="flex flex-wrap gap-1.5">
                   {cap.tags.map((t, i) => (
                     <span
                       key={i}
-                      className="font-label-technical text-[10px] px-3 py-1 border border-white/15 rounded-xs bg-surface-container-low text-on-surface font-bold"
+                      className="font-label-technical text-[9px] px-2.5 py-1 border border-[#002D72]/12 rounded-full bg-[#002D72]/5 text-[#002D72] font-bold"
                     >
                       {t}
                     </span>
@@ -144,41 +173,40 @@ export default function TeamSection() {
             ))}
           </div>
 
-          {/* Stats Panel with progress meters */}
+          {/* Stats Panel */}
           <motion.div
             initial={{ opacity: 0, scale: 0.96 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="md:col-span-4 glass-panel p-8 flex flex-col justify-between min-h-[340px] bg-gradient-to-br from-[#0A235C] to-[#1e3e62] text-white rounded-xs"
+            className="md:col-span-4 bg-gradient-to-br from-[#003894] to-[#001f52] p-8 flex flex-col justify-between min-h-[340px] text-white rounded-2xl shadow-2xl border border-white/10"
           >
             <div>
-              <div className="font-label-technical text-xs mb-2 opacity-90 uppercase tracking-widest font-bold">
+              <div className="font-label-technical text-xs mb-2 opacity-80 uppercase tracking-widest font-bold text-blue-300">
                 TEAM METRICS
               </div>
-              <div className="border-t border-white/20 my-4 w-full" />
+              <div className="border-t border-white/15 my-4 w-full" />
             </div>
-            <div className="space-y-6">
+            <div className="space-y-5">
               <div>
                 <div className="font-headline-lg text-5xl font-extrabold">05+</div>
-                <div className="font-label-technical text-xs opacity-90 uppercase tracking-widest font-bold">
+                <div className="font-label-technical text-xs opacity-70 uppercase tracking-widest font-bold mt-1">
                   CORE CAPABILITIES
                 </div>
               </div>
               <div>
                 <div className="font-headline-lg text-5xl font-extrabold">08+</div>
-                <div className="font-label-technical text-xs opacity-90 uppercase tracking-widest font-bold">
+                <div className="font-label-technical text-xs opacity-70 uppercase tracking-widest font-bold mt-1">
                   DISCIPLINES
                 </div>
               </div>
               <div>
                 <div className="font-headline-md text-3xl font-extrabold mb-1">ONE</div>
-                <div className="font-label-technical text-xs opacity-90 uppercase tracking-widest font-bold">
+                <div className="font-label-technical text-xs opacity-70 uppercase tracking-widest font-bold">
                   SHARED WORKFLOW
                 </div>
               </div>
-              {/* Progress meters */}
-              <div className="pt-2 border-t border-white/20">
+              <div className="pt-2 border-t border-white/15">
                 <StatMeter label="Client Satisfaction" value={99} delay={0.2} />
                 <StatMeter label="On-Time Delivery" value={98} delay={0.4} />
                 <StatMeter label="Code Ownership" value={100} delay={0.6} />
@@ -193,9 +221,9 @@ export default function TeamSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="py-10 border-y border-transparent mb-12 flex items-center justify-center text-center px-4"
+          className="py-10 border-y border-white/8 mb-12 flex items-center justify-center text-center px-4"
         >
-          <blockquote className="font-headline-lg text-xl sm:text-2xl text-primary max-w-4xl mx-auto font-bold italic leading-snug">
+          <blockquote className="font-headline-lg text-xl sm:text-2xl text-white max-w-4xl mx-auto font-bold italic leading-snug opacity-90">
             "Different skills. One shared responsibility: building something useful."
           </blockquote>
         </motion.div>
@@ -203,8 +231,8 @@ export default function TeamSection() {
         {/* Core Team Members Grid */}
         <div>
           <div className="flex items-center gap-2 mb-8">
-            <span className="material-symbols-outlined text-xs text-tech-accent">add</span>
-            <span className="font-label-technical text-xs text-on-surface-variant tracking-widest uppercase font-bold">
+            <span className="material-symbols-outlined text-xs text-blue-400">add</span>
+            <span className="font-label-technical text-xs text-blue-200/70 tracking-widest uppercase font-bold">
               CORE TEAM
             </span>
           </div>
@@ -216,29 +244,29 @@ export default function TeamSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1, duration: 0.5 }}
-                whileHover={{ y: -6 }}
-                className="group cursor-pointer bg-white p-3 border border-transparent rounded-xs shadow-xs"
+                whileHover={{ y: -6, boxShadow: '0 20px 50px rgba(0,0,0,0.3)' }}
+                className="group cursor-pointer bg-white p-3 rounded-2xl shadow-md border border-white/80 transition-all"
               >
-                <div className="aspect-[3/4] mb-4 overflow-hidden bg-[#e2e3e0] relative rounded-xs">
+                <div className="aspect-[3/4] mb-4 overflow-hidden bg-[#e8eef8] relative rounded-xl">
                   <img
                     src={member.img}
                     alt={member.name}
                     className="w-full h-full object-cover grayscale opacity-85 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
                   />
-                  <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black/50 to-transparent" />
                 </div>
-                <div className="border-t border-[#191919]/10 pt-4">
-                  <h4 className="font-headline-md text-lg font-bold text-on-surface uppercase mb-1">
+                <div className="border-t border-[#002D72]/8 pt-4 px-1">
+                  <h4 className="font-headline-md text-lg font-bold text-[#002D72] uppercase mb-1">
                     {member.name}
                   </h4>
-                  <p className="font-label-technical text-[10px] text-tech-accent mb-4 font-bold uppercase tracking-widest">
+                  <p className="font-label-technical text-[10px] text-[#4a8ef0] mb-4 font-bold uppercase tracking-widest">
                     {member.role}
                   </p>
-                  <p className="font-body-md text-xs text-on-surface-variant leading-relaxed mb-5">
+                  <p className="font-body-md text-xs text-[#374f8a] leading-relaxed mb-4">
                     {member.bio}
                   </p>
-                  {/* Skill Progress Bars */}
-                  <div className="glass-panel p-3 rounded-xs">
+                  {/* Skill Progress Bars — white card, navy text */}
+                  <div className="bg-[#f0f4ff] p-3 rounded-xl border border-[#002D72]/8">
                     {member.skills.map((skill, i) => (
                       <ProgressBar
                         key={i}

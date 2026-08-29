@@ -1,60 +1,87 @@
 @import "tailwindcss";
 
 @theme {
-  --color-structural-bg: #faf9f6;
-  --color-surface: #faf9f6;
-  --color-surface-container-low: #f8fafc;
-  --color-surface-container: #f1f5f9;
-  --color-surface-container-highest: #e2e8f0;
-  --color-surface-dim: #cbd5e1;
+  /* ── Core Brand Palette ── */
+  --color-structural-bg: #002D72;
+  --color-surface: #002D72;
+  --color-surface-container-low: #ffffff;
+  --color-surface-container: #f0f4ff;
+  --color-surface-container-highest: #dce6ff;
+  --color-surface-dim: #c0d0f0;
   --color-surface-bright: #ffffff;
-  --color-on-surface: #0A235C;
-  --color-on-surface-variant: #475569;
-  --color-tech-accent: #1e3e62;
-  --color-primary: #0A235C;
-  --color-primary-container: #1e3e62;
-  --color-on-primary: #ffffff;
-  --color-muted-text: #64748b;
-  --color-architectural-line: rgba(10, 35, 92, 0.08);
-  --color-glass-container: rgba(10, 35, 92, 0.95);
-  --color-outline: #94a3b8;
-  --color-outline-variant: #e2e8f0;
 
+  /* ── Text on dark navy bg ── */
+  --color-on-surface: #ffffff;
+  --color-on-surface-variant: #a8bfe8;
+
+  /* ── Accent / Brand ── */
+  --color-tech-accent: #4a8ef0;
+  --color-primary: #002D72;
+  --color-primary-container: #003894;
+  --color-on-primary: #ffffff;
+
+  /* ── Muted / Supporting ── */
+  --color-muted-text: #7a9fd4;
+  --color-architectural-line: rgba(255, 255, 255, 0.08);
+  --color-glass-container: #ffffff;
+  --color-outline: #4a8ef0;
+  --color-outline-variant: rgba(255,255,255,0.12);
+
+  /* ── Typography ── */
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-jakarta: 'Plus Jakarta Sans', sans-serif;
   --font-grotesk: 'Space Grotesk', monospace;
 
+  /* ── Spacing ── */
   --spacing-container-max-width: 1440px;
   --spacing-margin-desktop: 64px;
   --spacing-margin-mobile: 16px;
   --spacing-gutter: 16px;
 }
 
+/* ─────────────────────────────────────────── */
+/* BASE                                        */
+/* ─────────────────────────────────────────── */
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  background-color: #faf9f6;
-  color: #0A235C;
+  background-color: #002D72;
+  color: #ffffff;
   font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Milky Smooth White Background (Grid Removed) */
+/* ─────────────────────────────────────────── */
+/* BACKGROUND / LAYOUT                         */
+/* ─────────────────────────────────────────── */
 .architectural-grid {
-  background-color: #faf9f6;
-  background-image: none;
+  background-color: #002D72;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(74, 142, 240, 0.18) 0%, transparent 70%);
 }
 
-/* Glass Panel Styling with Navy backdrop */
+/* ─────────────────────────────────────────── */
+/* WIDGET CARD — White on Navy                 */
+/* ─────────────────────────────────────────── */
 .glass-panel {
-  background: rgba(10, 35, 92, 0.95);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
 }
 
-/* Material Symbols Icon helper */
+/* ─────────────────────────────────────────── */
+/* SECTION DIVIDERS                            */
+/* ─────────────────────────────────────────── */
+.section-divider {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ─────────────────────────────────────────── */
+/* MATERIAL SYMBOLS                            */
+/* ─────────────────────────────────────────── */
 .material-symbols-outlined {
   font-family: 'Material Symbols Outlined';
   font-weight: normal;
@@ -69,7 +96,9 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Custom Typography Utility Classes */
+/* ─────────────────────────────────────────── */
+/* TYPOGRAPHY UTILITIES                        */
+/* ─────────────────────────────────────────── */
 .font-headline-lg {
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: clamp(38px, 5vw, 60px);
@@ -124,34 +153,75 @@ body {
   font-weight: 400;
 }
 
-/* Smooth Global Transitions & Micro-Interactions */
+/* ─────────────────────────────────────────── */
+/* MICRO-INTERACTIONS                          */
+/* ─────────────────────────────────────────── */
 a, button, input, select, textarea {
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Custom Scrollbar styled for Navy & Slate */
+/* ─────────────────────────────────────────── */
+/* SCROLLBAR                                   */
+/* ─────────────────────────────────────────── */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
 }
-
 ::-webkit-scrollbar-track {
-  background: #f8fafc;
+  background: #001f52;
 }
-
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: rgba(74,142,240,0.45);
   border-radius: 3px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
-  background: #1e3e62;
+  background: #4a8ef0;
 }
 
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ─────────────────────────────────────────── */
+/* WHITE CARD INNER STYLES (text colours)      */
+/* ─────────────────────────────────────────── */
+.card-title   { color: #002D72; }
+.card-body    { color: #374f8a; }
+.card-muted   { color: #6b82b8; }
+.card-tag {
+  color: #002D72;
+  background: rgba(0,45,114,0.07);
+  border-color: rgba(0,45,114,0.18);
 }
-.scrollbar-hide {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+
+/* ─────────────────────────────────────────── */
+/* FORM INPUTS on white card                   */
+/* ─────────────────────────────────────────── */
+.form-input {
+  background: #f0f4ff;
+  border: 1px solid rgba(0,45,114,0.15);
+  color: #002D72;
+  border-radius: 4px;
+  padding: 10px 12px;
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.form-input::placeholder { color: #7a9fd4; }
+.form-input:focus {
+  outline: none;
+  border-color: #4a8ef0;
+  box-shadow: 0 0 0 3px rgba(74,142,240,0.15);
+  background: #ffffff;
+}
+
+/* ─────────────────────────────────────────── */
+/* GLOW ACCENT decoration                      */
+/* ─────────────────────────────────────────── */
+.accent-glow {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(80px);
+  opacity: 0.25;
 }

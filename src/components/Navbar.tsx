@@ -62,7 +62,7 @@ export default function Navbar({ activeSection = 'hero', onNavigate }: NavbarPro
                   src={logoSrc}
                   alt="PilotNemo"
                   className="h-16 w-auto object-contain"
-                  style={{ filter: 'brightness(0) saturate(100%) invert(30%) sepia(75%) saturate(351%) hue-rotate(183.9deg) brightness(70%) contrast(143%)' }}
+                  style={{ filter: 'brightness(0) invert(1)' }}
                 />
               </a>
 
@@ -75,8 +75,8 @@ export default function Navbar({ activeSection = 'hero', onNavigate }: NavbarPro
                     onClick={(e) => { e.preventDefault(); handleNavClick(item.id); }}
                     className={`text-xs uppercase tracking-widest transition-all ${
                       activeSection === item.id
-                        ? 'text-tech-accent font-bold border-b border-tech-accent pb-0.5'
-                        : 'text-on-surface-variant hover:text-tech-accent'
+                        ? 'text-blue-300 font-bold border-b border-blue-300 pb-0.5'
+                        : 'text-blue-200/70 hover:text-blue-300'
                     }`}
                   >
                     {item.label}
@@ -93,7 +93,7 @@ export default function Navbar({ activeSection = 'hero', onNavigate }: NavbarPro
               {/* Mobile menu trigger */}
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="md:hidden text-on-surface p-2 focus:outline-none cursor-pointer"
+                className="md:hidden text-white p-2 focus:outline-none cursor-pointer"
                 aria-label="Toggle Navigation Menu"
               >
                 <span className="material-symbols-outlined text-2xl">
