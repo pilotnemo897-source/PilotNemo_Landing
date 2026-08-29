@@ -41,22 +41,18 @@ export default function TeamSection() {
     {
       title: 'PRODUCT',
       tags: ['STRATEGY', 'ROADMAP', 'ANALYTICS'],
-      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAGYAD0cqclkryJR4BojRwwG_tOJ3WtrNaSngwWYChFd8D6wapj_t6XPUjqWju__E3fdNyyPIv8dapN7o038VU43x57pENRidZ_DQnueOvAC_InTJv7sR2I-e33_McT2fDCUEy_sZ2CTAWEQjQ_PVZ4WLxPBiKX4Y4LIX72fxZchAGhMQYjxLihvA2ptqSEmysEyn7HqpaYddWIF1suK3jI-9to1xJSpasKHqn0DMjp1x7orUTIZrqC5-5F6adgaqyZ_s_iz0ytjJPlKsA',
     },
     {
       title: 'DESIGN',
       tags: ['UI/UX', 'SYSTEMS', 'INTERACTION'],
-      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB_8NMmc43kqG7A8jn-f-uRvdaPDQJqT9RGQZ22orzZPQ7S-RpIEmXmolyatwBxgM-H1TMA6ZcCk27TqDWVlDwon-A2zyAHBkECjKRI8JnQU1XwmRUjdbbJLAt1lo7drAWaSwvYoobA2Se8UHsgtQwNSGV4-R9M_Rw2TpsVVUjMvLOwyYrU5MIW9lS59nFRivm3mAMCuDCg8pAPsO8DnQDmiclIccSiQ6QbTziYnH2YjwjlXq08pxAxBYl5pODE6J8q6yYwAXSyO2TCnAY',
     },
     {
       title: 'ENGINEERING',
       tags: ['FRONTEND', 'BACKEND', 'DEVOPS'],
-      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCrkX_7bkg9_solx9tD8vBo4CvqYwY38CXOo_s8rY5Pkmegff4LYawT0-sKelerngWo8cKXAaD3OE8rXIXPIJcrXxW-8D9UyXoMqzB5SlvhCMrPDMqrtSRoMJ87gXPtaeg6AeXdq9Dheewc-N08BDqtRtHJ5kMZN2fP8iD9pCATWLWy2ZCrjb2WxrMscMaeJE6McXbCQwaVJwkRwlvvu2CweKMFOuIrt2xL7XqZkp9QTnvbiWFfFdBNSOV2pM7GbwsffJgcQQrQHb8WxNM',
     },
     {
       title: 'GROWTH',
       tags: ['SEO', 'MARKETING', 'CONVERSION'],
-      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA45OBCBm564L0zsvporIiYAgAScylxARv16qtNcm22GhBOftkmAtwWYsX5P86m0bZAUTtg6Kd-boo7WzCZZC-qKJS7aZ8Qdv-oPJ3J2s3WvSSpOCT6fBx4VJ5i1Op8Fdw2zv6wSIxsPmIOQTc68Ir-7JEauFx3_LqsqxDyHpwvWqhMPzzXrgrya7rBbZVxQZSppaWRU5MPudg_K8znZQvi7xpnHJWRcApzuY50FBUbUuvIRvAF_9TH3cAPzE_dhS9XcBHLNQNMmTD1ihM',
     },
   ];
 
@@ -130,7 +126,7 @@ export default function TeamSection() {
         {/* Bento Grid: Capabilities & Stats */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 mb-12">
           {/* Capabilities Grid */}
-          <div className="md:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="md:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-2.5">
             {capabilities.map((cap, idx) => (
               <motion.div
                 key={idx}
@@ -138,24 +134,15 @@ export default function TeamSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.08, duration: 0.5 }}
-                whileHover={{ y: -4, boxShadow: '0 12px 32px rgba(0,0,0,0.2)' }}
-                className="bg-white p-4 relative rounded-xl shadow-md border border-white/80 transition-all group"
+                whileHover={{ y: -3, boxShadow: '0 12px 32px rgba(0,0,0,0.2)' }}
+                className="bg-white p-3 sm:p-3.5 rounded-xl shadow-md border border-white/80 transition-all group h-fit"
               >
                 {/* Title row */}
-                <div className="flex items-center justify-between mb-3">
-                  <h3 className="font-label-technical text-xs text-[#002D72] font-bold tracking-widest">
+                <div className="flex items-center justify-between mb-1.5">
+                  <h3 className="font-label-technical text-base sm:text-lg text-[#002D72] font-black tracking-wider uppercase">
                     {cap.title}
                   </h3>
-                  <span className="material-symbols-outlined text-xs text-[#002D72]/20">add</span>
-                </div>
-
-                {/* Illustration */}
-                <div className="w-full rounded-lg overflow-hidden bg-[#f0f4ff] mb-3 flex items-center justify-center">
-                  <img
-                    src={cap.img}
-                    alt={cap.title}
-                    className="w-full h-24 object-contain p-2 group-hover:scale-105 transition-transform duration-500"
-                  />
+                  <span className="material-symbols-outlined text-base font-bold text-[#002D72]/40 group-hover:text-[#002D72] transition-colors">add</span>
                 </div>
 
                 {/* Tags */}
@@ -163,7 +150,7 @@ export default function TeamSection() {
                   {cap.tags.map((t, i) => (
                     <span
                       key={i}
-                      className="font-label-technical text-[9px] px-2.5 py-1 border border-[#002D72]/12 rounded-full bg-[#002D72]/5 text-[#002D72] font-bold"
+                      className="font-label-technical text-xs sm:text-sm px-3 py-1 border border-[#002D72]/20 rounded-full bg-[#002D72]/8 text-[#002D72] font-extrabold"
                     >
                       {t}
                     </span>
