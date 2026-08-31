@@ -212,82 +212,82 @@ export default function ApproachSection({ onStartProject, onExploreServices }: A
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
             {/* Traditional Multi-Vendor Approach */}
-            <div className="bg-white border border-white/80 p-6 sm:p-8 md:p-10 rounded-xs flex flex-col justify-between relative overflow-hidden shadow-xl hover:border-blue-300 transition-all">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-[#002D72]/5 rounded-bl-full pointer-events-none" />
+            <div className="bg-white border border-white/80 p-6 sm:p-8 md:p-10 rounded-2xl flex flex-col justify-between relative overflow-hidden shadow-xl hover:border-blue-300 transition-all">
+              <div className="absolute top-0 right-0 w-36 h-36 bg-[#002D72]/5 rounded-bl-full pointer-events-none" />
 
               <div>
                 {/* Header Badge */}
-                <div className="flex items-center justify-between mb-8 pb-4 border-b border-[#002D72]/10">
-                  <div className="flex items-center gap-2">
-                    <span className="material-symbols-outlined text-[#002D72] text-lg">alt_route</span>
+                <div className="flex items-center justify-between mb-8 pb-5 border-b border-[#002D72]/10">
+                  <div className="flex items-center gap-2.5">
+                    <span className="material-symbols-outlined text-[#002D72] text-xl">alt_route</span>
                     <span className="font-label-technical text-xs font-bold text-[#002D72] uppercase tracking-widest">
                       TRADITIONAL APPROACH
                     </span>
                   </div>
-                  <span className="font-label-small text-[10px] bg-[#002D72]/8 text-[#002D72] border border-[#002D72]/15 px-2.5 py-1 rounded-xs font-bold uppercase tracking-wider">
+                  <span className="font-label-small text-[10px] bg-[#002D72]/8 text-[#002D72] border border-[#002D72]/15 px-3 py-1 rounded-full font-bold uppercase tracking-wider">
                     FRAGMENTED MODEL
                   </span>
                 </div>
 
-                {/* Disconnected Steps */}
+                {/* Disconnected Steps Container */}
                 <div className="space-y-4 mb-8">
                   {/* Step 1 */}
-                  <div className="p-4 sm:p-5 bg-[#f0f4ff] border border-[#002D72]/10 rounded-xs shadow-2xs relative">
+                  <div className="p-5 sm:p-6 bg-[#f0f4ff] border border-[#002D72]/10 rounded-xl shadow-2xs relative">
                     <div className="flex items-center justify-between mb-1.5">
-                      <span className="font-headline-md text-base sm:text-lg font-bold text-[#002D72]">
+                      <span className="font-headline-md text-lg sm:text-xl font-bold text-[#002D72]">
                         01. Strategy → Agency A
                       </span>
-                      <span className="font-label-small text-[10px] text-[#002D72] font-semibold bg-white border border-[#002D72]/15 px-2.5 py-0.5 rounded-xs">
+                      <span className="font-label-small text-[10px] text-[#002D72] font-semibold bg-white border border-[#002D72]/15 px-2.5 py-0.5 rounded-full">
                         High Overhead
                       </span>
                     </div>
-                    <p className="font-body-md text-xs sm:text-sm text-[#374f8a] font-normal">
+                    <p className="font-body-md text-sm text-[#374f8a] font-normal">
                       Product goals defined without engineering feasibility check.
                     </p>
                   </div>
 
                   {/* Connector 1 */}
                   <div className="flex items-center justify-center py-0.5">
-                    <div className="flex items-center gap-1.5 text-[#4a8ef0] font-label-technical text-[10px]">
+                    <div className="flex items-center gap-2 text-[#4a8ef0] font-label-technical text-xs">
                       <span className="material-symbols-outlined text-sm">link_off</span>
-                      <span className="uppercase tracking-widest font-semibold text-[#374f8a]">Handover Friction</span>
+                      <span className="uppercase tracking-widest font-bold text-[#374f8a]">Handover Friction</span>
                     </div>
                   </div>
 
                   {/* Step 2 */}
-                  <div className="p-4 sm:p-5 bg-[#f0f4ff] border border-[#002D72]/10 rounded-xs shadow-2xs relative">
+                  <div className="p-5 sm:p-6 bg-[#f0f4ff] border border-[#002D72]/10 rounded-xl shadow-2xs relative">
                     <div className="flex items-center justify-between mb-1.5">
-                      <span className="font-headline-md text-base sm:text-lg font-bold text-[#002D72]">
+                      <span className="font-headline-md text-lg sm:text-xl font-bold text-[#002D72]">
                         02. Design → Agency B
                       </span>
-                      <span className="font-label-small text-[10px] text-[#002D72] font-semibold bg-white border border-[#002D72]/15 px-2.5 py-0.5 rounded-xs">
+                      <span className="font-label-small text-[10px] text-[#002D72] font-semibold bg-white border border-[#002D72]/15 px-2.5 py-0.5 rounded-full">
                         Scope Loss
                       </span>
                     </div>
-                    <p className="font-body-md text-xs sm:text-sm text-[#374f8a] font-normal">
+                    <p className="font-body-md text-sm text-[#374f8a] font-normal">
                       Visual designs created without understanding technical stack limits.
                     </p>
                   </div>
 
                   {/* Connector 2 */}
                   <div className="flex items-center justify-center py-0.5">
-                    <div className="flex items-center gap-1.5 text-[#4a8ef0] font-label-technical text-[10px]">
+                    <div className="flex items-center gap-2 text-[#4a8ef0] font-label-technical text-xs">
                       <span className="material-symbols-outlined text-sm">link_off</span>
-                      <span className="uppercase tracking-widest font-semibold text-[#374f8a]">Communication Gap</span>
+                      <span className="uppercase tracking-widest font-bold text-[#374f8a]">Communication Gap</span>
                     </div>
                   </div>
 
                   {/* Step 3 */}
-                  <div className="p-4 sm:p-5 bg-[#f0f4ff] border border-[#002D72]/10 rounded-xs shadow-2xs relative">
+                  <div className="p-5 sm:p-6 bg-[#f0f4ff] border border-[#002D72]/10 rounded-xl shadow-2xs relative">
                     <div className="flex items-center justify-between mb-1.5">
-                      <span className="font-headline-md text-base sm:text-lg font-bold text-[#002D72]">
+                      <span className="font-headline-md text-lg sm:text-xl font-bold text-[#002D72]">
                         03. Development → Freelancers
                       </span>
-                      <span className="font-label-small text-[10px] text-[#002D72] font-semibold bg-white border border-[#002D72]/15 px-2.5 py-0.5 rounded-xs">
+                      <span className="font-label-small text-[10px] text-[#002D72] font-semibold bg-white border border-[#002D72]/15 px-2.5 py-0.5 rounded-full">
                         No Ownership
                       </span>
                     </div>
-                    <p className="font-body-md text-xs sm:text-sm text-[#374f8a] font-normal">
+                    <p className="font-body-md text-sm text-[#374f8a] font-normal">
                       Fragmented code, missed sprint deadlines, and zero post-launch maintenance.
                     </p>
                   </div>
@@ -295,13 +295,13 @@ export default function ApproachSection({ onStartProject, onExploreServices }: A
               </div>
 
               {/* Bottom Alert Block */}
-              <div className="p-4 sm:p-5 bg-[#f0f4ff] border border-[#002D72]/15 rounded-xs flex items-center gap-3.5">
-                <span className="material-symbols-outlined text-[#002D72] text-xl shrink-0">report_problem</span>
+              <div className="p-5 bg-[#f0f4ff] border border-[#002D72]/15 rounded-xl flex items-center gap-4">
+                <span className="material-symbols-outlined text-[#002D72] text-2xl shrink-0">report_problem</span>
                 <div>
                   <div className="font-label-technical text-xs font-extrabold text-[#002D72] uppercase tracking-widest">
                     DISCONNECTED WORKFLOWS
                   </div>
-                  <p className="font-body-md text-xs sm:text-sm text-[#374f8a] font-medium mt-0.5">
+                  <p className="font-body-md text-sm text-[#374f8a] font-medium mt-0.5">
                     Higher cost, delayed launches & no long-term accountability.
                   </p>
                 </div>
@@ -309,26 +309,26 @@ export default function ApproachSection({ onStartProject, onExploreServices }: A
             </div>
 
             {/* PilotNemo Integrated Connected Model */}
-            <div className="bg-gradient-to-br from-[#003894] to-[#001f52] text-white border border-white/15 p-6 sm:p-8 md:p-10 rounded-xs flex flex-col justify-between relative overflow-hidden shadow-2xl hover:border-sky-400/40 transition-all">
-              <div className="absolute top-0 right-0 w-36 h-36 bg-sky-400/10 rounded-bl-full pointer-events-none" />
+            <div className="bg-gradient-to-b from-[#0A2E70] via-[#08255e] to-[#051C4A] text-white border border-white/15 p-6 sm:p-8 md:p-10 rounded-2xl flex flex-col justify-between relative overflow-hidden shadow-2xl hover:border-sky-400/40 transition-all">
+              <div className="absolute top-0 right-0 w-44 h-44 bg-sky-400/10 rounded-bl-full pointer-events-none blur-sm" />
 
               <div>
                 {/* Header Badge */}
-                <div className="flex items-center justify-between mb-8 pb-4 border-b border-white/15">
-                  <div className="flex items-center gap-2">
-                    <span className="material-symbols-outlined text-sky-400 text-lg">verified</span>
+                <div className="flex items-center justify-between mb-8 pb-5 border-b border-white/15">
+                  <div className="flex items-center gap-2.5">
+                    <span className="material-symbols-outlined text-sky-400 text-xl">verified</span>
                     <span className="font-label-technical text-xs font-bold text-white uppercase tracking-widest">
                       PILOTNEMO INTEGRATED MODEL
                     </span>
                   </div>
-                  <span className="font-label-small text-[10px] bg-sky-400/15 text-sky-300 border border-sky-400/20 px-2.5 py-1 rounded-xs font-bold uppercase tracking-wider flex items-center gap-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse" />
+                  <span className="font-label-small text-xs bg-[#0A2E70] text-sky-300 border border-sky-400/30 px-3.5 py-1 rounded-full font-bold uppercase tracking-wider flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-sky-400 animate-pulse" />
                     CONNECTED ENGINE
                   </span>
                 </div>
 
                 {/* Connected Flow List */}
-                <div className="bg-white/5 border border-white/10 p-5 sm:p-6 rounded-xs mb-8 space-y-5">
+                <div className="bg-white/[0.04] border border-white/10 p-6 sm:p-8 rounded-xl mb-8 space-y-6">
                   {[
                     { title: 'Strategy & Feasibility Audit', note: 'Clear technical architecture blueprint from Day 1' },
                     { title: 'UX/UI & Interactive Prototyping', note: 'Designers who understand live code & accessibility' },
@@ -336,15 +336,15 @@ export default function ApproachSection({ onStartProject, onExploreServices }: A
                     { title: 'Zero-Downtime Deployment & QA', note: 'Security hardening & automated load testing' },
                     { title: 'Continuous Growth & 24/7 Managed SLA', note: 'Dedicated support, performance tuning & CRO' },
                   ].map((step, idx) => (
-                    <div key={idx} className="flex items-start gap-3.5">
-                      <span className="material-symbols-outlined text-sky-400 text-xl shrink-0 mt-0.5">
+                    <div key={idx} className="flex items-start gap-4">
+                      <span className="material-symbols-outlined text-sky-400 text-2xl shrink-0 mt-0.5">
                         check_circle
                       </span>
                       <div>
-                        <div className="font-headline-md text-base sm:text-lg font-bold text-white leading-snug">
+                        <div className="font-headline-md text-xl sm:text-2xl font-bold text-white leading-tight">
                           {step.title}
                         </div>
-                        <div className="font-body-md text-xs sm:text-sm text-blue-100/70 font-normal mt-0.5">
+                        <div className="font-body-md text-sm text-blue-100/70 font-normal mt-1">
                           {step.note}
                         </div>
                       </div>
@@ -354,13 +354,13 @@ export default function ApproachSection({ onStartProject, onExploreServices }: A
               </div>
 
               {/* Bottom Success Highlight */}
-              <div className="p-4 sm:p-5 bg-sky-400/15 border border-sky-400/25 rounded-xs flex items-center gap-3.5">
-                <span className="material-symbols-outlined text-sky-400 text-xl shrink-0">auto_awesome</span>
+              <div className="p-5 bg-sky-400/15 border border-sky-400/25 rounded-xl flex items-center gap-4">
+                <span className="material-symbols-outlined text-sky-400 text-2xl shrink-0">auto_awesome</span>
                 <div>
                   <div className="font-label-technical text-xs font-extrabold text-sky-300 uppercase tracking-widest">
                     ONE TEAM, ONE WORKFLOW
                   </div>
-                  <p className="font-body-md text-xs sm:text-sm text-blue-100/80 font-medium mt-0.5">
+                  <p className="font-body-md text-sm text-blue-100/90 font-medium mt-0.5">
                     100% IP ownership, 3x faster delivery & single-point accountability.
                   </p>
                 </div>
