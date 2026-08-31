@@ -42,12 +42,12 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#002D72] text-white antialiased flex flex-col font-sans selection:bg-tech-accent selection:text-white">
+    <div className="min-h-screen w-full max-w-full overflow-x-hidden bg-[#002D72] text-white antialiased flex flex-col font-sans selection:bg-tech-accent selection:text-white">
       {/* Top Navbar */}
       <Navbar activeSection={activeSection} onNavigate={scrollToSection} />
 
       {/* Main Landing Page Content */}
-      <main className="flex-grow architectural-grid">
+      <main className="flex-grow architectural-grid w-full max-w-full overflow-x-hidden">
         <Hero
           onStartProject={() => scrollToSection('contact')}
           onViewWork={() => scrollToSection('services')}

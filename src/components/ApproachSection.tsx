@@ -86,7 +86,7 @@ export default function ApproachSection({ onStartProject, onExploreServices }: A
   ];
 
   return (
-    <section id="approach" className="py-16 border-t border-white/8 relative">
+    <section id="approach" className="py-16 border-t border-white/8 relative overflow-hidden w-full max-w-full">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-8 md:px-16">
         {/* Header Section */}
         <header className="mb-12 border-b border-transparent pb-8">

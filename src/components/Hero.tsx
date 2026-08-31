@@ -15,7 +15,7 @@ export default function Hero({ onStartProject, onViewWork }: HeroProps) {
   ];
 
   return (
-    <section id="hero" className="relative pt-20 pb-0 overflow-hidden">
+    <section id="hero" className="relative pt-20 pb-0 overflow-hidden w-full max-w-full">
       {/* Decorative glow blobs */}
       <div className="accent-glow w-[600px] h-[600px] bg-blue-500 top-[-100px] left-[-200px]" />
       <div className="accent-glow w-[400px] h-[400px] bg-sky-400 top-[100px] right-[-100px]" />

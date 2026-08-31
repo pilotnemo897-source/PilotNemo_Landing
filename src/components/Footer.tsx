@@ -11,7 +11,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="w-full border-t border-white/8 bg-[#001f52] py-10">
+    <footer className="w-full max-w-full border-t border-white/8 bg-[#001f52] py-10 overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-8 md:px-16 grid grid-cols-2 md:grid-cols-4 gap-8">
         {/* Brand */}
         <div className="col-span-2 md:col-span-1">

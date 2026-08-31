@@ -54,7 +54,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-16 border-t border-white/8 relative">
+    <section id="contact" className="py-16 border-t border-white/8 relative overflow-hidden w-full max-w-full">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-8 md:px-16">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 relative">
           {/* Left Side: Form (7 columns) */}

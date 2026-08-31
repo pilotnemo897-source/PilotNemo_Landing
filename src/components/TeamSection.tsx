@@ -104,7 +104,7 @@ export default function TeamSection() {
   ];
 
   return (
-    <section id="team" className="py-16 border-t border-white/8 relative">
+    <section id="team" className="py-16 border-t border-white/8 relative overflow-hidden w-full max-w-full">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-8 md:px-16">
         {/* Header */}
         <header className="mb-10 border-b border-white/8 pb-8">

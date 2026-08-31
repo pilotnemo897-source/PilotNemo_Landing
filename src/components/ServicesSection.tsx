@@ -43,7 +43,7 @@ export default function ServicesSection() {
   const workflowSteps = ['IDEA', 'STRATEGY', 'DESIGN', 'DEVELOPMENT', 'LAUNCH', 'GROWTH'];
 
   return (
-    <section id="services" className="py-16 border-t border-white/8 relative">
+    <section id="services" className="py-16 border-t border-white/8 relative overflow-hidden w-full max-w-full">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-8 md:px-16">
         {/* Header */}
         <header className="pb-10 border-b border-white/8 relative mb-10">

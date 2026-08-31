@@ -38,7 +38,7 @@ export default function NotFound() {
 
   return (
     <div
-      className="w-full h-screen overflow-hidden flex flex-col relative"
+      className="w-full max-w-full min-h-screen h-screen overflow-hidden flex flex-col relative"
       style={{
         background: 'linear-gradient(to bottom, #0A235C, #1e3e62)',
       }}

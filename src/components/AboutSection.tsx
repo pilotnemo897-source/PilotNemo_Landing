@@ -50,7 +50,7 @@ export default function AboutSection({ onStartProject }: AboutSectionProps) {
   ];
 
   return (
-    <section id="about" className="py-16 border-t border-white/8 relative">
+    <section id="about" className="py-16 border-t border-white/8 relative overflow-hidden w-full max-w-full">
       {/* subtle glow */}
       <div className="accent-glow w-[500px] h-[500px] bg-blue-600 bottom-0 right-[-150px]" />
 
