@@ -119,96 +119,45 @@ export default function ApproachSection({ onStartProject, onExploreServices }: A
             </h3>
           </div>
 
-          {/* Animated progress bar across all steps */}
-          <div className="mb-6">
-            <div className="flex justify-between mb-2">
-              <span className="font-label-technical text-[9px] text-tech-accent tracking-widest uppercase font-bold">WORKFLOW PROGRESS</span>
-              <span className="font-label-technical text-[9px] text-muted-text font-bold">IDEA → GROWTH</span>
-            </div>
-            <div className="h-[2px] w-full bg-white/10 rounded-full overflow-hidden">
-              <motion.div
-                className="h-full bg-tech-accent rounded-full"
-                initial={{ width: 0 }}
-                whileInView={{ width: '100%' }}
-                viewport={{ once: true }}
-                transition={{ duration: 1.5, ease: 'easeOut', delay: 0.2 }}
-              />
-            </div>
-            <div className="flex justify-between mt-1.5">
-              {strategySteps.map((s) => (
-                <span key={s.num} className="font-label-technical text-[8px] text-muted-text tracking-widest">{s.num}</span>
-              ))}
-            </div>
-          </div>
-
-          {/* Strategy Steps — animated progress timeline */}
-          <div className="relative">
-            {/* Connector line behind cards (desktop) */}
-            <div className="hidden md:block absolute top-9 left-0 right-0 h-[2px] bg-white/8 z-0">
-              <motion.div
-                className="h-full bg-tech-accent/40"
-                initial={{ width: 0 }}
-                whileInView={{ width: '100%' }}
-                viewport={{ once: true }}
-                transition={{ duration: 1.4, delay: 0.4, ease: 'easeOut' }}
-              />
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-5 gap-4 relative z-10">
+          {/* Cards Grid / Scrollable on mobile */}
+          <div className="overflow-x-auto pb-6 scrollbar-hide">
+            <div className="flex flex-nowrap min-w-max md:min-w-0 md:grid md:grid-cols-5 gap-0 border border-white/15 bg-white rounded-2xl overflow-hidden shadow-xl">
               {strategySteps.map((step, idx) => (
-                <motion.div
+                <div
                   key={idx}
-                  initial={{ opacity: 0, y: 28 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.12, duration: 0.5, ease: 'easeOut' }}
-                  className="flex flex-col items-center md:items-start group"
+                  className="w-72 md:w-auto p-6 md:p-6 border-r border-[#002D72]/10 last:border-r-0 relative group hover:bg-[#f0f4ff]/60 transition-colors bg-white flex flex-col justify-between"
                 >
-                  {/* Step badge */}
-                  <div className="relative mb-4 flex items-center justify-center">
-                    <motion.div
-                      initial={{ scale: 0 }}
-                      whileInView={{ scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: idx * 0.12 + 0.2, duration: 0.4, type: 'spring', stiffness: 200 }}
-                      className="w-10 h-10 rounded-full bg-tech-accent flex items-center justify-center shadow-md border-2 border-white"
-                    >
-                      <span className="font-label-technical text-[10px] text-white font-extrabold">{step.num}</span>
-                    </motion.div>
-                  </div>
-
-                  {/* Card */}
-                  <div className="w-full p-4 bg-white border border-white/80 group-hover:border-blue-400/30 group-hover:shadow-lg transition-all rounded-xl shadow-sm">
-                    <div className="mb-4 overflow-hidden bg-transparent flex justify-center items-center">
+                  <div>
+                    <div className="font-label-technical text-sm text-[#4a8ef0] font-bold mb-4">
+                      {step.num}
+                    </div>
+                    <div className="mb-4 overflow-hidden rounded-xl bg-[#f0f4ff] flex justify-center items-center h-36 p-3">
                       <img
                         src={step.img}
                         alt={step.title}
-                        className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500 mix-blend-multiply"
+                        className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
                       />
                     </div>
-                    <h4 className="font-headline-md text-lg text-[#002D72] font-bold mb-3">
+                    <h4 className="font-headline-md text-xl text-[#002D72] font-bold mb-3">
                       {step.title}
                     </h4>
-                    <ul className="space-y-1.5 font-body-md text-xs text-on-surface-variant font-medium">
+                    <ul className="space-y-2 font-body-md text-xs text-[#374f8a] font-medium">
                       {step.items.map((item, i) => (
-                        <li key={i} className="font-semibold flex items-center gap-1.5 text-[#374f8a]">
-                          <span className="w-1 h-1 rounded-full bg-tech-accent shrink-0" />
+                        <li key={i} className="font-semibold flex items-center gap-1.5">
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#4a8ef0] shrink-0" />
                           {item}
                         </li>
                       ))}
                     </ul>
-                    {/* Mini progress strip per step */}
-                    <div className="mt-4 h-[2px] w-full bg-[#002D72]/10 rounded-full overflow-hidden">
-                      <motion.div
-                        className="h-full bg-tech-accent"
-                        initial={{ width: 0 }}
-                        whileInView={{ width: '100%' }}
-                        viewport={{ once: true }}
-                        transition={{ delay: idx * 0.15 + 0.5, duration: 0.8, ease: 'easeOut' }}
-                      />
-                    </div>
                   </div>
-                </motion.div>
+
+                  {/* Arrow Indicator connecting to next column */}
+                  {idx < strategySteps.length - 1 && (
+                    <span className="material-symbols-outlined absolute top-1/2 -right-3.5 text-white bg-[#002D72] rounded-full p-1 text-xs hidden md:flex items-center justify-center z-10 shadow-md group-hover:bg-[#4a8ef0] transition-colors">
+                      arrow_forward
+                    </span>
+                  )}
+                </div>
               ))}
             </div>
           </div>
@@ -219,8 +168,7 @@ export default function ApproachSection({ onStartProject, onExploreServices }: A
               <span className="text-blue-400 mx-2 font-extrabold">→</span> GROWTH. One connected process. One team.
             </p>
           </div>
-          </div>
-
+        </div>
 
         {/* SECTION 02 — WHY PILOTNEMO */}
         <div className="mb-16">
@@ -258,102 +206,102 @@ export default function ApproachSection({ onStartProject, onExploreServices }: A
               SECTION 03 — PILOTNEMO DIFFERENCE
             </h3>
           </div>
-          <h4 className="font-headline-md text-2xl sm:text-4xl text-white font-extrabold mb-6 max-w-3xl leading-tight">
+          <h4 className="font-headline-md text-2xl sm:text-4xl text-white font-extrabold mb-8 max-w-3xl leading-tight">
             Why work with multiple teams when one team can connect everything?
           </h4>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
             {/* Traditional Multi-Vendor Approach */}
-            <div className="lg:col-span-6 bg-[#fff7f7] border border-red-200/50 p-6 sm:p-8 rounded-xs flex flex-col justify-between relative overflow-hidden shadow-xs hover:border-red-300 transition-all">
-              <div className="absolute top-0 right-0 w-24 h-24 bg-red-500/5 rounded-bl-full pointer-events-none" />
+            <div className="bg-white border border-white/80 p-6 sm:p-8 md:p-10 rounded-xs flex flex-col justify-between relative overflow-hidden shadow-xl hover:border-blue-300 transition-all">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-[#002D72]/5 rounded-bl-full pointer-events-none" />
 
               <div>
                 {/* Header Badge */}
-                <div className="flex items-center justify-between mb-8 pb-4 border-b border-red-200/80">
+                <div className="flex items-center justify-between mb-8 pb-4 border-b border-[#002D72]/10">
                   <div className="flex items-center gap-2">
-                    <span className="material-symbols-outlined text-red-600 text-lg">warning</span>
-                    <span className="font-label-technical text-xs font-bold text-red-700 uppercase tracking-widest">
+                    <span className="material-symbols-outlined text-[#002D72] text-lg">alt_route</span>
+                    <span className="font-label-technical text-xs font-bold text-[#002D72] uppercase tracking-widest">
                       TRADITIONAL APPROACH
                     </span>
                   </div>
-                  <span className="font-label-small text-[10px] bg-red-100 text-red-800 px-2.5 py-1 rounded-xs font-bold uppercase">
-                    HIGH RISK
+                  <span className="font-label-small text-[10px] bg-[#002D72]/8 text-[#002D72] border border-[#002D72]/15 px-2.5 py-1 rounded-xs font-bold uppercase tracking-wider">
+                    FRAGMENTED MODEL
                   </span>
                 </div>
 
                 {/* Disconnected Steps */}
                 <div className="space-y-4 mb-8">
                   {/* Step 1 */}
-                  <div className="p-4 bg-white border border-transparent rounded-xs shadow-2xs relative">
-                    <div className="flex items-center justify-between mb-1">
-                      <span className="font-headline-md text-sm font-bold text-[#002D72]">
+                  <div className="p-4 sm:p-5 bg-[#f0f4ff] border border-[#002D72]/10 rounded-xs shadow-2xs relative">
+                    <div className="flex items-center justify-between mb-1.5">
+                      <span className="font-headline-md text-base sm:text-lg font-bold text-[#002D72]">
                         01. Strategy → Agency A
                       </span>
-                      <span className="font-label-small text-[10px] text-red-600 font-semibold bg-red-50 px-2 py-0.5 rounded-xs">
+                      <span className="font-label-small text-[10px] text-[#002D72] font-semibold bg-white border border-[#002D72]/15 px-2.5 py-0.5 rounded-xs">
                         High Overhead
                       </span>
                     </div>
-                    <p className="font-body-md text-xs text-gray-500">
+                    <p className="font-body-md text-xs sm:text-sm text-[#374f8a] font-normal">
                       Product goals defined without engineering feasibility check.
                     </p>
                   </div>
 
                   {/* Connector 1 */}
                   <div className="flex items-center justify-center py-0.5">
-                    <div className="flex items-center gap-1 text-red-400 font-label-technical text-[10px]">
+                    <div className="flex items-center gap-1.5 text-[#4a8ef0] font-label-technical text-[10px]">
                       <span className="material-symbols-outlined text-sm">link_off</span>
-                      <span className="uppercase tracking-widest font-semibold">Handover Friction</span>
+                      <span className="uppercase tracking-widest font-semibold text-[#374f8a]">Handover Friction</span>
                     </div>
                   </div>
 
                   {/* Step 2 */}
-                  <div className="p-4 bg-white border border-transparent rounded-xs shadow-2xs relative">
-                    <div className="flex items-center justify-between mb-1">
-                      <span className="font-headline-md text-sm font-bold text-[#002D72]">
+                  <div className="p-4 sm:p-5 bg-[#f0f4ff] border border-[#002D72]/10 rounded-xs shadow-2xs relative">
+                    <div className="flex items-center justify-between mb-1.5">
+                      <span className="font-headline-md text-base sm:text-lg font-bold text-[#002D72]">
                         02. Design → Agency B
                       </span>
-                      <span className="font-label-small text-[10px] text-red-600 font-semibold bg-red-50 px-2 py-0.5 rounded-xs">
+                      <span className="font-label-small text-[10px] text-[#002D72] font-semibold bg-white border border-[#002D72]/15 px-2.5 py-0.5 rounded-xs">
                         Scope Loss
                       </span>
                     </div>
-                    <p className="font-body-md text-xs text-gray-500">
+                    <p className="font-body-md text-xs sm:text-sm text-[#374f8a] font-normal">
                       Visual designs created without understanding technical stack limits.
                     </p>
                   </div>
 
                   {/* Connector 2 */}
                   <div className="flex items-center justify-center py-0.5">
-                    <div className="flex items-center gap-1 text-red-400 font-label-technical text-[10px]">
+                    <div className="flex items-center gap-1.5 text-[#4a8ef0] font-label-technical text-[10px]">
                       <span className="material-symbols-outlined text-sm">link_off</span>
-                      <span className="uppercase tracking-widest font-semibold">Communication Gap</span>
+                      <span className="uppercase tracking-widest font-semibold text-[#374f8a]">Communication Gap</span>
                     </div>
                   </div>
 
                   {/* Step 3 */}
-                  <div className="p-4 bg-white border border-transparent rounded-xs shadow-2xs relative">
-                    <div className="flex items-center justify-between mb-1">
-                      <span className="font-headline-md text-sm font-bold text-[#002D72]">
+                  <div className="p-4 sm:p-5 bg-[#f0f4ff] border border-[#002D72]/10 rounded-xs shadow-2xs relative">
+                    <div className="flex items-center justify-between mb-1.5">
+                      <span className="font-headline-md text-base sm:text-lg font-bold text-[#002D72]">
                         03. Development → Freelancers
                       </span>
-                      <span className="font-label-small text-[10px] text-red-600 font-semibold bg-red-50 px-2 py-0.5 rounded-xs">
+                      <span className="font-label-small text-[10px] text-[#002D72] font-semibold bg-white border border-[#002D72]/15 px-2.5 py-0.5 rounded-xs">
                         No Ownership
                       </span>
                     </div>
-                    <p className="font-body-md text-xs text-gray-500">
+                    <p className="font-body-md text-xs sm:text-sm text-[#374f8a] font-normal">
                       Fragmented code, missed sprint deadlines, and zero post-launch maintenance.
                     </p>
                   </div>
                 </div>
               </div>
 
-              {/* Bottom Warning Alert */}
-              <div className="p-4 bg-red-100/80 border border-transparent rounded-xs flex items-center gap-3">
-                <span className="material-symbols-outlined text-red-600 text-xl">error_med</span>
+              {/* Bottom Alert Block */}
+              <div className="p-4 sm:p-5 bg-[#f0f4ff] border border-[#002D72]/15 rounded-xs flex items-center gap-3.5">
+                <span className="material-symbols-outlined text-[#002D72] text-xl shrink-0">report_problem</span>
                 <div>
-                  <div className="font-label-technical text-xs font-extrabold text-red-800 uppercase tracking-widest">
+                  <div className="font-label-technical text-xs font-extrabold text-[#002D72] uppercase tracking-widest">
                     DISCONNECTED WORKFLOWS
                   </div>
-                  <p className="font-body-md text-xs text-red-700 font-medium">
+                  <p className="font-body-md text-xs sm:text-sm text-[#374f8a] font-medium mt-0.5">
                     Higher cost, delayed launches & no long-term accountability.
                   </p>
                 </div>
@@ -361,8 +309,8 @@ export default function ApproachSection({ onStartProject, onExploreServices }: A
             </div>
 
             {/* PilotNemo Integrated Connected Model */}
-            <div className="lg:col-span-6 bg-gradient-to-br from-[#0A235C] to-[#1e3e62] text-white border border-transparent p-6 sm:p-8 rounded-xs flex flex-col justify-between relative overflow-hidden shadow-xl hover:border-sky-400/50 transition-all">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-sky-400/10 rounded-bl-full pointer-events-none" />
+            <div className="bg-gradient-to-br from-[#003894] to-[#001f52] text-white border border-white/15 p-6 sm:p-8 md:p-10 rounded-xs flex flex-col justify-between relative overflow-hidden shadow-2xl hover:border-sky-400/40 transition-all">
+              <div className="absolute top-0 right-0 w-36 h-36 bg-sky-400/10 rounded-bl-full pointer-events-none" />
 
               <div>
                 {/* Header Badge */}
@@ -373,14 +321,14 @@ export default function ApproachSection({ onStartProject, onExploreServices }: A
                       PILOTNEMO INTEGRATED MODEL
                     </span>
                   </div>
-                  <span className="font-label-small text-[10px] bg-sky-400/15 text-sky-300 border border-transparent px-2.5 py-1 rounded-xs font-bold uppercase flex items-center gap-1.5">
+                  <span className="font-label-small text-[10px] bg-sky-400/15 text-sky-300 border border-sky-400/20 px-2.5 py-1 rounded-xs font-bold uppercase tracking-wider flex items-center gap-1.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse" />
                     CONNECTED ENGINE
                   </span>
                 </div>
 
                 {/* Connected Flow List */}
-                <div className="bg-white/5 border border-transparent p-4 rounded-xs mb-8 space-y-4">
+                <div className="bg-white/5 border border-white/10 p-5 sm:p-6 rounded-xs mb-8 space-y-5">
                   {[
                     { title: 'Strategy & Feasibility Audit', note: 'Clear technical architecture blueprint from Day 1' },
                     { title: 'UX/UI & Interactive Prototyping', note: 'Designers who understand live code & accessibility' },
@@ -388,15 +336,15 @@ export default function ApproachSection({ onStartProject, onExploreServices }: A
                     { title: 'Zero-Downtime Deployment & QA', note: 'Security hardening & automated load testing' },
                     { title: 'Continuous Growth & 24/7 Managed SLA', note: 'Dedicated support, performance tuning & CRO' },
                   ].map((step, idx) => (
-                    <div key={idx} className="flex items-start gap-3">
+                    <div key={idx} className="flex items-start gap-3.5">
                       <span className="material-symbols-outlined text-sky-400 text-xl shrink-0 mt-0.5">
                         check_circle
                       </span>
                       <div>
-                        <div className="font-headline-md text-sm font-bold text-white">
+                        <div className="font-headline-md text-base sm:text-lg font-bold text-white leading-snug">
                           {step.title}
                         </div>
-                        <div className="font-body-md text-xs text-gray-300">
+                        <div className="font-body-md text-xs sm:text-sm text-blue-100/70 font-normal mt-0.5">
                           {step.note}
                         </div>
                       </div>
@@ -406,13 +354,13 @@ export default function ApproachSection({ onStartProject, onExploreServices }: A
               </div>
 
               {/* Bottom Success Highlight */}
-              <div className="p-4 bg-sky-400/10 border border-transparent rounded-xs flex items-center gap-3">
-                <span className="material-symbols-outlined text-sky-400 text-xl">auto_awesome</span>
+              <div className="p-4 sm:p-5 bg-sky-400/15 border border-sky-400/25 rounded-xs flex items-center gap-3.5">
+                <span className="material-symbols-outlined text-sky-400 text-xl shrink-0">auto_awesome</span>
                 <div>
                   <div className="font-label-technical text-xs font-extrabold text-sky-300 uppercase tracking-widest">
                     ONE TEAM, ONE WORKFLOW
                   </div>
-                  <p className="font-body-md text-xs text-gray-300 font-medium">
+                  <p className="font-body-md text-xs sm:text-sm text-blue-100/80 font-medium mt-0.5">
                     100% IP ownership, 3x faster delivery & single-point accountability.
                   </p>
                 </div>
