@@ -20,7 +20,7 @@ export default function AboutSection({ onStartProject }: AboutSectionProps) {
   ];
 
   return (
-    <section id="about" className="py-20 border-t border-gray-200 relative overflow-hidden w-full max-w-full bg-white">
+    <section id="about" className="pt-10 md:pt-14 pb-16 md:pb-20 border-t border-gray-200 relative overflow-hidden w-full max-w-full bg-white">
       {/* subtle ambient glow */}
       <div className="accent-glow w-[500px] h-[500px] bg-gray-200 bottom-0 right-[-150px]" />
 

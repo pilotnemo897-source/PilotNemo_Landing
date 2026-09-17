@@ -7,22 +7,15 @@ interface HeroProps {
 }
 
 export default function Hero({ onStartProject, onViewWork }: HeroProps) {
-  const infoStrips = [
-    '01 — STRATEGY',
-    '02 — DESIGN',
-    '03 — DEVELOPMENT',
-    '04 — LAUNCH',
-    '05 — GROWTH',
-  ];
 
   return (
-    <section id="hero" className="relative pt-28 pb-0 overflow-hidden w-full max-w-full bg-white">
+    <section id="hero" className="relative pt-24 pb-8 md:pb-12 overflow-hidden w-full max-w-full bg-white">
       {/* Decorative subtle ambient tint */}
       <div className="accent-glow w-[500px] h-[500px] bg-blue-100 top-[-80px] left-[-150px]" />
       <div className="accent-glow w-[400px] h-[400px] bg-gray-200 top-[100px] right-[-100px]" />
 
       {/* Main Hero Container */}
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 md:px-16 flex flex-col md:flex-row gap-10 lg:gap-16 items-center min-h-[calc(100vh-220px)] relative z-10">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 md:px-16 flex flex-col md:flex-row gap-10 lg:gap-16 items-center relative z-10">
         {/* Left Content */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
@@ -76,13 +69,7 @@ export default function Hero({ onStartProject, onViewWork }: HeroProps) {
             </motion.button>
           </div>
 
-          {/* Subtext Detail */}
-          <div className="flex items-center gap-4">
-            <span className="font-label-small text-[10px] uppercase tracking-widest text-gray-500 font-bold">
-              ONE TEAM. FROM IDEA TO SCALE.
-            </span>
-            <div className="h-px bg-gray-200 flex-grow" />
-          </div>
+
         </motion.div>
 
         {/* Right Visual Illustration */}
@@ -102,28 +89,6 @@ export default function Hero({ onStartProject, onViewWork }: HeroProps) {
             />
           </div>
         </motion.div>
-      </div>
-
-      {/* Bottom Info Strip (Gray shade bar) */}
-      <div className="relative z-10 border-t border-b border-gray-200 bg-gray-50 py-4 px-4 sm:px-8 md:px-16 w-full mt-10">
-        <div className="max-w-[1440px] mx-auto flex flex-wrap justify-between items-center gap-4">
-          {infoStrips.map((item, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 + idx * 0.08, duration: 0.4 }}
-              className="flex items-center gap-4"
-            >
-              <span className="font-label-technical text-xs text-gray-700 tracking-widest font-bold">
-                {item}
-              </span>
-              {idx < infoStrips.length - 1 && (
-                <span className="hidden md:inline-block h-4 w-px bg-gray-300 ml-4" />
-              )}
-            </motion.div>
-          ))}
-        </div>
       </div>
     </section>
   );

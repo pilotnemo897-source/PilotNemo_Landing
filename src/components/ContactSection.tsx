@@ -8,7 +8,6 @@ export default function ContactSection() {
     email: '',
     services: [] as string[],
     details: '',
-    timeline: '1-3',
   });
 
   const [submitted, setSubmitted] = useState(false);
@@ -46,7 +45,6 @@ export default function ContactSection() {
         email: '',
         services: [],
         details: '',
-        timeline: '1-3',
       });
     }, 4500);
   };
@@ -61,15 +59,9 @@ export default function ContactSection() {
               <span className="font-label-technical text-xs text-gray-800 tracking-widest uppercase mb-6 border border-gray-300 px-4 py-1.5 bg-gray-100 rounded-full inline-block font-bold shadow-xs">
                 03 / START A PROJECT
               </span>
-              <h2 className="font-headline-lg text-4xl sm:text-6xl text-gray-950 mb-4 leading-tight font-extrabold">
+              <h2 className="font-headline-lg text-4xl sm:text-6xl text-gray-950 mb-8 leading-tight font-extrabold">
                 Have an idea? <span className="text-blue-600">Let's build it.</span>
               </h2>
-              <p className="font-body-lg text-lg text-gray-600 mb-3 max-w-2xl font-normal">
-                Tell us what you're building. We'll help you figure out what's next.
-              </p>
-              <div className="font-body-md text-sm text-gray-700 mb-8 max-w-2xl bg-gray-50 border-l-4 border-gray-900 p-4 rounded-r-lg leading-relaxed font-medium">
-                Whether you're starting a new product, improving an existing platform or looking to grow your digital presence, share a few details about your requirements and our team will review your request.
-              </div>
 
               <AnimatePresence>
                 {submitted && (
@@ -210,40 +202,7 @@ export default function ContactSection() {
                   />
                 </div>
 
-                {/* Expected Timeline */}
-                <div className="pt-5 mt-5 border-t border-gray-200">
-                  <label className="font-label-technical text-xs text-gray-900 block mb-3 uppercase tracking-widest font-bold">
-                    EXPECTED TIMELINE
-                  </label>
-                  <div className="grid grid-cols-3 gap-3">
-                    {[
-                      { label: 'ASAP', val: 'ASAP' },
-                      { label: '1–3 MONTHS', val: '1-3' },
-                      { label: '3–6 MONTHS', val: '3-6' },
-                    ].map((time) => (
-                      <label
-                        key={time.val}
-                        className={`cursor-pointer flex items-center justify-center px-4 py-3 rounded-xl border font-label-technical text-xs uppercase transition-all text-center ${
-                          formData.timeline === time.val
-                            ? 'bg-gray-900 border-gray-900 text-white font-bold shadow-xs'
-                            : 'bg-gray-50 border-gray-300 text-gray-800 hover:bg-gray-100'
-                        }`}
-                      >
-                        <input
-                          type="radio"
-                          name="timeline"
-                          value={time.val}
-                          checked={formData.timeline === time.val}
-                          onChange={(e) => setFormData({ ...formData, timeline: e.target.value })}
-                          className="sr-only"
-                        />
-                        <span className="font-bold tracking-wider">
-                          {time.label}
-                        </span>
-                      </label>
-                    ))}
-                  </div>
-                </div>
+
 
                 {/* Submit Button */}
                 <div className="pt-6 mt-6 border-t border-gray-200 flex items-center justify-start">
