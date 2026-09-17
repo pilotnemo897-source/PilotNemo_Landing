@@ -38,11 +38,11 @@ export default function AboutSection({ onStartProject }: AboutSectionProps) {
               01 / ABOUT US
             </div>
             <h2 className="font-headline-lg text-4xl sm:text-6xl font-extrabold tracking-tight leading-[1.05] text-gray-950 mb-4">
-              Architecting the{' '}
-              <span className="text-blue-600">digital frontier.</span>
+              Building products that{' '}
+              <span className="text-blue-600">drive real growth.</span>
             </h2>
-            <p className="font-body-lg text-lg text-gray-600 leading-relaxed max-w-2xl font-normal">
-              We are a collective of digital architects, engineers, and strategists. We believe in building robust, high-performance systems that drive measurable growth and define industry standards.
+            <p className="font-body-lg text-base sm:text-lg text-gray-600 leading-relaxed max-w-2xl font-normal">
+              We are a full-cycle digital studio crafting high-performance web, mobile, and software solutions designed to scale your business.
             </p>
           </motion.div>
 
@@ -71,8 +71,8 @@ export default function AboutSection({ onStartProject }: AboutSectionProps) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16 pt-8 border-t border-gray-200">
           {/* Left: Overview & Stats Grid */}
           <div className="lg:col-span-7">
-            <p className="font-body-lg text-lg text-gray-600 leading-relaxed mb-8">
-              PilotNemo is a premier digital growth & IT engineering partner. We combine technology, strategy, and design to elevate market leaders. 250+ projects delivered, 99% client satisfaction, 10+ years of industry experience.
+            <p className="font-body-lg text-base sm:text-lg text-gray-600 leading-relaxed mb-6 font-medium">
+              Driven by engineering excellence, intuitive design, and a proven delivery track record:
             </p>
             <div className="grid grid-cols-2 gap-4">
               {mainStats.map((stat, idx) => (
@@ -107,7 +107,7 @@ export default function AboutSection({ onStartProject }: AboutSectionProps) {
             >
               <div className="flex justify-between items-center mb-5 border-b border-gray-200 pb-4">
                 <span className="font-label-technical text-xs font-bold tracking-widest uppercase text-gray-800">
-                  OUR.MISSION
+                  OUR MISSION
                 </span>
                 <div className="flex gap-1.5">
                   <div className="w-2.5 h-2.5 rounded-full bg-blue-600" />
@@ -115,15 +115,15 @@ export default function AboutSection({ onStartProject }: AboutSectionProps) {
                   <div className="w-2.5 h-2.5 rounded-full bg-gray-300" />
                 </div>
               </div>
-              <p className="font-body-lg text-lg sm:text-xl font-medium leading-relaxed mb-8 text-gray-700 flex-grow">
-                To engineer digital experiences that transcend the ordinary. We aim to empower businesses with technological infrastructure that is not just functional, but transformative.
+              <p className="font-body-lg text-base sm:text-lg font-medium leading-relaxed mb-6 text-gray-700 flex-grow">
+                To build high-performance digital products and intuitive experiences that empower businesses to scale faster and lead their markets.
               </p>
               <div className="border border-gray-200 bg-white p-4 rounded-xl shadow-xs">
-                <div className="font-label-technical text-xs font-bold tracking-widest uppercase text-blue-600 mb-2">
-                  TARGET OUTPUT
+                <div className="font-label-technical text-xs font-bold tracking-widest uppercase text-blue-600 mb-1.5">
+                  CORE FOCUS
                 </div>
-                <div className="font-headline-md text-2xl font-extrabold text-gray-950">
-                  100% Innovation Drive
+                <div className="font-headline-md text-xl sm:text-2xl font-extrabold text-gray-950">
+                  Speed, Scale & Quality
                 </div>
               </div>
             </motion.div>
