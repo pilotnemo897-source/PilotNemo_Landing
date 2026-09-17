@@ -22,8 +22,7 @@ export default function Navbar({ activeSection = 'hero', onNavigate }: NavbarPro
   const navItems = [
     { label: 'About', id: 'about' },
     { label: 'Services', id: 'services' },
-    { label: 'Process', id: 'approach' },
-    { label: 'Team', id: 'team' },
+    { label: 'Contact', id: 'contact' },
   ];
 
   const handleNavClick = (id: string) => {
@@ -49,7 +48,7 @@ export default function Navbar({ activeSection = 'hero', onNavigate }: NavbarPro
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="fixed top-0 left-0 right-0 w-full z-50 bg-transparent py-4"
+            className="fixed top-0 left-0 right-0 w-full z-50 bg-white/85 backdrop-blur-md border-b border-gray-200/60 py-4"
           >
             <div className="w-full px-6 sm:px-10 md:px-12 flex justify-between items-center">
               {/* Big Logo — left */}
@@ -61,8 +60,7 @@ export default function Navbar({ activeSection = 'hero', onNavigate }: NavbarPro
                 <img
                   src={logoSrc}
                   alt="PilotNemo"
-                  className="h-16 w-auto object-contain"
-                  style={{ filter: 'brightness(0) invert(1)' }}
+                  className="h-14 w-auto object-contain"
                 />
               </a>
 
@@ -75,8 +73,8 @@ export default function Navbar({ activeSection = 'hero', onNavigate }: NavbarPro
                     onClick={(e) => { e.preventDefault(); handleNavClick(item.id); }}
                     className={`text-xs uppercase tracking-widest transition-all ${
                       activeSection === item.id
-                        ? 'text-blue-300 font-bold border-b border-blue-300 pb-0.5'
-                        : 'text-blue-200/70 hover:text-blue-300'
+                        ? 'text-black font-bold border-b-2 border-black pb-0.5'
+                        : 'text-gray-600 hover:text-black font-medium'
                     }`}
                   >
                     {item.label}
@@ -84,7 +82,7 @@ export default function Navbar({ activeSection = 'hero', onNavigate }: NavbarPro
                 ))}
                 <button
                   onClick={() => handleNavClick('contact')}
-                  className="font-label-technical text-xs px-6 py-2.5 bg-tech-accent text-white hover:bg-primary transition-all uppercase tracking-widest font-bold cursor-pointer rounded-xs shadow-xs"
+                  className="font-label-technical text-xs px-6 py-2.5 bg-gray-900 text-white hover:bg-black transition-all uppercase tracking-widest font-bold cursor-pointer rounded-sm shadow-xs"
                 >
                   START A PROJECT
                 </button>
@@ -93,7 +91,7 @@ export default function Navbar({ activeSection = 'hero', onNavigate }: NavbarPro
               {/* Mobile menu trigger */}
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="md:hidden text-white p-2 focus:outline-none cursor-pointer"
+                className="md:hidden text-gray-900 p-2 focus:outline-none cursor-pointer"
                 aria-label="Toggle Navigation Menu"
               >
                 <span className="material-symbols-outlined text-2xl">
@@ -114,7 +112,7 @@ export default function Navbar({ activeSection = 'hero', onNavigate }: NavbarPro
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -16, scale: 0.95 }}
             transition={{ duration: 0.25, ease: 'easeOut' }}
-            className="fixed top-2 left-1/2 -translate-x-1/2 z-50 hidden md:flex items-center gap-0.5 px-1.5 py-0.5 rounded-full bg-[#202124]/95 backdrop-blur-md border border-white/10 shadow-xl"
+            className="fixed top-3 left-1/2 -translate-x-1/2 z-50 hidden md:flex items-center gap-1 px-3 py-1.5 rounded-full bg-white/95 backdrop-blur-md border border-gray-300 shadow-lg"
           >
             {/* Logo mark */}
             <a
@@ -125,34 +123,33 @@ export default function Navbar({ activeSection = 'hero', onNavigate }: NavbarPro
               <img
                 src={logoSrc}
                 alt="PilotNemo"
-                className="h-8 w-auto object-contain"
-                style={{ filter: 'brightness(0) invert(1)' }}
+                className="h-7 w-auto object-contain"
               />
             </a>
 
-            <div className="w-px h-3 bg-white/20 mx-0.5" />
+            <div className="w-px h-3.5 bg-gray-300 mx-1" />
 
             {/* Nav link buttons */}
             {navItems.map((item) => (
               <button
                 key={item.label}
                 onClick={() => handleNavClick(item.id)}
-                className={`font-label-technical text-[9px] uppercase tracking-widest px-2.5 py-1 rounded-full transition-all cursor-pointer ${
+                className={`font-label-technical text-[10px] uppercase tracking-widest px-3 py-1 rounded-full transition-all cursor-pointer ${
                   activeSection === item.id
-                    ? 'bg-tech-accent text-white font-bold'
-                    : 'text-gray-300 hover:text-white hover:bg-white/10'
+                    ? 'bg-gray-900 text-white font-bold'
+                    : 'text-gray-600 hover:text-black hover:bg-gray-100 font-medium'
                 }`}
               >
                 {item.label}
               </button>
             ))}
 
-            <div className="w-px h-3 bg-white/20 mx-0.5" />
+            <div className="w-px h-3.5 bg-gray-300 mx-1" />
 
             {/* CTA mini button */}
             <button
               onClick={() => handleNavClick('contact')}
-              className="font-label-technical text-[9px] px-2.5 py-1 bg-tech-accent text-white hover:bg-primary transition-all uppercase tracking-widest font-bold cursor-pointer rounded-full"
+              className="font-label-technical text-[10px] px-3.5 py-1 bg-gray-900 text-white hover:bg-black transition-all uppercase tracking-widest font-bold cursor-pointer rounded-full"
             >
               Let's Talk
             </button>
@@ -170,7 +167,7 @@ export default function Navbar({ activeSection = 'hero', onNavigate }: NavbarPro
             exit={{ opacity: 0, scale: 0.8 }}
             transition={{ duration: 0.2 }}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="fixed top-4 right-4 z-50 md:hidden flex items-center gap-2 px-4 py-2 rounded-full bg-[#202124]/95 backdrop-blur-md border border-white/10 shadow-xl text-white cursor-pointer"
+            className="fixed top-4 right-4 z-50 md:hidden flex items-center gap-2 px-4 py-2 rounded-full bg-white/95 backdrop-blur-md border border-gray-300 shadow-md text-gray-900 cursor-pointer"
           >
             <span className="material-symbols-outlined text-base">
               {mobileMenuOpen ? 'close' : 'menu'}
@@ -188,7 +185,7 @@ export default function Navbar({ activeSection = 'hero', onNavigate }: NavbarPro
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.25 }}
-            className="fixed inset-x-0 top-[60px] z-40 bg-[#202124] border-b border-white/10 shadow-2xl md:hidden px-6 py-6"
+            className="fixed inset-x-0 top-[60px] z-40 bg-white border-b border-gray-200 shadow-2xl md:hidden px-6 py-6"
           >
             <div className="flex flex-col gap-5">
               {navItems.map((item) => (
@@ -196,14 +193,14 @@ export default function Navbar({ activeSection = 'hero', onNavigate }: NavbarPro
                   key={item.label}
                   href={`#${item.id}`}
                   onClick={(e) => { e.preventDefault(); handleNavClick(item.id); }}
-                  className="font-label-technical text-sm text-gray-200 hover:text-tech-accent tracking-widest uppercase py-2 border-b border-white/5"
+                  className="font-label-technical text-sm text-gray-800 hover:text-black tracking-widest uppercase py-2 border-b border-gray-100"
                 >
                   {item.label}
                 </a>
               ))}
               <button
                 onClick={() => handleNavClick('contact')}
-                className="mt-2 w-full font-label-technical text-xs px-6 py-3.5 bg-tech-accent text-white hover:bg-primary font-bold tracking-widest uppercase cursor-pointer rounded-xs flex items-center justify-center gap-2"
+                className="mt-2 w-full font-label-technical text-xs px-6 py-3.5 bg-gray-900 text-white hover:bg-black font-bold tracking-widest uppercase cursor-pointer rounded-sm flex items-center justify-center gap-2"
               >
                 START A PROJECT
                 <span className="material-symbols-outlined text-sm">arrow_forward</span>

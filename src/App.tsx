@@ -3,8 +3,6 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import AboutSection from './components/AboutSection';
 import ServicesSection from './components/ServicesSection';
-import TeamSection from './components/TeamSection';
-import ApproachSection from './components/ApproachSection';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 
@@ -21,7 +19,7 @@ export default function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['hero', 'about', 'services', 'approach', 'team', 'contact'];
+      const sections = ['hero', 'about', 'services', 'contact'];
       const scrollPos = window.scrollY + 200;
 
       for (const sectionId of sections) {
@@ -42,7 +40,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen w-full max-w-full overflow-x-hidden bg-[#002D72] text-white antialiased flex flex-col font-sans selection:bg-tech-accent selection:text-white">
+    <div className="min-h-screen w-full max-w-full overflow-x-hidden bg-white text-gray-900 antialiased flex flex-col font-sans selection:bg-gray-900 selection:text-white">
       {/* Top Navbar */}
       <Navbar activeSection={activeSection} onNavigate={scrollToSection} />
 
@@ -54,11 +52,6 @@ export default function App() {
         />
         <AboutSection onStartProject={() => scrollToSection('contact')} />
         <ServicesSection />
-        <ApproachSection
-          onStartProject={() => scrollToSection('contact')}
-          onExploreServices={() => scrollToSection('services')}
-        />
-        <TeamSection />
         <ContactSection />
       </main>
 

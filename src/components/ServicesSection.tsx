@@ -43,24 +43,24 @@ export default function ServicesSection() {
   const workflowSteps = ['IDEA', 'STRATEGY', 'DESIGN', 'DEVELOPMENT', 'LAUNCH', 'GROWTH'];
 
   return (
-    <section id="services" className="py-16 border-t border-white/8 relative overflow-hidden w-full max-w-full">
+    <section id="services" className="py-20 border-t border-gray-200 relative overflow-hidden w-full max-w-full bg-white">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-8 md:px-16">
         {/* Header */}
-        <header className="pb-10 border-b border-white/8 relative mb-10">
-          <div className="font-label-technical text-xs text-blue-300 mb-4 tracking-widest uppercase font-bold">
+        <header className="pb-10 border-b border-gray-200 relative mb-10">
+          <div className="inline-block px-4 py-1.5 bg-gray-100 text-gray-800 text-xs font-label-technical font-bold tracking-widest uppercase mb-4 border border-gray-300 rounded-full shadow-xs">
             02 / WHAT WE DO
           </div>
-          <h2 className="font-headline-lg text-4xl sm:text-6xl text-white mb-4 max-w-3xl font-extrabold">
+          <h2 className="font-headline-lg text-4xl sm:text-6xl text-gray-950 mb-4 max-w-3xl font-extrabold">
             One team.{' '}
-            <span className="text-blue-300">Multiple digital</span>{' '}
+            <span className="text-blue-600">Multiple digital</span>{' '}
             capabilities.
           </h2>
-          <p className="font-body-lg text-base sm:text-lg text-blue-100/70 max-w-2xl font-normal leading-relaxed">
+          <p className="font-body-lg text-base sm:text-lg text-gray-600 max-w-2xl font-normal leading-relaxed">
             From product design to development and digital growth, PilotNemo brings the essential capabilities together in one connected workflow.
           </p>
         </header>
 
-        {/* Services Grid */}
+        {/* Services Grid (Gray shade boxes) */}
         <div className="py-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((s, idx) => (
             <motion.div
@@ -69,10 +69,10 @@ export default function ServicesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.15 }}
               transition={{ duration: 0.5, delay: idx * 0.08 }}
-              whileHover={{ y: -6, boxShadow: '0 20px 50px rgba(0,0,0,0.25)' }}
-              className="bg-white p-6 flex flex-col justify-between h-full relative group transition-all duration-300 min-h-[410px] rounded-2xl shadow-md border border-white/80"
+              whileHover={{ y: -6 }}
+              className="bg-gray-50 p-6 flex flex-col justify-between h-full relative group transition-all duration-300 min-h-[410px] rounded-2xl shadow-xs hover:shadow-md border border-gray-200 hover:border-gray-300 hover:bg-gray-100/90"
             >
-              <div className="mb-5 overflow-hidden flex items-center justify-center bg-[#f0f4ff] rounded-xl p-3">
+              <div className="mb-5 overflow-hidden flex items-center justify-center bg-white border border-gray-200 rounded-xl p-3 shadow-xs">
                 <img
                   src={s.img}
                   alt={s.title}
@@ -80,17 +80,17 @@ export default function ServicesSection() {
                 />
               </div>
               <div className="mt-auto">
-                <h3 className="font-headline-md text-2xl text-[#002D72] mb-2 font-bold">
+                <h3 className="font-headline-md text-2xl text-gray-950 mb-2 font-bold">
                   {s.title}
                 </h3>
-                <p className="font-body-md text-sm text-[#374f8a] mb-4 leading-relaxed font-normal">
+                <p className="font-body-md text-sm text-gray-600 mb-4 leading-relaxed font-normal">
                   {s.desc}
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {s.tags.map((t, i) => (
                     <span
                       key={i}
-                      className="font-label-technical text-[10px] px-2.5 py-1 border border-[#002D72]/15 text-[#002D72] bg-[#002D72]/6 rounded-full font-semibold"
+                      className="font-label-technical text-[10px] px-2.5 py-1 border border-gray-300 text-gray-700 bg-gray-200/70 rounded-full font-semibold"
                     >
                       {t}
                     </span>
@@ -101,9 +101,9 @@ export default function ServicesSection() {
           ))}
         </div>
 
-        {/* Process Flow Diagram */}
-        <div className="py-8 border-t border-white/8 mt-4">
-          <div className="font-label-technical text-xs text-blue-300/70 mb-5 tracking-widest uppercase font-bold">
+        {/* Process Flow Diagram (Gray shade workflow bar) */}
+        <div className="py-8 border-t border-gray-200 mt-4">
+          <div className="font-label-technical text-xs text-gray-600 mb-5 tracking-widest uppercase font-bold">
             WORKFLOW ARCHITECTURE
           </div>
           <div className="flex flex-col md:flex-row items-center overflow-x-auto pb-4 scrollbar-hide justify-start gap-3">
@@ -117,11 +117,11 @@ export default function ServicesSection() {
                 whileHover={{ scale: 1.06 }}
                 className="flex items-center shrink-0"
               >
-                <span className="font-label-technical text-xs px-5 py-2.5 border border-white/20 bg-white/10 backdrop-blur-sm font-bold text-white rounded-full shadow-sm transition-colors hover:border-blue-400 hover:bg-blue-400/20">
+                <span className="font-label-technical text-xs px-5 py-2.5 border border-gray-300 bg-gray-100 font-bold text-gray-800 rounded-full shadow-xs transition-colors hover:bg-gray-200 hover:text-black">
                   {step}
                 </span>
                 {idx < workflowSteps.length - 1 && (
-                  <span className="material-symbols-outlined text-blue-400 mx-2 text-lg">
+                  <span className="material-symbols-outlined text-gray-400 mx-2 text-lg">
                     arrow_right_alt
                   </span>
                 )}
