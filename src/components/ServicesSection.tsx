@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import seoImg from '../assets/seo-service.jpg';
 
 export default function ServicesSection() {
   const services = [
@@ -27,10 +28,10 @@ export default function ServicesSection() {
       tags: ['SEO', 'PPC', 'Analytics', 'Content', 'CRO'],
     },
     {
-      title: 'Branding & Creative',
-      desc: 'Strategic brand identity development, visual language systems, and compelling creative direction for digital touchpoints.',
-      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCjCV_UEYyVTFVwCHY8JYU4LpK7pST95317pC-_w4i6VfwuCnqm4M1jswTRExhwCEzRqwgOpi4kJ7t_Ba4TNMjf1QGJYJlcHkxNX8XH_w58ujTZBkLv9HLggZbkc2_vcDTtdi9j7ukSD2ML4sOb196yPVWxcpiW0BGJADHoQHA6h3IINdnI2hSwcxKeEUvQ8i3Tw6OI0t7lgThfjYnexiva4MjXrBRVSHuV3AWMO1dpvlMiEZmnWUxgH5r03PLWwGKzfSL1MukACklSMbtc',
-      tags: ['Identity', 'Guidelines', 'Motion', '3D', 'Copywriting'],
+      title: 'SEO Optimization',
+      desc: 'Data-driven search engine optimization, keyword strategy, and technical audits to elevate organic rankings and visibility.',
+      img: seoImg,
+      tags: ['Technical SEO', 'On-Page SEO', 'Keyword Strategy', 'Backlinks', 'Rankings'],
     },
     {
       title: 'Custom Software',
@@ -39,8 +40,6 @@ export default function ServicesSection() {
       tags: ['SaaS', 'APIs', 'Microservices', 'DevOps', 'Cloud'],
     },
   ];
-
-  const workflowSteps = ['IDEA', 'STRATEGY', 'DESIGN', 'DEVELOPMENT', 'LAUNCH', 'GROWTH'];
 
   return (
     <section id="services" className="py-20 border-t border-gray-200 relative overflow-hidden w-full max-w-full bg-white">
@@ -101,34 +100,6 @@ export default function ServicesSection() {
           ))}
         </div>
 
-        {/* Process Flow Diagram (Gray shade workflow bar) */}
-        <div className="py-8 border-t border-gray-200 mt-4">
-          <div className="font-label-technical text-xs text-gray-600 mb-5 tracking-widest uppercase font-bold">
-            WORKFLOW ARCHITECTURE
-          </div>
-          <div className="flex flex-col md:flex-row items-center overflow-x-auto pb-4 scrollbar-hide justify-start gap-3">
-            {workflowSteps.map((step, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, x: -15 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.08, duration: 0.4 }}
-                whileHover={{ scale: 1.06 }}
-                className="flex items-center shrink-0"
-              >
-                <span className="font-label-technical text-xs px-5 py-2.5 border border-gray-300 bg-gray-100 font-bold text-gray-800 rounded-full shadow-xs transition-colors hover:bg-gray-200 hover:text-black">
-                  {step}
-                </span>
-                {idx < workflowSteps.length - 1 && (
-                  <span className="material-symbols-outlined text-gray-400 mx-2 text-lg">
-                    arrow_right_alt
-                  </span>
-                )}
-              </motion.div>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   );

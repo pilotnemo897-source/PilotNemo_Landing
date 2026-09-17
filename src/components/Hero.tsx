@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import logoSrc from '../assets/logo.png';
 
 interface HeroProps {
   onStartProject?: () => void;
@@ -29,12 +30,16 @@ export default function Hero({ onStartProject, onViewWork }: HeroProps) {
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           className="w-full md:w-1/2 flex flex-col justify-center z-10"
         >
-          {/* Badge (Gray shade box) */}
-          <div className="mb-5">
-            <span className="font-label-technical text-xs text-gray-800 tracking-widest uppercase border border-gray-300 px-4 py-1.5 bg-gray-100 rounded-full inline-block font-semibold shadow-xs">
-              PILOTNEMO / DIGITAL PRODUCT STUDIO
-            </span>
+          {/* Original PilotNemo Logo - Left Top */}
+          <div className="mb-6">
+            <img
+              src={logoSrc}
+              alt="PilotNemo"
+              className="h-12 sm:h-14 md:h-16 w-auto object-contain"
+            />
           </div>
+
+
 
           {/* Headline */}
           <h1 className="font-headline-lg text-3xl sm:text-4xl lg:text-5xl text-gray-950 leading-[1.1] mb-5 font-extrabold">

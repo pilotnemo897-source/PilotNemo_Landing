@@ -13,7 +13,7 @@ export default function AboutSection({ onStartProject }: AboutSectionProps) {
   ];
 
   const mainStats = [
-    { value: '$50M+', label: 'CLIENT REVENUE GENERATED' },
+    { value: '50M+', label: 'CLIENT REVENUE GENERATED' },
     { value: '250+', label: 'ENTERPRISE PROJECTS' },
     { value: '99.8%', label: 'ON-TIME SPRINT DELIVERY' },
     { value: '100%', label: 'CODE TRANSFERRED' },
